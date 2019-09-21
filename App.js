@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import PlayerCard from "./components/audioplayerCard";
 import { Header } from "react-native-elements";
 
+// TODO: overflow scroll to be added
 export default class App extends React.Component {
   render() {
     return (
@@ -20,7 +21,6 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#fff",
-    overflow: "auto"
+    backgroundColor: "#fff"
   }
 });
