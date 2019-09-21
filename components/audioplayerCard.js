@@ -26,12 +26,77 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ value: this.props.fileValue });
   }
 
-  async playSound() {
+  async playSound_1() {
     var filePath = this.state.value;
     const soundObject = new Audio.Sound();
     try {
       console.log("in the playsound method");
       await soundObject.loadAsync(require("../916_1.wav"));
+      await soundObject.playAsync();
+      // Your sound is playing!
+    } catch (error) {
+      console.log("error playing sound due to ", error);
+    }
+  }
+
+  async playSound_2() {
+    var filePath = this.state.value;
+    const soundObject = new Audio.Sound();
+    try {
+      console.log("in the playsound method");
+      await soundObject.loadAsync(require("../916_3.wav"));
+      await soundObject.playAsync();
+      // Your sound is playing!
+    } catch (error) {
+      console.log("error playing sound due to ", error);
+    }
+  }
+
+  async playSound_3() {
+    var filePath = this.state.value;
+    const soundObject = new Audio.Sound();
+    try {
+      console.log("in the playsound method");
+      await soundObject.loadAsync(require("../916_5.wav"));
+      await soundObject.playAsync();
+      // Your sound is playing!
+    } catch (error) {
+      console.log("error playing sound due to ", error);
+    }
+  }
+
+  async playSound_4() {
+    var filePath = this.state.value;
+    const soundObject = new Audio.Sound();
+    try {
+      console.log("in the playsound method");
+      await soundObject.loadAsync(require("../916_7.wav"));
+      await soundObject.playAsync();
+      // Your sound is playing!
+    } catch (error) {
+      console.log("error playing sound due to ", error);
+    }
+  }
+
+  async playSound_5() {
+    var filePath = this.state.value;
+    const soundObject = new Audio.Sound();
+    try {
+      console.log("in the playsound method");
+      await soundObject.loadAsync(require("../916_9.wav"));
+      await soundObject.playAsync();
+      // Your sound is playing!
+    } catch (error) {
+      console.log("error playing sound due to ", error);
+    }
+  }
+
+  async playSound_6() {
+    var filePath = this.state.value;
+    const soundObject = new Audio.Sound();
+    try {
+      console.log("in the playsound method");
+      await soundObject.loadAsync(require("../916_11.wav"));
       await soundObject.playAsync();
       // Your sound is playing!
     } catch (error) {
@@ -68,36 +133,34 @@ export default class AudioplayerCard extends React.Component {
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button title="Play" onPress={() => this.playSound()} />
+          <Button title="Play" onPress={() => this.playSound_1()} />
+          {/* */}
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button title="Play" onPress={() => this.playSound_2()} />
+          {/*  */}
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button title="Play" onPress={() => this.playSound_3()} />
+          {/*  */}
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button title="Play" onPress={() => this.playSound_4()} />
+          {/*  */}
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button title="Play" onPress={() => this.playSound_5()} />
+          {/*  */}
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button title="Play" onPress={() => this.playSound_6()} />
         </Card>
-        <Card>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignContent: "center",
-              justifyContent: "center"
-            }}
-          >
-            <View
-              style={{
-                display: "flex",
-                fleDirection: "column"
-              }}
-            >
-              <Button
-                title="Yes"
-                style={{ width: width / 3, margin: 10 }}
-                onPress={() => console.log("pressed yes")}
-              />
-              <Button
-                title="No"
-                style={{ width: width / 3, margin: 10 }}
-                onPress={() => console.log("pressed no")}
-              />
-            </View>
-          </View>
-        </Card>
+        {/*  */}
       </View>
     );
   }
