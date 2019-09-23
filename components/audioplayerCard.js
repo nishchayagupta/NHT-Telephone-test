@@ -140,32 +140,50 @@ export default class AudioplayerCard extends React.Component {
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button title="Play" onPress={() => this.playSound_1()} />
+          <Button
+            title="Play Noise-Level 1"
+            onPress={() => this.playSound_1()}
+          />
           {/* */}
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button title="Play" onPress={() => this.playSound_2()} />
+          <Button
+            title="Play Noise-Level 3"
+            onPress={() => this.playSound_2()}
+          />
           {/*  */}
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button title="Play" onPress={() => this.playSound_3()} />
+          <Button
+            title="Play Noise-Level 5"
+            onPress={() => this.playSound_3()}
+          />
           {/*  */}
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button title="Play" onPress={() => this.playSound_4()} />
+          <Button
+            title="Play Noise-Level 7"
+            onPress={() => this.playSound_4()}
+          />
           {/*  */}
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button title="Play" onPress={() => this.playSound_5()} />
+          <Button
+            title="Play Noise-Level 9"
+            onPress={() => this.playSound_5()}
+          />
           {/*  */}
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button title="Play" onPress={() => this.playSound_6()} />
+          <Button
+            title="Play Noise-Level 11"
+            onPress={() => this.playSound_6()}
+          />
         </Card>
         {/*  */}
       </ScrollView>
