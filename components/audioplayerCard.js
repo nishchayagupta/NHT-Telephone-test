@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  ScrollView
+} from "react-native";
 import {
   Card,
   ListItem,
@@ -107,7 +114,7 @@ export default class AudioplayerCard extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <View>
+      <ScrollView style={{ overflow: "scroll" }}>
         <Card
           style={{
             display: "flex",
@@ -161,7 +168,7 @@ export default class AudioplayerCard extends React.Component {
           <Button title="Play" onPress={() => this.playSound_6()} />
         </Card>
         {/*  */}
-      </View>
+      </ScrollView>
     );
   }
 }
