@@ -177,6 +177,33 @@ export default class AudioplayerCard extends React.Component {
     }
   }
 
+  listRandom() {
+    Leftvisited = [];
+    while (Leftvisited.length < 30) {
+      randNumber = Math.floor(Math.random() * 64);
+      if (Leftvisited.includes(audioFiles[randNumber])) {
+        continue;
+      } else {
+        Leftvisited.push(audioFiles[randNumber]);
+      }
+    }
+    console.log("left : " + Leftvisited);
+
+    RightVisited = [];
+    while (RightVisited.length < 30) {
+      randNumber = Math.floor(Math.random() * 64);
+      if (
+        Leftvisited.includes(audioFiles[randNumber]) ||
+        RightVisited.includes(audioFiles[randNumber])
+      ) {
+        continue;
+      } else {
+        RightVisited.push(audioFiles[randNumber]);
+      }
+    }
+    console.log("right : " + RightVisited);
+  }
+
   render() {
     console.log(this.state);
     return (
@@ -254,7 +281,7 @@ export default class AudioplayerCard extends React.Component {
           <View style={{ height: 10 }} />
           <Button
             title="Play Noise-Level 11"
-            onPress={() => console.log(audioFiles.length)}
+            onPress={() => this.listRandom()}
           />
         </Card>
         {/*  */}
