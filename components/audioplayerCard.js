@@ -19,6 +19,72 @@ import { Audio } from "expo-av";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
+const audioFiles = [
+  128,
+  152,
+  154,
+  161,
+  181,
+  182,
+  185,
+  193,
+  194,
+  199,
+  213,
+  216,
+  281,
+  233,
+  243,
+  254,
+  256,
+  261,
+  294,
+  295,
+  296,
+  313,
+  318,
+  321,
+  322,
+  324,
+  342,
+  343,
+  345,
+  346,
+  353,
+  362,
+  383,
+  384,
+  393,
+  398,
+  436,
+  439,
+  441,
+  452,
+  453,
+  454,
+  464,
+  483,
+  534,
+  556,
+  568,
+  593,
+  599,
+  639,
+  649,
+  658,
+  823,
+  825,
+  828,
+  833,
+  854,
+  856,
+  862,
+  891,
+  916,
+  929,
+  942,
+  989
+];
 
 //TODO: Add dynamic change of Audio files using assets
 export default class AudioplayerCard extends React.Component {
@@ -180,9 +246,15 @@ export default class AudioplayerCard extends React.Component {
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
+          <Button title="Play Noise-Level 11" />
+
+          {/*  */}
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
           <Button
             title="Play Noise-Level 11"
-            onPress={() => this.playSound_6()}
+            onPress={() => console.log(audioFiles.length)}
           />
         </Card>
         {/*  */}
