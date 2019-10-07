@@ -91,7 +91,8 @@ export default class AudioplayerCard extends React.Component {
   constructor(props) {
     super(props);
     state = {
-      value: ""
+      left: [],
+      right: []
     };
   }
 
@@ -177,7 +178,7 @@ export default class AudioplayerCard extends React.Component {
     }
   }
 
-  listRandom() {
+  componentDidMount() {
     Leftvisited = [];
     while (Leftvisited.length < 30) {
       randNumber = Math.floor(Math.random() * 64);
@@ -187,7 +188,7 @@ export default class AudioplayerCard extends React.Component {
         Leftvisited.push(audioFiles[randNumber]);
       }
     }
-    console.log("left : " + Leftvisited);
+    this.setState({ left: Leftvisited });
 
     RightVisited = [];
     while (RightVisited.length < 30) {
@@ -201,7 +202,17 @@ export default class AudioplayerCard extends React.Component {
         RightVisited.push(audioFiles[randNumber]);
       }
     }
-    console.log("right : " + RightVisited);
+    this.setState({ right: RightVisited });
+  }
+
+  selectAudio() {
+    var array = [...this.state.left]; // make a separate copy of the array
+    const currentVal = array[0];
+    const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+    console.log("currentValue", currentVal);
+    this.setState({ value: currentVal });
+    console.log("newArray", newArray);
+    this.setState({ left: newArray });
   }
 
   render() {
@@ -281,7 +292,7 @@ export default class AudioplayerCard extends React.Component {
           <View style={{ height: 10 }} />
           <Button
             title="Play Noise-Level 11"
-            onPress={() => this.listRandom()}
+            onPress={() => this.selectAudio()}
           />
         </Card>
         {/*  */}
