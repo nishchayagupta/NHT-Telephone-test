@@ -215,7 +215,7 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ left: newArray });
   }
 
-  selectRIghtAudio() {
+  selectRightAudio() {
     var array = [...this.state.right]; // make a separate copy of the array
     const currentVal = array[0];
     const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
