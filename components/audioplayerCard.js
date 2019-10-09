@@ -205,7 +205,7 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ right: RightVisited });
   }
 
-  selectAudio() {
+  selectLeftAudio() {
     var array = [...this.state.left]; // make a separate copy of the array
     const currentVal = array[0];
     const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
@@ -215,6 +215,15 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ left: newArray });
   }
 
+  selectRIghtAudio() {
+    var array = [...this.state.right]; // make a separate copy of the array
+    const currentVal = array[0];
+    const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+    console.log("currentValue", currentVal);
+    this.setState({ value: currentVal });
+    console.log("newArray", newArray);
+    this.setState({ right: newArray });
+  }
   render() {
     console.log(this.state);
     return (
@@ -291,8 +300,17 @@ export default class AudioplayerCard extends React.Component {
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
           <Button
-            title="Play Noise-Level 11"
-            onPress={() => this.selectAudio()}
+            title="Select Left Audio"
+            onPress={() => this.selectLeftAudio()}
+          />
+
+          {/*  */}
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button
+            title="Select Right Audio"
+            onPress={() => this.selectRightAudio()}
           />
         </Card>
         {/*  */}
