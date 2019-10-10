@@ -16,6 +16,7 @@ import {
   Input
 } from "react-native-elements";
 import { Audio } from "expo-av";
+import EarSelect from "./earSelection";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
@@ -90,9 +91,11 @@ const audioFiles = [
 export default class AudioplayerCard extends React.Component {
   constructor(props) {
     super(props);
-    state = {
+    this.state = {
       left: [],
-      right: []
+      right: [],
+      currentEar: "",
+      overlayActivate: false
     };
   }
 
@@ -206,6 +209,7 @@ export default class AudioplayerCard extends React.Component {
   }
 
   selectLeftAudio() {
+    this.setState({ overlayActivate: true });
     var array = [...this.state.left]; // make a separate copy of the array
     const currentVal = array[0];
     const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
@@ -224,6 +228,7 @@ export default class AudioplayerCard extends React.Component {
     console.log("newArray", newArray);
     this.setState({ right: newArray });
   }
+
   render() {
     console.log(this.state);
     return (
@@ -257,43 +262,9 @@ export default class AudioplayerCard extends React.Component {
             title="Play Noise-Level 1"
             onPress={() => this.playSound_1()}
           />
-          {/* */}
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button
-            title="Play Noise-Level 3"
-            onPress={() => this.playSound_2()}
-          />
+
           {/*  */}
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button
-            title="Play Noise-Level 5"
-            onPress={() => this.playSound_3()}
-          />
-          {/*  */}
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button
-            title="Play Noise-Level 7"
-            onPress={() => this.playSound_4()}
-          />
-          {/*  */}
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button
-            title="Play Noise-Level 9"
-            onPress={() => this.playSound_5()}
-          />
-          {/*  */}
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button title="Play Noise-Level 11" />
+          <EarSelect visible={this.state.overlayActivate} />
 
           {/*  */}
           <View style={{ height: 10 }} />
