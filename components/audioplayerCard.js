@@ -227,13 +227,15 @@ export default class AudioplayerCard extends React.Component {
       this.setState({ value: currentVal });
       this.setState({ right: newArray });
       console.log("right" + this.state.right);
-    } else {
+    } else if (this.state.currentEar === "left") {
       var array = [...this.state.left]; // make a separate copy of the array
       const currentVal = array[0];
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
       this.setState({ value: currentVal });
       this.setState({ left: newArray });
       console.log("left" + this.state.left);
+    } else {
+      console.log("please select an ear");
     }
   }
 

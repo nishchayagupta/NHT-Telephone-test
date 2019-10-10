@@ -29,10 +29,19 @@ export default class EarSelect extends React.Component {
   render() {
     return (
       <View>
-        <Overlay isVisible={this.props.visible} height={100}>
+        <Overlay isVisible={this.props.visible} height={200}>
           <Text>Select Ear</Text>
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
           <Button title="Left" onPress={() => this.close("left")} />
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
           <Button title="Right" onPress={() => this.close("right")} />
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
         </Overlay>
       </View>
     );
