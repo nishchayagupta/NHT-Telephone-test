@@ -273,6 +273,32 @@ export default class AudioplayerCard extends React.Component {
     }
   }
 
+  displayPlayAudioButton() {
+    if (this.state.currentEar === "") {
+      return (
+        <View>
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button
+            title="Play Audio"
+            onPress={() => this.playAudio()}
+            disabled={true}
+          />
+        </View>
+      );
+    } else if (this.state.currentEar !== "") {
+      return (
+        <View>
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button title="Play Audio" onPress={() => this.playAudio()} />
+        </View>
+      );
+    }
+  }
+
   render() {
     return (
       <ScrollView style={{ overflow: "scroll" }}>
@@ -314,11 +340,7 @@ export default class AudioplayerCard extends React.Component {
 
           {/*  */}
 
-          {/*  */}
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button title="Select Right Audio" onPress={() => this.playAudio()} />
+          {this.displayPlayAudioButton()}
         </Card>
         {/*  */}
       </ScrollView>
