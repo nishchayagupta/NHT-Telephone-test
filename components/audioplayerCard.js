@@ -219,14 +219,22 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ left: newArray });
   }
 
-  selectRightAudio() {
-    var array = [...this.state.right]; // make a separate copy of the array
-    const currentVal = array[0];
-    const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-    console.log("currentValue", currentVal);
-    this.setState({ value: currentVal });
-    console.log("newArray", newArray);
-    this.setState({ right: newArray });
+  playAudio() {
+    if (this.state.currentEar === "right") {
+      var array = [...this.state.right]; // make a separate copy of the array
+      const currentVal = array[0];
+      const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+      this.setState({ value: currentVal });
+      this.setState({ right: newArray });
+      console.log("right" + this.state.right);
+    } else {
+      var array = [...this.state.left]; // make a separate copy of the array
+      const currentVal = array[0];
+      const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+      this.setState({ value: currentVal });
+      this.setState({ left: newArray });
+      console.log("left" + this.state.left);
+    }
   }
 
   handleOverlay = (OverlayValue, earPreference) => {
@@ -235,7 +243,6 @@ export default class AudioplayerCard extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <ScrollView style={{ overflow: "scroll" }}>
         <Card
@@ -287,10 +294,7 @@ export default class AudioplayerCard extends React.Component {
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button
-            title="Select Right Audio"
-            onPress={() => this.selectRightAudio()}
-          />
+          <Button title="Select Right Audio" onPress={() => this.playAudio()} />
         </Card>
         {/*  */}
       </ScrollView>
