@@ -20,21 +20,16 @@ import { Overlay } from "react-native-elements";
 export default class EarSelect extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isVisible: props.visible
-    };
   }
 
   close() {
-    console.log("in close method");
-    this.setState({ isVisible: false });
+    this.props.onValueChange(false);
   }
 
   render() {
-    console.log("selection state" + this.state.isVisible);
     return (
       <View>
-        <Overlay isVisible={this.state.isVisible}>
+        <Overlay isVisible={this.props.visible}>
           <Text>Hello from Overlay!</Text>
           <Button title="close" onPress={() => this.close()} />
         </Overlay>

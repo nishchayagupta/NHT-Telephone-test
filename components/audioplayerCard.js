@@ -229,6 +229,10 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ right: newArray });
   }
 
+  handleOverlay = OverlayValue => {
+    this.setState({ overlayActivate: OverlayValue });
+  };
+
   render() {
     console.log(this.state);
     return (
@@ -264,7 +268,10 @@ export default class AudioplayerCard extends React.Component {
           />
 
           {/*  */}
-          <EarSelect visible={this.state.overlayActivate} />
+          <EarSelect
+            visible={this.state.overlayActivate}
+            onValueChange={this.handleOverlay}
+          />
 
           {/*  */}
           <View style={{ height: 10 }} />
