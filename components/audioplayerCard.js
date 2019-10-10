@@ -229,8 +229,9 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ right: newArray });
   }
 
-  handleOverlay = OverlayValue => {
+  handleOverlay = (OverlayValue, earPreference) => {
     this.setState({ overlayActivate: OverlayValue });
+    this.setState({ currentEar: earPreference });
   };
 
   render() {

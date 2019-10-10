@@ -22,16 +22,17 @@ export default class EarSelect extends React.Component {
     super(props);
   }
 
-  close() {
-    this.props.onValueChange(false);
-  }
+  close = earPreference => {
+    this.props.onValueChange(false, earPreference);
+  };
 
   render() {
     return (
       <View>
-        <Overlay isVisible={this.props.visible}>
-          <Text>Hello from Overlay!</Text>
-          <Button title="close" onPress={() => this.close()} />
+        <Overlay isVisible={this.props.visible} height={100}>
+          <Text>Select Ear</Text>
+          <Button title="Left" onPress={() => this.close("left")} />
+          <Button title="Right" onPress={() => this.close("right")} />
         </Overlay>
       </View>
     );
