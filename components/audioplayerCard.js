@@ -242,6 +242,21 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ currentEar: earPreference });
   };
 
+  displaySelectEarButton() {
+    if (this.state.currentEar === "") {
+      return (
+        <View>
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button title="Select Ear" onPress={() => this.selectLeftAudio()} />
+        </View>
+      );
+    } else {
+      return <View style={{ height: 10 }} />;
+    }
+  }
+
   render() {
     return (
       <ScrollView style={{ overflow: "scroll" }}>
@@ -274,7 +289,7 @@ export default class AudioplayerCard extends React.Component {
             title="Play Noise-Level 1"
             onPress={() => this.playSound_1()}
           />
-
+          {this.displaySelectEarButton()}
           {/*  */}
           <EarSelect
             visible={this.state.overlayActivate}
@@ -282,13 +297,6 @@ export default class AudioplayerCard extends React.Component {
           />
 
           {/*  */}
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button
-            title="Select Left Audio"
-            onPress={() => this.selectLeftAudio()}
-          />
 
           {/*  */}
           <View style={{ height: 10 }} />
