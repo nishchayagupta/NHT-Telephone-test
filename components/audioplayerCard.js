@@ -316,6 +316,8 @@ export default class AudioplayerCard extends React.Component {
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
           <Button title="Restart Test" onPress={() => this.reset()} />
+          <View style={{ height: 10 }} />
+
           <View
             style={{
               display: "flex",
@@ -346,6 +348,11 @@ export default class AudioplayerCard extends React.Component {
           {/*  */}
 
           {this.displayPlayAudioButton()}
+          <View style={{ height: 10 }} />
+
+          <Input placeholder="Enter number" />
+          <View style={{ height: 10 }} />
+          <Button title="Register" onPress={() => this.playSound_1()} />
         </Card>
         {/*  */}
       </ScrollView>
