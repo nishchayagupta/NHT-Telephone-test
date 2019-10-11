@@ -99,10 +99,6 @@ export default class AudioplayerCard extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({ value: this.props.fileValue });
-  }
-
   async playSound_1() {
     var filePath = this.state.value;
     const soundObject = new Audio.Sound();
@@ -299,6 +295,11 @@ export default class AudioplayerCard extends React.Component {
     }
   }
 
+  reset() {
+    this.setState({ currentEar: "" });
+    this.setState({ overlayActivate: false });
+  }
+
   render() {
     return (
       <ScrollView style={{ overflow: "scroll" }}>
@@ -311,6 +312,10 @@ export default class AudioplayerCard extends React.Component {
             alignContent: "center"
           }}
         >
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button title="Restart Test" onPress={() => this.reset()} />
           <View
             style={{
               display: "flex",
