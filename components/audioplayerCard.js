@@ -95,7 +95,9 @@ export default class AudioplayerCard extends React.Component {
       left: [],
       right: [],
       currentEar: "",
-      overlayActivate: false
+      overlayActivate: false,
+      currentTrack: "",
+      currentLevel: 1
     };
   }
 
@@ -227,7 +229,7 @@ export default class AudioplayerCard extends React.Component {
       if (newArray.length === 0) {
         this.setState({ currentEar: "left" });
       }
-      this.setState({ value: currentVal });
+      this.setState({ currentTrack: currentVal });
       this.setState({ right: newArray });
       console.log("right" + this.state.right);
     } else if (
@@ -241,7 +243,7 @@ export default class AudioplayerCard extends React.Component {
       if (newArray.length === 0) {
         this.setState({ currentEar: "right" });
       }
-      this.setState({ value: currentVal });
+      this.setState({ currentTrack: currentVal });
       this.setState({ left: newArray });
       console.log("left" + this.state.left);
     } else {
@@ -353,6 +355,12 @@ export default class AudioplayerCard extends React.Component {
           <Input placeholder="Enter number" />
           <View style={{ height: 10 }} />
           <Button title="Register" onPress={() => this.playSound_1()} />
+
+          {/*  */}
+          <View style={{ height: 10 }} />
+          <Text>
+            {this.state.currentTrack}_{this.state.currentLevel}
+          </Text>
         </Card>
         {/*  */}
       </ScrollView>
