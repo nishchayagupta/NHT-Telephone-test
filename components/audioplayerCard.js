@@ -98,8 +98,10 @@ export default class AudioplayerCard extends React.Component {
       overlayActivate: false,
       currentTrack: "",
       currentLevel: 1,
-      Textvalue: ""
+      textValue: ""
     };
+
+    this.handleTextInput = this.handleTextInput.bind(this);
   }
 
   async playSound_1() {
@@ -212,9 +214,7 @@ export default class AudioplayerCard extends React.Component {
     var array = [...this.state.left]; // make a separate copy of the array
     const currentVal = array[0];
     const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-    console.log("currentValue", currentVal);
     this.setState({ value: currentVal });
-    console.log("newArray", newArray);
     this.setState({ left: newArray });
   }
 
@@ -223,7 +223,6 @@ export default class AudioplayerCard extends React.Component {
       this.state.currentEar === "right" &&
       this.state.currentEar.length !== 0
     ) {
-      console.log("current ear", this.state.currentEar);
       var array = [...this.state.right]; // make a separate copy of the array
       const currentVal = array[0];
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
@@ -232,12 +231,10 @@ export default class AudioplayerCard extends React.Component {
       }
       this.setState({ currentTrack: currentVal });
       this.setState({ right: newArray });
-      console.log("right" + this.state.right);
     } else if (
       this.state.currentEar === "left" &&
       this.state.currentEar.length !== 0
     ) {
-      console.log("current ear", this.state.currentEar);
       var array = [...this.state.left]; // make a separate copy of the array
       const currentVal = array[0];
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
@@ -246,7 +243,6 @@ export default class AudioplayerCard extends React.Component {
       }
       this.setState({ currentTrack: currentVal });
       this.setState({ left: newArray });
-      console.log("left" + this.state.left);
     } else {
       console.log("please select an ear");
     }
@@ -304,7 +300,19 @@ export default class AudioplayerCard extends React.Component {
   }
 
   handleTextInput(event) {
-    this.setState({ Textvalue: event.target.value });
+    this.setState({ textValue: event.nativeEvent.text });
+  }
+
+  verifyRegister() {
+    if (this.state.textValue == this.state.currentTrack) {
+      console.log(this.state.textValue, "matches", this.state.currentTrack);
+    } else {
+      console.log(
+        this.state.textValue,
+        "doesn't match",
+        this.state.currentTrack
+      );
+    }
   }
 
   render() {
@@ -359,11 +367,11 @@ export default class AudioplayerCard extends React.Component {
 
           <Input
             placeholder="Enter number"
-            value={this.state.Textvalue}
+            value={this.state.textValue}
             onChange={this.handleTextInput}
           />
           <View style={{ height: 10 }} />
-          <Button title="Register" onPress={() => this.playSound_1()} />
+          <Button title="Register" onPress={() => this.verifyRegister()} />
 
           {/*  */}
           <View style={{ height: 10 }} />
