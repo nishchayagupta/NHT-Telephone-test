@@ -97,7 +97,8 @@ export default class AudioplayerCard extends React.Component {
       currentEar: "",
       overlayActivate: false,
       currentTrack: "",
-      currentLevel: 1
+      currentLevel: 1,
+      Textvalue: ""
     };
   }
 
@@ -302,6 +303,10 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ overlayActivate: false });
   }
 
+  handleTextInput(event) {
+    this.setState({ Textvalue: event.target.value });
+  }
+
   render() {
     return (
       <ScrollView style={{ overflow: "scroll" }}>
@@ -352,7 +357,11 @@ export default class AudioplayerCard extends React.Component {
           {this.displayPlayAudioButton()}
           <View style={{ height: 10 }} />
 
-          <Input placeholder="Enter number" />
+          <Input
+            placeholder="Enter number"
+            value={this.state.Textvalue}
+            onChange={this.handleTextInput}
+          />
           <View style={{ height: 10 }} />
           <Button title="Register" onPress={() => this.playSound_1()} />
 
