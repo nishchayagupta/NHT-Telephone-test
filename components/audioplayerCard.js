@@ -297,6 +297,8 @@ export default class AudioplayerCard extends React.Component {
   reset() {
     this.setState({ currentEar: "" });
     this.setState({ overlayActivate: false });
+    this.setState({ textValue: "" });
+    this.setState({ currentTrack: "" });
   }
 
   handleTextInput(event) {
@@ -375,7 +377,14 @@ export default class AudioplayerCard extends React.Component {
 
           {/*  */}
           <View style={{ height: 10 }} />
-          <Text>
+          <Text
+            style={{
+              alignContent: "center",
+              textAlign: "center",
+              fontSize: 20,
+              fontWeight: "bold"
+            }}
+          >
             {this.state.currentTrack}_{this.state.currentLevel}
           </Text>
         </Card>
