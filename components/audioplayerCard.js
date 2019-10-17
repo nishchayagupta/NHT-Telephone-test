@@ -17,7 +17,6 @@ import {
 } from "react-native-elements";
 import { Audio } from "expo-av";
 import EarSelect from "./earSelection";
-import { showMessage, hideMessage } from "react-native-flash-message";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
@@ -309,6 +308,8 @@ export default class AudioplayerCard extends React.Component {
   verifyRegister() {
     if (this.state.textValue == this.state.currentTrack) {
       console.log(this.state.textValue, "matches", this.state.currentTrack);
+      var currentLevel = this.state.currentLevel + 1;
+      this.setState({ currentLevel: currentLevel });
     } else {
       console.log(
         this.state.textValue,
@@ -388,19 +389,6 @@ export default class AudioplayerCard extends React.Component {
           >
             {this.state.currentTrack}_{this.state.currentLevel}
           </Text>
-          <View style={{ flex: 1 }}>
-            <Button
-              onPress={() => {
-                /* HERE WE GONE SHOW OUR FIRST MESSAGE */
-                showMessage({
-                  message: "Simple message",
-                  type: "info"
-                });
-              }}
-              title="Request Details"
-              color="#841584"
-            />
-          </View>
         </Card>
         {/*  */}
       </ScrollView>
