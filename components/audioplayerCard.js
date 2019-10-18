@@ -310,12 +310,16 @@ export default class AudioplayerCard extends React.Component {
       console.log(this.state.textValue, "matches", this.state.currentTrack);
       var currentLevel = this.state.currentLevel + 1;
       this.setState({ currentLevel: currentLevel });
+      this.playAudio();
     } else {
       console.log(
         this.state.textValue,
         "doesn't match",
         this.state.currentTrack
       );
+      var currentLevel = this.state.currentLevel - 1;
+      this.setState({ currentLevel: currentLevel });
+      this.playAudio();
     }
   }
 
