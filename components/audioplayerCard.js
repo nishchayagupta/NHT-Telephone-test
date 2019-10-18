@@ -5,7 +5,8 @@ import {
   View,
   Image,
   Dimensions,
-  ScrollView
+  ScrollView,
+  KeyboardAvoidingView
 } from "react-native";
 import {
   Card,
@@ -110,71 +111,6 @@ export default class AudioplayerCard extends React.Component {
     try {
       console.log("in the playsound method");
       await soundObject.loadAsync(require("../916_1.wav"));
-      await soundObject.playAsync();
-      // Your sound is playing!
-    } catch (error) {
-      console.log("error playing sound due to ", error);
-    }
-  }
-
-  async playSound_2() {
-    var filePath = this.state.value;
-    const soundObject = new Audio.Sound();
-    try {
-      console.log("in the playsound method");
-      await soundObject.loadAsync(require("../916_3.wav"));
-      await soundObject.playAsync();
-      // Your sound is playing!
-    } catch (error) {
-      console.log("error playing sound due to ", error);
-    }
-  }
-
-  async playSound_3() {
-    var filePath = this.state.value;
-    const soundObject = new Audio.Sound();
-    try {
-      console.log("in the playsound method");
-      await soundObject.loadAsync(require("../916_5.wav"));
-      await soundObject.playAsync();
-      // Your sound is playing!
-    } catch (error) {
-      console.log("error playing sound due to ", error);
-    }
-  }
-
-  async playSound_4() {
-    var filePath = this.state.value;
-    const soundObject = new Audio.Sound();
-    try {
-      console.log("in the playsound method");
-      await soundObject.loadAsync(require("../916_7.wav"));
-      await soundObject.playAsync();
-      // Your sound is playing!
-    } catch (error) {
-      console.log("error playing sound due to ", error);
-    }
-  }
-
-  async playSound_5() {
-    var filePath = this.state.value;
-    const soundObject = new Audio.Sound();
-    try {
-      console.log("in the playsound method");
-      await soundObject.loadAsync(require("../916_9.wav"));
-      await soundObject.playAsync();
-      // Your sound is playing!
-    } catch (error) {
-      console.log("error playing sound due to ", error);
-    }
-  }
-
-  async playSound_6() {
-    var filePath = this.state.value;
-    const soundObject = new Audio.Sound();
-    try {
-      console.log("in the playsound method");
-      await soundObject.loadAsync(require("../916_11.wav"));
       await soundObject.playAsync();
       // Your sound is playing!
     } catch (error) {
@@ -299,6 +235,7 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ overlayActivate: false });
     this.setState({ textValue: "" });
     this.setState({ currentTrack: "" });
+    this.setState({ currentLevel: 1 });
   }
 
   handleTextInput(event) {
@@ -308,7 +245,11 @@ export default class AudioplayerCard extends React.Component {
   verifyRegister() {
     if (this.state.textValue == this.state.currentTrack) {
       console.log(this.state.textValue, "matches", this.state.currentTrack);
-      var currentLevel = this.state.currentLevel + 1;
+      if (this.state.currentLevel < 11) {
+        var currentLevel = this.state.currentLevel + 1;
+      } else {
+        var currentLevel = this.state.currentLevel;
+      }
       this.setState({ currentLevel: currentLevel });
       this.playAudio();
     } else {
@@ -317,7 +258,11 @@ export default class AudioplayerCard extends React.Component {
         "doesn't match",
         this.state.currentTrack
       );
-      var currentLevel = this.state.currentLevel - 1;
+      if (this.state.currentLevel > 1) {
+        var currentLevel = this.state.currentLevel - 1;
+      } else {
+        var currentLevel = this.state.currentLevel;
+      }
       this.setState({ currentLevel: currentLevel });
       this.playAudio();
     }
@@ -325,7 +270,7 @@ export default class AudioplayerCard extends React.Component {
 
   render() {
     return (
-      <ScrollView style={{ overflow: "scroll" }}>
+      <KeyboardAvoidingView style={{ overflow: "scroll" }}>
         <Card
           style={{
             display: "flex",
@@ -391,11 +336,11 @@ export default class AudioplayerCard extends React.Component {
               fontWeight: "bold"
             }}
           >
-            {this.state.currentTrack}_{this.state.currentLevel}
+            {this.state.currentEar} : {this.state.currentTrack}_{this.state.currentLevel}
           </Text>
         </Card>
         {/*  */}
-      </ScrollView>
+      </KeyboardAvoidingView>
     );
   }
 }
