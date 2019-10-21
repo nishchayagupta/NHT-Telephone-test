@@ -259,6 +259,7 @@ export default class AudioplayerCard extends React.Component {
       }
       this.setState({ correctResponses: this.state.correctResponses + 1 });
       this.setState({ currentLevel: currentLevel });
+      this.setState({ textValue: "" });
       this.playAudio();
     } else {
       console.log(
@@ -273,6 +274,8 @@ export default class AudioplayerCard extends React.Component {
         var currentLevel = this.state.currentLevel;
       }
       this.setState({ currentLevel: currentLevel });
+      this.setState({ textValue: "" });
+
       this.playAudio();
     }
   }
