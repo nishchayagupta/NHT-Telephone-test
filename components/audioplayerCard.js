@@ -98,26 +98,14 @@ export default class AudioplayerCard extends React.Component {
       currentEar: "",
       overlayActivate: false,
       currentTrack: "",
-      currentLevel: 1,
-      textValue: ""
+      currentLevel: 2,
+      textValue: "",
+      counter: 0,
+      correctResponses: 0
     };
 
     this.handleTextInput = this.handleTextInput.bind(this);
   }
-
-  async playSound_1() {
-    var filePath = this.state.value;
-    const soundObject = new Audio.Sound();
-    try {
-      console.log("in the playsound method");
-      await soundObject.loadAsync(require("../916_1.wav"));
-      await soundObject.playAsync();
-      // Your sound is playing!
-    } catch (error) {
-      console.log("error playing sound due to ", error);
-    }
-  }
-
   componentDidMount() {
     Leftvisited = [];
     while (Leftvisited.length < 30) {
@@ -145,13 +133,27 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ right: RightVisited });
   }
 
-  selectLeftAudio() {
-    this.setState({ overlayActivate: true });
-    var array = [...this.state.left]; // make a separate copy of the array
-    const currentVal = array[0];
-    const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-    this.setState({ value: currentVal });
-    this.setState({ left: newArray });
+  reset() {
+    this.setState({ currentEar: "" });
+    this.setState({ overlayActivate: false });
+    this.setState({ textValue: "" });
+    this.setState({ currentTrack: "" });
+    this.setState({ currentLevel: 1 });
+    this.setState({ counter: 0 });
+    this.setState({ correctResponses: 0 });
+  }
+
+  async playSound_1() {
+    var filePath = this.state.value;
+    const soundObject = new Audio.Sound();
+    try {
+      console.log("in the playsound method");
+      await soundObject.loadAsync(require("../916_1.wav"));
+      await soundObject.playAsync();
+      // Your sound is playing!
+    } catch (error) {
+      console.log("error playing sound due to ", error);
+    }
   }
 
   playAudio() {
@@ -162,8 +164,10 @@ export default class AudioplayerCard extends React.Component {
       var array = [...this.state.right]; // make a separate copy of the array
       const currentVal = array[0];
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+      this.setState({ counter: this.state.counter + 1 });
       if (newArray.length === 0) {
         this.setState({ currentEar: "left" });
+        this.setState({ counter: 0 });
       }
       this.setState({ currentTrack: currentVal });
       this.setState({ right: newArray });
@@ -174,8 +178,10 @@ export default class AudioplayerCard extends React.Component {
       var array = [...this.state.left]; // make a separate copy of the array
       const currentVal = array[0];
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+      this.setState({ counter: this.state.counter + 1 });
       if (newArray.length === 0) {
         this.setState({ currentEar: "right" });
+        this.setState({ counter: 0 });
       }
       this.setState({ currentTrack: currentVal });
       this.setState({ left: newArray });
@@ -188,6 +194,15 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ overlayActivate: OverlayValue });
     this.setState({ currentEar: earPreference });
   };
+
+  selectLeftAudio() {
+    this.setState({ overlayActivate: true });
+    var array = [...this.state.left]; // make a separate copy of the array
+    const currentVal = array[0];
+    const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+    this.setState({ value: currentVal });
+    this.setState({ left: newArray });
+  }
 
   displaySelectEarButton() {
     if (this.state.currentEar === "") {
@@ -230,14 +245,6 @@ export default class AudioplayerCard extends React.Component {
     }
   }
 
-  reset() {
-    this.setState({ currentEar: "" });
-    this.setState({ overlayActivate: false });
-    this.setState({ textValue: "" });
-    this.setState({ currentTrack: "" });
-    this.setState({ currentLevel: 1 });
-  }
-
   handleTextInput(event) {
     this.setState({ textValue: event.nativeEvent.text });
   }
@@ -250,6 +257,7 @@ export default class AudioplayerCard extends React.Component {
       } else {
         var currentLevel = this.state.currentLevel;
       }
+      this.setState({ correctResponses: this.state.correctResponses + 1 });
       this.setState({ currentLevel: currentLevel });
       this.playAudio();
     } else {
@@ -258,6 +266,7 @@ export default class AudioplayerCard extends React.Component {
         "doesn't match",
         this.state.currentTrack
       );
+
       if (this.state.currentLevel > 1) {
         var currentLevel = this.state.currentLevel - 1;
       } else {
@@ -337,6 +346,18 @@ export default class AudioplayerCard extends React.Component {
             }}
           >
             {this.state.currentEar} : {this.state.currentTrack}_{this.state.currentLevel}
+          </Text>
+
+          <Text
+            style={{
+              alignContent: "center",
+              textAlign: "center",
+              fontSize: 20,
+              fontWeight: "bold"
+            }}
+          >
+            {this.state.currentEar} : {this.state.counter} and correct responses
+            : {this.state.correctResponses}
           </Text>
         </Card>
         {/*  */}
