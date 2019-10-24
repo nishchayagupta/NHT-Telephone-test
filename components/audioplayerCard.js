@@ -168,6 +168,7 @@ export default class AudioplayerCard extends React.Component {
       if (newArray.length === 0) {
         this.setState({ currentEar: "left" });
         this.setState({ counter: 0 });
+        this.setState({ correctResponses: 0 });
       }
       this.setState({ currentTrack: currentVal });
       this.setState({ right: newArray });
@@ -182,6 +183,7 @@ export default class AudioplayerCard extends React.Component {
       if (newArray.length === 0) {
         this.setState({ currentEar: "right" });
         this.setState({ counter: 0 });
+        this.setState({ correctResponses: 0 });
       }
       this.setState({ currentTrack: currentVal });
       this.setState({ left: newArray });
@@ -195,13 +197,8 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ currentEar: earPreference });
   };
 
-  selectLeftAudio() {
+  selectEar() {
     this.setState({ overlayActivate: true });
-    var array = [...this.state.left]; // make a separate copy of the array
-    const currentVal = array[0];
-    const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-    this.setState({ value: currentVal });
-    this.setState({ left: newArray });
   }
 
   displaySelectEarButton() {
@@ -211,7 +208,7 @@ export default class AudioplayerCard extends React.Component {
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button title="Select Ear" onPress={() => this.selectLeftAudio()} />
+          <Button title="Select Ear" onPress={() => this.selectEar()} />
         </View>
       );
     } else {
