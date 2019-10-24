@@ -141,6 +141,7 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ currentLevel: 1 });
     this.setState({ counter: 0 });
     this.setState({ correctResponses: 0 });
+    this.componentDidMount();
   }
 
   async playSound_1() {
@@ -157,15 +158,12 @@ export default class AudioplayerCard extends React.Component {
   }
 
   playAudio() {
-    if (
-      this.state.currentEar === "right" &&
-      this.state.currentEar.length !== 0
-    ) {
+    if (this.state.currentEar === "right" && this.state.right.length !== 0) {
       var array = [...this.state.right]; // make a separate copy of the array
       const currentVal = array[0];
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
       this.setState({ counter: this.state.counter + 1 });
-      if (newArray.length === 0) {
+      if (newArray.length === 0 && this.state.left.length !== 0) {
         this.setState({ currentEar: "left" });
         this.setState({ counter: 0 });
         this.setState({ correctResponses: 0 });
@@ -174,13 +172,13 @@ export default class AudioplayerCard extends React.Component {
       this.setState({ right: newArray });
     } else if (
       this.state.currentEar === "left" &&
-      this.state.currentEar.length !== 0
+      this.state.left.length !== 0
     ) {
       var array = [...this.state.left]; // make a separate copy of the array
       const currentVal = array[0];
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
       this.setState({ counter: this.state.counter + 1 });
-      if (newArray.length === 0) {
+      if (newArray.length === 0 && this.state.right.length !== 0) {
         this.setState({ currentEar: "right" });
         this.setState({ counter: 0 });
         this.setState({ correctResponses: 0 });
@@ -197,10 +195,6 @@ export default class AudioplayerCard extends React.Component {
     this.setState({ currentEar: earPreference });
   };
 
-  selectEar() {
-    this.setState({ overlayActivate: true });
-  }
-
   displaySelectEarButton() {
     if (this.state.currentEar === "") {
       return (
@@ -208,7 +202,12 @@ export default class AudioplayerCard extends React.Component {
           <View style={{ height: 10 }} />
           <Divider style={{ height: 1 }} />
           <View style={{ height: 10 }} />
-          <Button title="Select Ear" onPress={() => this.selectEar()} />
+          <Button
+            title="Select Ear"
+            onPress={() => {
+              this.setState({ overlayActivate: true });
+            }}
+          />
         </View>
       );
     } else {
