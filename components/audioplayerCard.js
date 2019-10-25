@@ -159,6 +159,9 @@ export default class AudioplayerCard extends React.Component {
 
   playAudio() {
     if (this.state.currentEar === "right" && this.state.right.length !== 0) {
+      if (this.state.correctResponses == 0 && this.state.counter > 5) {
+        console.log("test failed for right ear");
+      }
       var array = [...this.state.right]; // make a separate copy of the array
       const currentVal = array[0];
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
@@ -174,6 +177,9 @@ export default class AudioplayerCard extends React.Component {
       this.state.currentEar === "left" &&
       this.state.left.length !== 0
     ) {
+      if (this.state.correctResponses == 0 && this.state.counter > 5) {
+        console.log("test failed for left ear");
+      }
       var array = [...this.state.left]; // make a separate copy of the array
       const currentVal = array[0];
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
