@@ -161,36 +161,44 @@ export default class AudioplayerCard extends React.Component {
     if (this.state.currentEar === "right" && this.state.right.length !== 0) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
         console.log("test failed for right ear");
-      }
-      var array = [...this.state.right]; // make a separate copy of the array
-      const currentVal = array[0];
-      const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-      this.setState({ counter: this.state.counter + 1 });
-      if (newArray.length === 0 && this.state.left.length !== 0) {
         this.setState({ currentEar: "left" });
         this.setState({ counter: 0 });
         this.setState({ correctResponses: 0 });
+      } else {
+        var array = [...this.state.right]; // make a separate copy of the array
+        const currentVal = array[0];
+        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+        this.setState({ counter: this.state.counter + 1 });
+        if (newArray.length === 0 && this.state.left.length !== 0) {
+          this.setState({ currentEar: "left" });
+          this.setState({ counter: 0 });
+          this.setState({ correctResponses: 0 });
+        }
+        this.setState({ currentTrack: currentVal });
+        this.setState({ right: newArray });
       }
-      this.setState({ currentTrack: currentVal });
-      this.setState({ right: newArray });
     } else if (
       this.state.currentEar === "left" &&
       this.state.left.length !== 0
     ) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
         console.log("test failed for left ear");
-      }
-      var array = [...this.state.left]; // make a separate copy of the array
-      const currentVal = array[0];
-      const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-      this.setState({ counter: this.state.counter + 1 });
-      if (newArray.length === 0 && this.state.right.length !== 0) {
         this.setState({ currentEar: "right" });
         this.setState({ counter: 0 });
         this.setState({ correctResponses: 0 });
+      } else {
+        var array = [...this.state.left]; // make a separate copy of the array
+        const currentVal = array[0];
+        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+        this.setState({ counter: this.state.counter + 1 });
+        if (newArray.length === 0 && this.state.right.length !== 0) {
+          this.setState({ currentEar: "right" });
+          this.setState({ counter: 0 });
+          this.setState({ correctResponses: 0 });
+        }
+        this.setState({ currentTrack: currentVal });
+        this.setState({ left: newArray });
       }
-      this.setState({ currentTrack: currentVal });
-      this.setState({ left: newArray });
     } else {
       console.log("please select an ear");
     }
