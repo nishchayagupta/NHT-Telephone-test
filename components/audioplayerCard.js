@@ -99,7 +99,7 @@ export default class AudioplayerCard extends React.Component {
       overlayActivate: false,
       currentTrack: "",
       currentLevel: 2,
-      textValue: "",
+      inputValue: "",
       counter: 0,
       correctResponses: 0
     };
@@ -136,9 +136,9 @@ export default class AudioplayerCard extends React.Component {
   reset() {
     this.setState({ currentEar: "" });
     this.setState({ overlayActivate: false });
-    this.setState({ textValue: "" });
+    this.setState({ inputValue: "" });
     this.setState({ currentTrack: "" });
-    this.setState({ currentLevel: 1 });
+    this.setState({ currentLevel: 2 });
     this.setState({ counter: 0 });
     this.setState({ correctResponses: 0 });
     this.componentDidMount();
@@ -157,13 +157,19 @@ export default class AudioplayerCard extends React.Component {
     }
   }
 
+  earChange(ear) {
+    console.log("in method");
+    if (ear === "right") {
+      this.setState({ currentEar: "left" });
+      this.setState({ counter: 0 });
+      this.setState({ correctResponses: 0 });
+    }
+  }
+
   playAudio() {
     if (this.state.currentEar === "right" && this.state.right.length !== 0) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
-        console.log("test failed for right ear");
-        this.setState({ currentEar: "left" });
-        this.setState({ counter: 0 });
-        this.setState({ correctResponses: 0 });
+        this.earChange("right");
       } else {
         var array = [...this.state.right]; // make a separate copy of the array
         const currentVal = array[0];
@@ -256,12 +262,12 @@ export default class AudioplayerCard extends React.Component {
   }
 
   handleTextInput(event) {
-    this.setState({ textValue: event.nativeEvent.text });
+    this.setState({ inputValue: event.nativeEvent.text });
   }
 
   verifyRegister() {
-    if (this.state.textValue == this.state.currentTrack) {
-      console.log(this.state.textValue, "matches", this.state.currentTrack);
+    if (this.state.inputValue == this.state.currentTrack) {
+      console.log(this.state.inputValue, "matches", this.state.currentTrack);
       if (this.state.currentLevel < 11) {
         var currentLevel = this.state.currentLevel + 1;
       } else {
@@ -269,11 +275,11 @@ export default class AudioplayerCard extends React.Component {
       }
       this.setState({ correctResponses: this.state.correctResponses + 1 });
       this.setState({ currentLevel: currentLevel });
-      this.setState({ textValue: "" });
+      this.setState({ inputValue: "" });
       this.playAudio();
     } else {
       console.log(
-        this.state.textValue,
+        this.state.inputValue,
         "doesn't match",
         this.state.currentTrack
       );
@@ -284,7 +290,7 @@ export default class AudioplayerCard extends React.Component {
         var currentLevel = this.state.currentLevel;
       }
       this.setState({ currentLevel: currentLevel });
-      this.setState({ textValue: "" });
+      this.setState({ inputValue: "" });
 
       this.playAudio();
     }
@@ -292,7 +298,7 @@ export default class AudioplayerCard extends React.Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={{ overflow: "scroll" }}>
+      <ScrollView style={{ overflow: "scroll" }}>
         <Card
           style={{
             display: "flex",
@@ -342,7 +348,7 @@ export default class AudioplayerCard extends React.Component {
 
           <Input
             placeholder="Enter number"
-            value={this.state.textValue}
+            value={this.state.inputValue}
             onChange={this.handleTextInput}
           />
           <View style={{ height: 10 }} />
@@ -374,7 +380,7 @@ export default class AudioplayerCard extends React.Component {
           </Text>
         </Card>
         {/*  */}
-      </KeyboardAvoidingView>
+      </ScrollView>
     );
   }
 }
