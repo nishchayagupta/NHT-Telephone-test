@@ -28,120 +28,86 @@ export default class HomeScreen extends React.Component {
     this.state = {
       inputText: ""
     };
+    this.returnButton = this.returnButton.bind(this);
   }
 
-  appendState(num) {
+  appendState = num => {
     this.setState({ inputText: this.state.inputText + num });
-  }
+  };
 
-  backspace() {
+  backspace = () => {
     this.setState({ inputText: this.state.inputText.slice(0, -1) });
-  }
+  };
+
+  spaceView = (num, val) => {
+    returnDiv = [];
+    for (let i = 0; i < num; i++) {
+      keyValue = `${val}` + `${i}`;
+      returnDiv.push(<SpaceView key={keyValue} />);
+    }
+    return (
+      <View>
+        {returnDiv}
+      </View>
+    );
+  };
+
+  returnButton = num => {
+    return (
+      <Button
+        title={num}
+        onPress={() => {
+          this.appendState(num);
+        }}
+        style={styles.ButtonStyle}
+      />
+    );
+  };
 
   render() {
     return (
       <View id="MainView" style={styles.MainView}>
-        <SpaceView />
+        {this.spaceView(4, "main")}
         <Text style={{ textAlign: "center", fontSize: 40, height: 40 }}>
           {this.state.inputText}
         </Text>
-        <SpaceView />
-        <SpaceView />
-        <SpaceView />
-        <SpaceView />
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginLeft: 50,
-            marginRight: 50
-          }}
-        >
-          <Button
-            title="1"
-            onPress={() => {
-              this.appendState(1);
-            }}
-          />
-          <Button
-            title="2"
-            onPress={() => {
-              this.appendState(2);
-            }}
-          />
-          <Button
-            title="3"
-            onPress={() => {
-              this.appendState(3);
-            }}
-          />
+        {this.spaceView(3, "numpad")}
+        <View style={styles.ButtonViewStyle}>
+          {this.returnButton("1")}
+          {this.returnButton("2")}
+          {this.returnButton("3")}
         </View>
-        <SpaceView />
-        <SpaceView />
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginLeft: 50,
-            marginRight: 50
-          }}
-        >
-          <Button
-            title="4"
-            onPress={() => {
-              this.appendState(4);
-            }}
-          />
-          <Button
-            title="5"
-            onPress={() => {
-              this.appendState(5);
-            }}
-            raised
-          />
-          <Button
-            title="6"
-            onPress={() => {
-              this.appendState(6);
-            }}
-          />
+        {this.spaceView(2, "numpad1")}
+        <View style={styles.ButtonViewStyle}>
+          {this.returnButton("4")}
+          {this.returnButton("5")}
+          {this.returnButton("6")}
         </View>
-        <SpaceView />
-        <SpaceView />
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginLeft: 50,
-            marginRight: 50
-          }}
-        >
-          <Button
-            title="7"
-            onPress={() => {
-              this.appendState(7);
-            }}
-          />
-          <Button
-            title="8"
-            onPress={() => {
-              this.appendState(8);
-            }}
-          />
-          <Button
-            title="9"
-            onPress={() => {
-              this.appendState(9);
-            }}
-          />
+        {this.spaceView(2, "numpad2")}
+        <View style={styles.ButtonViewStyle}>
+          {this.returnButton("7")}
+          {this.returnButton("8")}
+          {this.returnButton("9")}
         </View>
-        <SpaceView />
+        {this.spaceView(2, "numpad3")}
+        <Button
+          title="Play Audio"
+          onPress={() => {
+            this.backspace();
+          }}
+          style={{ margin: 30 }}
+        />
         <SpaceView />
         <Button
           title="delete"
+          onPress={() => {
+            this.backspace();
+          }}
+          style={{ margin: 30 }}
+        />
+        <SpaceView />
+        <Button
+          title="Verify"
           onPress={() => {
             this.backspace();
           }}
@@ -156,5 +122,19 @@ const styles = {
   MainView: {
     height: DeviceHeight,
     width: DeviceWidth
+  },
+  ButtonStyle: {
+    height: 50,
+    width: 50,
+    borderRadius: 20,
+    overflow: "hidden"
+  },
+  ButtonViewStyle: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginLeft: 50,
+    marginRight: 50,
+    height: 60
   }
 };
