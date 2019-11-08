@@ -18,7 +18,8 @@ import {
   Input
 } from "react-native-elements";
 import SpaceView from "./spaceView";
-
+import { Audio } from "expo-av";
+import * as Constants from "./constants";
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
 
@@ -39,10 +40,10 @@ export default class HomeScreen extends React.Component {
     //randomly selecting 30 files for the left ear
     while (Leftvisited.length < 30) {
       randNumber = Math.floor(Math.random() * 64);
-      if (Leftvisited.includes(audioFiles[randNumber])) {
+      if (Leftvisited.includes(Constants.audioFiles[randNumber])) {
         continue;
       } else {
-        Leftvisited.push(audioFiles[randNumber]);
+        Leftvisited.push(Constants.audioFiles[randNumber]);
       }
     }
     //setting state variable left according to the audio files selected
@@ -53,16 +54,30 @@ export default class HomeScreen extends React.Component {
     while (RightVisited.length < 30) {
       randNumber = Math.floor(Math.random() * 64);
       if (
-        Leftvisited.includes(audioFiles[randNumber]) ||
-        RightVisited.includes(audioFiles[randNumber])
+        Leftvisited.includes(Constants.audioFiles[randNumber]) ||
+        RightVisited.includes(Constants.audioFiles[randNumber])
       ) {
         continue;
       } else {
-        RightVisited.push(audioFiles[randNumber]);
+        RightVisited.push(Constants.audioFiles[randNumber]);
       }
     }
     // setting state variable right according to the 30 files selected
     this.setState({ right: RightVisited });
+  }
+
+  // Play audio file
+  async playSound_1() {
+    var filePath = this.state.value;
+    const soundObject = new Audio.Sound();
+    try {
+      console.log("in the playsound method");
+      await soundObject.loadAsync(require("../916_1.wav"));
+      await soundObject.playAsync();
+      // Your sound is playing!
+    } catch (error) {
+      console.log("error playing sound due to ", error);
+    }
   }
 
   // This method would append the text value entered by the user into the top text show area
@@ -143,12 +158,19 @@ export default class HomeScreen extends React.Component {
           {this.returnButton("9")}
         </View>
         {this.spaceView(2, "numpad3")}
+        <View style={styles.ButtonViewStyle}>
+          {this.returnButton(" ")}
+          {this.returnButton("0")}
+          {this.returnButton("Back")}
+        </View>
+        {this.spaceView(2, "numpad3")}
         <Button
           title="Play Audio"
           onPress={() => {
-            this.backspace();
+            this.playSound_1();
           }}
           style={{ margin: 30 }}
+          raised
         />
         <SpaceView />
         <Button
@@ -157,6 +179,7 @@ export default class HomeScreen extends React.Component {
             this.backspace();
           }}
           style={{ margin: 30 }}
+          raised
         />
         <SpaceView />
         <Button
@@ -165,6 +188,7 @@ export default class HomeScreen extends React.Component {
             this.backspace();
           }}
           style={{ margin: 30 }}
+          raised
         />
       </View>
     );

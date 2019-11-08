@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "react-native";
+import { View } from "react-native";
 
 export default class SpaceView extends React.Component {
   render() {
