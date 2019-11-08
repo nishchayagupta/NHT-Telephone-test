@@ -105,6 +105,18 @@ export default class HomeScreen extends React.Component {
     );
   };
 
+  // This function would reset all the states and take the test to its initial state
+  reset() {
+    this.setState({ currentEar: "" });
+    this.setState({ overlayActivate: false });
+    this.setState({ inputValue: "" });
+    this.setState({ currentTrack: "" });
+    this.setState({ currentLevel: 2 });
+    this.setState({ counter: 0 });
+    this.setState({ correctResponses: 0 });
+    this.componentDidMount();
+  }
+
   render() {
     return (
       <View id="MainView" style={styles.MainView}>
