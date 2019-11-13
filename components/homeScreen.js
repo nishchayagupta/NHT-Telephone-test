@@ -29,7 +29,14 @@ export default class HomeScreen extends React.Component {
     this.state = {
       inputText: "",
       left: [],
-      right: []
+      right: [],
+      currentEar: "",
+      overlayActivate: false,
+      currentTrack: "",
+      currentLevel: 2,
+      inputValue: "",
+      counter: 0,
+      correctResponses: 0
     };
     this.returnButton = this.returnButton.bind(this);
   }
