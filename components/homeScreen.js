@@ -29,18 +29,54 @@ export default class HomeScreen extends React.Component {
     this.state = {
       inputText: "",
       left: [],
-      right: [],
-      currentEar: "",
-      overlayActivate: false,
-      currentTrack: "",
-      currentLevel: 2,
-      inputValue: "",
-      counter: 0,
-      correctResponses: 0
+      right: []
     };
     this.returnButton = this.returnButton.bind(this);
   }
 
+  playAudio() {
+    if (this.state.currentEar === "right" && this.state.right.length !== 0) {
+      if (this.state.correctResponses == 0 && this.state.counter > 5) {
+        this.earChange("right");
+      } else {
+        var array = [...this.state.right]; // make a separate copy of the array
+        const currentVal = array[0];
+        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+        this.setState({ counter: this.state.counter + 1 });
+        if (newArray.length === 0 && this.state.left.length !== 0) {
+          this.setState({ currentEar: "left" });
+          this.setState({ counter: 0 });
+          this.setState({ correctResponses: 0 });
+        }
+        this.setState({ currentTrack: currentVal });
+        this.setState({ right: newArray });
+      }
+    } else if (
+      this.state.currentEar === "left" &&
+      this.state.left.length !== 0
+    ) {
+      if (this.state.correctResponses == 0 && this.state.counter > 5) {
+        console.log("test failed for left ear");
+        this.setState({ currentEar: "right" });
+        this.setState({ counter: 0 });
+        this.setState({ correctResponses: 0 });
+      } else {
+        var array = [...this.state.left]; // make a separate copy of the array
+        const currentVal = array[0];
+        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+        this.setState({ counter: this.state.counter + 1 });
+        if (newArray.length === 0 && this.state.right.length !== 0) {
+          this.setState({ currentEar: "right" });
+          this.setState({ counter: 0 });
+          this.setState({ correctResponses: 0 });
+        }
+        this.setState({ currentTrack: currentVal });
+        this.setState({ left: newArray });
+      }
+    } else {
+      console.log("please select an ear");
+    }
+  }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
   componentDidMount() {
     Leftvisited = [];
