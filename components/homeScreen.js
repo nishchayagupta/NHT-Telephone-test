@@ -20,6 +20,8 @@ import {
 import SpaceView from "./spaceView";
 import { Audio } from "expo-av";
 import * as Constants from "./constants";
+import EarSelect from "./earSelection";
+
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
 
@@ -33,6 +35,31 @@ export default class HomeScreen extends React.Component {
     };
     this.returnButton = this.returnButton.bind(this);
   }
+
+  displaySelectEarButton() {
+    if (this.state.currentEar === "") {
+      return (
+        <View>
+          <View style={{ height: 10 }} />
+          <Divider style={{ height: 1 }} />
+          <View style={{ height: 10 }} />
+          <Button
+            title="Select Ear"
+            onPress={() => {
+              this.setState({ overlayActivate: true });
+            }}
+          />
+        </View>
+      );
+    } else {
+      return <View style={{ height: 10 }} />;
+    }
+  }
+
+  handleOverlay = (OverlayValue, earPreference) => {
+    this.setState({ overlayActivate: OverlayValue });
+    this.setState({ currentEar: earPreference });
+  };
 
   playAudio() {
     if (this.state.currentEar === "right" && this.state.right.length !== 0) {
@@ -178,6 +205,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View id="MainView" style={styles.MainView}>
+        {this.displaySelectEarButton()}
         {this.spaceView(4, "main")}
         <Text style={{ textAlign: "center", fontSize: 40, height: 40 }}>
           {this.state.inputText}
