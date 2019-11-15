@@ -31,7 +31,9 @@ export default class HomeScreen extends React.Component {
     this.state = {
       inputText: "",
       left: [],
-      right: []
+      right: [],
+      currentEar: "",
+      overlayActivate: false
     };
     this.returnButton = this.returnButton.bind(this);
   }
