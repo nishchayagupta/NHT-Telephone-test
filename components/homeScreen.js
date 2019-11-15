@@ -32,6 +32,9 @@ export default class HomeScreen extends React.Component {
       inputText: "",
       left: [],
       right: [],
+      currentTrack: "",
+      currentLevel: 2,
+
       currentEar: "",
       overlayActivate: false
     };
