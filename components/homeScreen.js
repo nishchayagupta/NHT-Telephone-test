@@ -201,6 +201,10 @@ export default class HomeScreen extends React.Component {
     );
   };
 
+  clear = () => {
+    this.setState({ inputText: "" });
+  };
+
   // This function would reset all the states and take the test to its initial state
   reset() {
     this.setState({ currentEar: "" });
@@ -220,7 +224,7 @@ export default class HomeScreen extends React.Component {
         <Text style={{ textAlign: "center", fontSize: 40, height: 40 }}>
           {this.state.inputText}
         </Text>
-        {this.spaceView(2, "numpad")}
+        {this.spaceView(5, "numpad")}
         <View style={styles.ButtonViewStyle}>
           {this.returnButton("1")}
           {this.returnButton("2")}
@@ -240,38 +244,36 @@ export default class HomeScreen extends React.Component {
         </View>
         {this.spaceView(2, "numpad3")}
         <View style={styles.ButtonViewStyle}>
-          {this.returnButton(" ")}
+          <TouchableOpacity
+            onPress={() => {
+              this.clear();
+            }}
+          >
+            <Icon name="clear" color="black" size={50} />
+          </TouchableOpacity>
           {this.returnButton("0")}
           <TouchableOpacity
             onPress={() => {
               this.backspace();
             }}
           >
-            <Icon name="backspace" color="#517fa4" size={50} />
+            <Icon name="backspace" color="black" size={50} />
           </TouchableOpacity>
         </View>
         {this.spaceView(2, "numpad3")}
         <TouchableOpacity
           onPress={() => {
-            this.backspace();
+            this.playSound_1();
           }}
         >
           <Icon
-            name="play-circle-filled"
+            name="play-circle-outline"
             type="material"
             color="black"
             size={100}
           />
         </TouchableOpacity>
         <SpaceView />
-        <Button
-          title="Verify"
-          onPress={() => {
-            this.backspace();
-          }}
-          style={{ margin: 30 }}
-          raised
-        />
       </View>
     );
   }
