@@ -7,7 +7,8 @@ import {
   Dimensions,
   ScrollView,
   KeyboardAvoidingView,
-  TextInput
+  TextInput,
+  TouchableOpacity
 } from "react-native";
 import {
   Card,
@@ -34,7 +35,9 @@ export default class HomeScreen extends React.Component {
       right: [],
       currentTrack: "",
       currentLevel: 2,
-
+      inputValue: "",
+      counter: 0,
+      correctResponses: 0,
       currentEar: "",
       overlayActivate: false
     };
@@ -185,13 +188,16 @@ export default class HomeScreen extends React.Component {
   // same as the argument passed and would also work as a button (i.e. append the value clicked to the top text section)
   returnButton = num => {
     return (
-      <Button
-        title={num}
+      <TouchableOpacity
         onPress={() => {
           this.appendState(num);
         }}
         style={styles.ButtonStyle}
-      />
+      >
+        <Text style={{ fontSize: 30 }}>
+          {num}
+        </Text>
+      </TouchableOpacity>
     );
   };
 
@@ -210,12 +216,11 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View id="MainView" style={styles.MainView}>
-        {this.displaySelectEarButton()}
-        {this.spaceView(4, "main")}
+        {this.spaceView(2, "main")}
         <Text style={{ textAlign: "center", fontSize: 40, height: 40 }}>
           {this.state.inputText}
         </Text>
-        {this.spaceView(3, "numpad")}
+        {this.spaceView(2, "numpad")}
         <View style={styles.ButtonViewStyle}>
           {this.returnButton("1")}
           {this.returnButton("2")}
@@ -237,26 +242,27 @@ export default class HomeScreen extends React.Component {
         <View style={styles.ButtonViewStyle}>
           {this.returnButton(" ")}
           {this.returnButton("0")}
-          {this.returnButton("Back")}
+          <TouchableOpacity
+            onPress={() => {
+              this.backspace();
+            }}
+          >
+            <Icon name="backspace" color="#517fa4" size={50} />
+          </TouchableOpacity>
         </View>
         {this.spaceView(2, "numpad3")}
-        <Button
-          title="Play Audio"
-          onPress={() => {
-            this.playSound_1();
-          }}
-          style={{ margin: 30 }}
-          raised
-        />
-        <SpaceView />
-        <Button
-          title="delete"
+        <TouchableOpacity
           onPress={() => {
             this.backspace();
           }}
-          style={{ margin: 30 }}
-          raised
-        />
+        >
+          <Icon
+            name="play-circle-filled"
+            type="material"
+            color="black"
+            size={100}
+          />
+        </TouchableOpacity>
         <SpaceView />
         <Button
           title="Verify"
@@ -277,17 +283,21 @@ const styles = {
     width: DeviceWidth
   },
   ButtonStyle: {
-    height: 50,
-    width: 50,
-    borderRadius: 20,
-    overflow: "hidden"
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    alignContent: "center",
+    justifyContent: "center",
+    height: 60,
+    width: 60,
+    borderRadius: 30
   },
   ButtonViewStyle: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    marginLeft: 50,
-    marginRight: 50,
-    height: 60
+    marginLeft: 40,
+    marginRight: 40,
+    height: 70
   }
 };
