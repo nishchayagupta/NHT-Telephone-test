@@ -10,7 +10,10 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Header
-          centerComponent={{ text: "Audiology IU", style: { color: "#fff" } }}
+          centerComponent={{
+            text: "NHT Application",
+            style: { color: "#fff" }
+          }}
         />
         {/* <PlayerCard fileValue="../916_1.wav" /> */}
         <HomeScreen />

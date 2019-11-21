@@ -5,7 +5,8 @@ import {
   View,
   Image,
   Dimensions,
-  ScrollView
+  ScrollView,
+  TouchableOpacity
 } from "react-native";
 import {
   Card,
@@ -16,6 +17,9 @@ import {
   Input
 } from "react-native-elements";
 import { Overlay } from "react-native-elements";
+
+const DeviceHeight = Dimensions.get("window").height;
+const DeviceWidth = Dimensions.get("window").width;
 
 export default class EarSelect extends React.Component {
   constructor(props) {
@@ -29,19 +33,63 @@ export default class EarSelect extends React.Component {
   render() {
     return (
       <View>
-        <Overlay isVisible={this.props.visible} height={200}>
-          <Text>Select Ear</Text>
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button title="Left" onPress={() => this.close("left")} />
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button title="Right" onPress={() => this.close("right")} />
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
+        <Overlay
+          isVisible={this.props.visible}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+          height={DeviceHeight / 4}
+          overlayBackgroundColor="#FFFFFF"
+        >
+          <Icon name="headset" type="material" color="black" size={100} />
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                height: 50,
+                width: DeviceWidth / 3,
+                display: "flex",
+                flexDirection: "row",
+                backgroundColor: "#C5CAE9",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 5,
+                margin: 10
+              }}
+              onPress={() => {
+                this.close("left");
+              }}
+            >
+              <Text style={{ fontSize: 20 }}>Left</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                height: 50,
+                width: DeviceWidth / 3,
+                display: "flex",
+                flexDirection: "row",
+                backgroundColor: "#C5CAE9",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 5,
+                margin: 10
+              }}
+              onPress={() => {
+                this.close("right");
+              }}
+            >
+              <Text style={{ fontSize: 20 }}>Right</Text>
+            </TouchableOpacity>
+          </View>
         </Overlay>
       </View>
     );

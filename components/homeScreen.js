@@ -22,6 +22,7 @@ import SpaceView from "./spaceView";
 import { Audio } from "expo-av";
 import * as Constants from "./constants";
 import EarSelect from "./earSelection";
+import Toast, { DURATION } from "react-native-easy-toast";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -44,23 +45,64 @@ export default class HomeScreen extends React.Component {
     this.returnButton = this.returnButton.bind(this);
   }
 
+  earChange(ear) {
+    console.log("in method");
+    if (ear === "right") {
+      this.setState({ currentEar: "left" });
+      this.setState({ counter: 0 });
+      this.setState({ correctResponses: 0 });
+    }
+  }
+
   displaySelectEarButton() {
     if (this.state.currentEar === "") {
       return (
-        <View>
-          <View style={{ height: 10 }} />
-          <Divider style={{ height: 1 }} />
-          <View style={{ height: 10 }} />
-          <Button
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "center"
+          }}
+        >
+          <TouchableOpacity
             title="Select Ear"
             onPress={() => {
               this.setState({ overlayActivate: true });
             }}
-          />
+            style={{
+              height: 50,
+              width: DeviceWidth - DeviceWidth / 4,
+              display: "flex",
+              flexDirection: "row",
+              backgroundColor: "#C5CAE9",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 5,
+              margin: 10
+            }}
+          >
+            <Text style={{ fontSize: 20 }}>Select Ear</Text>
+          </TouchableOpacity>
         </View>
       );
     } else {
-      return <View style={{ height: 10 }} />;
+      return (
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "center"
+          }}
+        >
+          <SpaceView />
+          <Text style={{ fontSize: 20 }}>
+            Testing {this.state.currentEar} ear currently and track no is{" "}
+            {this.state.currentTrack}
+          </Text>
+        </View>
+      );
     }
   }
 
@@ -73,6 +115,7 @@ export default class HomeScreen extends React.Component {
     if (this.state.currentEar === "right" && this.state.right.length !== 0) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
         this.earChange("right");
+        this.setState({ right: [] });
       } else {
         var array = [...this.state.right]; // make a separate copy of the array
         const currentVal = array[0];
@@ -91,10 +134,10 @@ export default class HomeScreen extends React.Component {
       this.state.left.length !== 0
     ) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
-        console.log("test failed for left ear");
         this.setState({ currentEar: "right" });
         this.setState({ counter: 0 });
         this.setState({ correctResponses: 0 });
+        this.setState({ left: [] });
       } else {
         var array = [...this.state.left]; // make a separate copy of the array
         const currentVal = array[0];
@@ -110,6 +153,7 @@ export default class HomeScreen extends React.Component {
       }
     } else {
       console.log("please select an ear");
+      this.refs.error.show("Please select an ear");
     }
   }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
@@ -220,7 +264,9 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View id="MainView" style={styles.MainView}>
+        {this.displaySelectEarButton()}
         {this.spaceView(2, "main")}
+        <Toast ref="error" position="top" />
         <Text style={{ textAlign: "center", fontSize: 40, height: 40 }}>
           {this.state.inputText}
         </Text>
@@ -263,7 +309,7 @@ export default class HomeScreen extends React.Component {
         {this.spaceView(2, "numpad3")}
         <TouchableOpacity
           onPress={() => {
-            this.playSound_1();
+            this.playAudio();
           }}
         >
           <Icon
@@ -274,6 +320,10 @@ export default class HomeScreen extends React.Component {
           />
         </TouchableOpacity>
         <SpaceView />
+        <EarSelect
+          visible={this.state.overlayActivate}
+          onValueChange={this.handleOverlay}
+        />
       </View>
     );
   }
@@ -301,5 +351,15 @@ const styles = {
     marginLeft: 40,
     marginRight: 40,
     height: 70
+  },
+  selectEar: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    alignContent: "center",
+    justifyContent: "center",
+    height: 60,
+    width: 60,
+    borderRadius: 30
   }
 };
