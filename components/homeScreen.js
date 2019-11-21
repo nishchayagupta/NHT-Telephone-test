@@ -99,7 +99,7 @@ export default class HomeScreen extends React.Component {
           <SpaceView />
           <Text style={{ fontSize: 20 }}>
             Testing {this.state.currentEar} ear currently and track no is{" "}
-            {this.state.currentTrack}
+            {this.state.currentTrack}_{this.state.currentLevel}
           </Text>
         </View>
       );
@@ -114,8 +114,12 @@ export default class HomeScreen extends React.Component {
   playAudio() {
     if (this.state.currentEar === "right" && this.state.right.length !== 0) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
-        this.earChange("right");
         this.setState({ right: [] });
+        console.log("right deleted", this.state.right.length);
+        this.setState({ currentEar: "left" });
+        this.setState({ counter: 0 });
+        this.setState({ correctResponses: 0 });
+        this.setState({ currentTrack: "" });
       } else {
         var array = [...this.state.right]; // make a separate copy of the array
         const currentVal = array[0];
@@ -134,10 +138,12 @@ export default class HomeScreen extends React.Component {
       this.state.left.length !== 0
     ) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
+        this.setState({ left: [] });
+        console.log("left deleted", this.state.left.length);
         this.setState({ currentEar: "right" });
         this.setState({ counter: 0 });
         this.setState({ correctResponses: 0 });
-        this.setState({ left: [] });
+        this.setState({ currentTrack: "" });
       } else {
         var array = [...this.state.left]; // make a separate copy of the array
         const currentVal = array[0];
@@ -153,6 +159,8 @@ export default class HomeScreen extends React.Component {
       }
     } else {
       console.log("please select an ear");
+      this.setState({ currentEar: "" });
+      this.setState({ currentTrack: "" });
       this.refs.error.show("Please select an ear");
     }
   }
@@ -261,6 +269,37 @@ export default class HomeScreen extends React.Component {
     this.componentDidMount();
   }
 
+  verifyRegister() {
+    if (this.state.inputText == this.state.currentTrack) {
+      console.log(this.state.inputText, "matches", this.state.currentTrack);
+      if (this.state.currentLevel < 11) {
+        var currentLevel = this.state.currentLevel + 1;
+      } else {
+        var currentLevel = this.state.currentLevel;
+      }
+      this.setState({ correctResponses: this.state.correctResponses + 1 });
+      this.setState({ currentLevel: currentLevel });
+      this.setState({ inputText: "" });
+      this.playAudio();
+    } else {
+      console.log(
+        this.state.inputText,
+        "doesn't match",
+        this.state.currentTrack
+      );
+
+      if (this.state.currentLevel > 1) {
+        var currentLevel = this.state.currentLevel - 1;
+      } else {
+        var currentLevel = this.state.currentLevel;
+      }
+      this.setState({ currentLevel: currentLevel });
+      this.setState({ inputText: "" });
+
+      this.playAudio();
+    }
+  }
+
   render() {
     return (
       <View id="MainView" style={styles.MainView}>
@@ -307,19 +346,38 @@ export default class HomeScreen extends React.Component {
           </TouchableOpacity>
         </View>
         {this.spaceView(2, "numpad3")}
-        <TouchableOpacity
-          onPress={() => {
-            this.playAudio();
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
           }}
         >
-          <Icon
-            name="play-circle-outline"
-            type="material"
-            color="black"
-            size={100}
-          />
-        </TouchableOpacity>
-        <SpaceView />
+          <TouchableOpacity
+            onPress={() => {
+              this.playAudio();
+            }}
+            style={{ margin: 20 }}
+          >
+            <Icon
+              name="play-circle-outline"
+              type="material"
+              color="black"
+              size={100}
+            />
+          </TouchableOpacity>
+          <SpaceView />
+          {this.spaceView(2, "numpad3")}
+          <TouchableOpacity
+            onPress={() => {
+              this.verifyRegister();
+            }}
+            style={{ margin: 20 }}
+          >
+            <Icon name="done" type="material" color="black" size={100} />
+          </TouchableOpacity>
+        </View>
         <EarSelect
           visible={this.state.overlayActivate}
           onValueChange={this.handleOverlay}
@@ -361,5 +419,10 @@ const styles = {
     height: 60,
     width: 60,
     borderRadius: 30
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
+    color: "white"
   }
 };
