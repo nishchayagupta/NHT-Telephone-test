@@ -23,6 +23,7 @@ import { Audio } from "expo-av";
 import * as Constants from "./constants";
 import EarSelect from "./earSelection";
 import Toast, { DURATION } from "react-native-easy-toast";
+import * as AudioFiles from "./audioSelector";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -107,11 +108,30 @@ export default class HomeScreen extends React.Component {
   }
 
   handleOverlay = (OverlayValue, earPreference) => {
+    if (earPreference == "left") {
+      var array = [...this.state.left]; // make a separate copy of the array
+      const currentVal = array[0];
+      const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+      currentTrackString =
+        this.state.currentTrack + "_" + this.state.currentLevel;
+      this.setState({ right: newArray });
+      this.setState({ currentTrack: currentVal });
+      this.playAudio();
+    } else if (earPreference == "right") {
+      var array = [...this.state.right]; // make a separate copy of the array
+      const currentVal = array[0];
+      const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+      currentTrackString =
+        this.state.currentTrack + "_" + this.state.currentLevel;
+      this.setState({ right: newArray });
+      this.setState({ currentTrack: currentVal });
+      this.playAudio();
+    }
     this.setState({ overlayActivate: OverlayValue });
     this.setState({ currentEar: earPreference });
   };
 
-  playAudio() {
+  trackChange() {
     if (this.state.currentEar === "right" && this.state.right.length !== 0) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
         this.setState({ right: [] });
@@ -164,6 +184,12 @@ export default class HomeScreen extends React.Component {
       this.refs.error.show("Please select an ear");
     }
   }
+
+  playAudio() {
+    currentTrackString =
+      this.state.currentTrack + "_" + this.state.currentLevel;
+    this.playSound(currentTrackString);
+  }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
   componentDidMount() {
     Leftvisited = [];
@@ -197,12 +223,13 @@ export default class HomeScreen extends React.Component {
   }
 
   // Play audio file
-  async playSound_1() {
+  async playSound(audioTrack) {
+    console.log(audioTrack);
     var filePath = this.state.value;
     const soundObject = new Audio.Sound();
     try {
       console.log("in the playsound method");
-      await soundObject.loadAsync(require("../916_1.wav"));
+      await soundObject.loadAsync(AudioFiles.audioSelector(audioTrack));
       await soundObject.playAsync();
       // Your sound is playing!
     } catch (error) {
@@ -280,7 +307,7 @@ export default class HomeScreen extends React.Component {
       this.setState({ correctResponses: this.state.correctResponses + 1 });
       this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
-      this.playAudio();
+      this.trackChange();
     } else {
       console.log(
         this.state.inputText,
@@ -290,13 +317,13 @@ export default class HomeScreen extends React.Component {
 
       if (this.state.currentLevel > 1) {
         var currentLevel = this.state.currentLevel - 1;
+        this.trackChange();
       } else {
+        this.trackChange();
         var currentLevel = this.state.currentLevel;
       }
       this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
-
-      this.playAudio();
     }
   }
 
@@ -378,10 +405,12 @@ export default class HomeScreen extends React.Component {
             <Icon name="done" type="material" color="black" size={100} />
           </TouchableOpacity>
         </View>
-        <EarSelect
-          visible={this.state.overlayActivate}
-          onValueChange={this.handleOverlay}
-        />
+        <View>
+          <EarSelect
+            visible={this.state.overlayActivate}
+            onValueChange={this.handleOverlay}
+          />
+        </View>
       </View>
     );
   }

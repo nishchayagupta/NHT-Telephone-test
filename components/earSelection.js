@@ -32,66 +32,64 @@ export default class EarSelect extends React.Component {
 
   render() {
     return (
-      <View>
-        <Overlay
-          isVisible={this.props.visible}
+      <Overlay
+        isVisible={this.props.visible}
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+        height={DeviceHeight / 4}
+        overlayBackgroundColor="#FFFFFF"
+      >
+        <Icon name="headset" type="material" color="black" size={100} />
+        <View
           style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "center"
           }}
-          height={DeviceHeight / 4}
-          overlayBackgroundColor="#FFFFFF"
         >
-          <Icon name="headset" type="material" color="black" size={100} />
-          <View
+          <TouchableOpacity
             style={{
+              height: 50,
+              width: DeviceWidth / 3,
               display: "flex",
               flexDirection: "row",
+              backgroundColor: "#C5CAE9",
               alignItems: "center",
-              justifyContent: "center"
+              justifyContent: "center",
+              borderRadius: 5,
+              margin: 10
+            }}
+            onPress={() => {
+              this.close("left");
             }}
           >
-            <TouchableOpacity
-              style={{
-                height: 50,
-                width: DeviceWidth / 3,
-                display: "flex",
-                flexDirection: "row",
-                backgroundColor: "#C5CAE9",
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: 5,
-                margin: 10
-              }}
-              onPress={() => {
-                this.close("left");
-              }}
-            >
-              <Text style={{ fontSize: 20 }}>Left</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                height: 50,
-                width: DeviceWidth / 3,
-                display: "flex",
-                flexDirection: "row",
-                backgroundColor: "#C5CAE9",
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: 5,
-                margin: 10
-              }}
-              onPress={() => {
-                this.close("right");
-              }}
-            >
-              <Text style={{ fontSize: 20 }}>Right</Text>
-            </TouchableOpacity>
-          </View>
-        </Overlay>
-      </View>
+            <Text style={{ fontSize: 20 }}>Left</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              height: 50,
+              width: DeviceWidth / 3,
+              display: "flex",
+              flexDirection: "row",
+              backgroundColor: "#C5CAE9",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 5,
+              margin: 10
+            }}
+            onPress={() => {
+              this.close("right");
+            }}
+          >
+            <Text style={{ fontSize: 20 }}>Right</Text>
+          </TouchableOpacity>
+        </View>
+      </Overlay>
     );
   }
 }
