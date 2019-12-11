@@ -159,7 +159,7 @@ export default class HomeScreen extends React.Component {
     ) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
         this.setState({ left: [] });
-        console.log("left deleted", this.state.left.length);
+        console.log("left deleted", this.state.right.length);
         this.setState({ currentEar: "right" });
         this.setState({ counter: 0 });
         this.setState({ correctResponses: 0 });
@@ -273,7 +273,7 @@ export default class HomeScreen extends React.Component {
         }}
         style={styles.ButtonStyle}
       >
-        <Text style={{ fontSize: 30 }}>
+        <Text style={{ fontSize: 40, fontWeight: "bold" }}>
           {num}
         </Text>
       </TouchableOpacity>
@@ -333,7 +333,13 @@ export default class HomeScreen extends React.Component {
         {this.displaySelectEarButton()}
         {this.spaceView(2, "main")}
         <Toast ref="error" position="top" />
-        <Text style={{ textAlign: "center", fontSize: 40, height: 40 }}>
+        <Text
+          style={{
+            textAlign: "center",
+            fontSize: 40,
+            height: 60
+          }}
+        >
           {this.state.inputText}
         </Text>
         {this.spaceView(5, "numpad")}
@@ -427,9 +433,9 @@ const styles = {
     padding: 10,
     alignContent: "center",
     justifyContent: "center",
-    height: 60,
-    width: 60,
-    borderRadius: 30
+    height: 80,
+    width: 80,
+    borderRadius: 40
   },
   ButtonViewStyle: {
     display: "flex",
