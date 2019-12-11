@@ -114,7 +114,7 @@ export default class HomeScreen extends React.Component {
       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
       currentTrackString =
         this.state.currentTrack + "_" + this.state.currentLevel;
-      this.setState({ right: newArray });
+      this.setState({ left: newArray });
       this.setState({ currentTrack: currentVal });
       this.playAudio();
     } else if (earPreference == "right") {
