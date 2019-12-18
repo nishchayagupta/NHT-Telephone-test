@@ -10,8 +10,19 @@ export default class Initialscreen extends React.Component {
   constructor(props) {
     super(props);
     state = {
-      value: ""
+      clientID: "",
+      testID: ""
     };
+    this.handleClientIDChange = this.handleClientIDChange.bind(this);
+    this.handleTestIDCHange = this.handleTestIDCHange.bind(this);
+  }
+
+  handleClientIDChange(event) {
+    this.setState({ clientID: event.nativeEvent.text });
+  }
+
+  handleTestIDCHange(event) {
+    this.setState({ testID: event.nativeEvent.text });
   }
 
   spaceView = (num, val) => {
@@ -28,6 +39,7 @@ export default class Initialscreen extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <View
         style={{
@@ -52,7 +64,7 @@ export default class Initialscreen extends React.Component {
             <Text style={{ fontSize: 20, fontWeight: "bold" }}>
               {" "}Client ID{" "}
             </Text>
-            <Input />
+            <Input onChange={this.handleClientIDChange} />
           </View>
         </Card>
 
@@ -69,7 +81,7 @@ export default class Initialscreen extends React.Component {
             }}
           >
             <Text style={{ fontSize: 20, fontWeight: "bold" }}> Test ID </Text>
-            <Input />
+            <Input onChange={this.handleTestIDCHange} />
           </View>
         </Card>
       </View>
