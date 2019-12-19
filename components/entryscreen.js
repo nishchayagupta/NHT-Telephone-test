@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, Dimensions } from "react-native";
-import { Input, Card } from "react-native-elements";
+import { View, Text, Dimensions, TouchableOpacity } from "react-native";
+import { Input, Card, Button } from "react-native-elements";
 import SpaceView from "./spaceView";
 
 const DeviceHeight = Dimensions.get("window").height;
@@ -82,6 +82,59 @@ export default class Initialscreen extends React.Component {
           >
             <Text style={{ fontSize: 20, fontWeight: "bold" }}> Test ID </Text>
             <Input onChange={this.handleTestIDCHange} />
+          </View>
+        </Card>
+
+        {this.spaceView(1, "first")}
+        <Card>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: 10,
+              paddingRight: 10
+            }}
+          >
+            <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+              {" "}Select Ear{" "}
+            </Text>
+            {this.spaceView(2, "first")}
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between"
+              }}
+            >
+              <View style={{ padding: 30 }}>
+                <TouchableOpacity
+                  style={{
+                    height: 40,
+                    width: 100,
+                    backgroundColor: "#DDDDDD",
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}
+                >
+                  <Text style={{ alignSelf: "center" }}>Left Ear</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={{ padding: 30 }}>
+                <TouchableOpacity
+                  style={{
+                    height: 40,
+                    width: 100,
+                    backgroundColor: "#DDDDDD",
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}
+                >
+                  <Text style={{ alignSelf: "center" }}>Right Ear</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
         </Card>
       </View>
