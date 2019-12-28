@@ -39,7 +39,6 @@ export default class Initialscreen extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <View
         style={{
@@ -135,6 +134,27 @@ export default class Initialscreen extends React.Component {
                 </TouchableOpacity>
               </View>
             </View>
+          </View>
+        </Card>
+
+        {this.spaceView(1, "first")}
+        <Card>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: 10,
+              paddingRight: 10
+            }}
+          >
+            <Text style={{ fontSize: 20, fontWeight: "bold" }}> Test ID </Text>
+            <TouchableOpacity
+              onPress={this.props.navigation.navigate("Switch2")}
+            >
+              <Text> Go to Home Screen</Text>
+            </TouchableOpacity>
           </View>
         </Card>
       </View>
