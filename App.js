@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import HomeScreen from "./components/homeScreen";
 import { Header } from "react-native-elements";
 import InitialScreen from "./components/entryscreen";
+import { createSwitchNavigator, createAppContainer } from "react-navigation";
 
 // TODO: overflow scroll to be added
 
@@ -10,6 +11,7 @@ const MyNavigator = createSwitchNavigator({
   InitialScreen: InitialScreen,
   HomeScreen: HomeScreen
 });
+const AppContainer = createAppContainer(MyNavigator);
 
 export default class App extends React.Component {
   render() {
@@ -21,7 +23,7 @@ export default class App extends React.Component {
             style: { color: "#fff" }
           }}
         />
-        <InitialScreen />
+        <AppContainer />
       </View>
     );
   }

@@ -39,7 +39,6 @@ export default class Initialscreen extends Component<Props> {
   };
 
   render() {
-    console.log(NHTContainer);
     return (
       <View
         style={{
