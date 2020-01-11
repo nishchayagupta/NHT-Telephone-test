@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Dimensions, TouchableOpacity } from "react-native";
-import { Input, Card, Button } from "react-native-elements";
+import { Input, Card, Button, CheckBox } from "react-native-elements";
 import SpaceView from "./spaceView";
 
 const DeviceHeight = Dimensions.get("window").height;
@@ -9,9 +9,12 @@ const DeviceWidth = Dimensions.get("window").width;
 export default class Initialscreen extends Component<Props> {
   constructor(props) {
     super(props);
-    state = {
+    this.state = {
       clientID: "",
-      testID: ""
+      testID: "",
+      selectedEar: "",
+      leftStatus: false,
+      rightStatus: false
     };
     this.handleClientIDChange = this.handleClientIDChange.bind(this);
     this.handleTestIDCHange = this.handleTestIDCHange.bind(this);
@@ -36,6 +39,18 @@ export default class Initialscreen extends Component<Props> {
         {returnDiv}
       </View>
     );
+  };
+
+  selectEar = id => {
+    if (id == "left") {
+      this.setState({ selectedEar: "left" });
+      this.setState({ leftStatus: true });
+      this.setState({ rightStatus: false });
+    } else if (id == "right") {
+      this.setState({ selectedEar: "right" });
+      this.setState({ leftStatus: false });
+      this.setState({ rightStatus: true });
+    }
   };
 
   render() {
@@ -108,30 +123,26 @@ export default class Initialscreen extends Component<Props> {
               }}
             >
               <View style={{ padding: 30 }}>
-                <TouchableOpacity
-                  style={{
-                    height: 40,
-                    width: 100,
-                    backgroundColor: "#DDDDDD",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}
-                >
-                  <Text style={{ alignSelf: "center" }}>Left Ear</Text>
-                </TouchableOpacity>
+                <CheckBox
+                  id="left"
+                  center
+                  title="Left Ear"
+                  checkedIcon="dot-circle-o"
+                  uncheckedIcon="circle-o"
+                  checked={this.state.leftStatus}
+                  onPress={() => this.selectEar("left")}
+                />
               </View>
               <View style={{ padding: 30 }}>
-                <TouchableOpacity
-                  style={{
-                    height: 40,
-                    width: 100,
-                    backgroundColor: "#DDDDDD",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}
-                >
-                  <Text style={{ alignSelf: "center" }}>Right Ear</Text>
-                </TouchableOpacity>
+                <CheckBox
+                  id="right"
+                  center
+                  title="Right Ear"
+                  checkedIcon="dot-circle-o"
+                  uncheckedIcon="circle-o"
+                  checked={this.state.rightStatus}
+                  onPress={() => this.selectEar("right")}
+                />
               </View>
             </View>
           </View>
@@ -149,7 +160,10 @@ export default class Initialscreen extends Component<Props> {
               paddingRight: 10
             }}
           >
-            <TouchableOpacity style={styles.ButtonViewStyle}>
+            <TouchableOpacity
+              style={styles.ButtonViewStyle}
+              onPress={() => this.props.navigation.navigate("HomeScreen")}
+            >
               <Text> Go to Home Screen</Text>
             </TouchableOpacity>
           </View>
