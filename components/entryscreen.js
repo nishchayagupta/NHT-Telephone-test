@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { View, Text, Dimensions, TouchableOpacity } from "react-native";
 import { Input, Card, Button } from "react-native-elements";
 import SpaceView from "./spaceView";
-import { NHTContainer } from "./switchnavigator";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
