@@ -162,7 +162,10 @@ export default class Initialscreen extends Component<Props> {
           >
             <TouchableOpacity
               style={styles.ButtonViewStyle}
-              onPress={() => this.props.navigation.navigate("HomeScreen")}
+              onPress={() =>
+                this.props.navigation.navigate("HomeScreen", {
+                  selectedEar: this.state.selectedEar
+                })}
             >
               <Text> Go to Home Screen</Text>
             </TouchableOpacity>

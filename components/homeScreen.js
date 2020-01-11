@@ -330,7 +330,10 @@ export default class HomeScreen extends Component<Props> {
   render() {
     return (
       <View id="MainView" style={styles.MainView}>
-        {this.displaySelectEarButton()}
+        {/* {this.displaySelectEarButton()} */}
+        <Text>
+          {this.props.navigation.state.params.selectedEar}
+        </Text>
         {this.spaceView(2, "main")}
         <Toast ref="error" position="top" />
         <Text
