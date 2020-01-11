@@ -1,12 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import { View, Text, Dimensions, TouchableOpacity } from "react-native";
 import { Input, Card, Button } from "react-native-elements";
 import SpaceView from "./spaceView";
+import { NHTContainer } from "./switchnavigator";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
 
-export default class Initialscreen extends React.Component {
+export default class Initialscreen extends Component<Props> {
   constructor(props) {
     super(props);
     state = {
@@ -39,6 +40,7 @@ export default class Initialscreen extends React.Component {
   };
 
   render() {
+    console.log(NHTContainer);
     return (
       <View
         style={{
@@ -149,10 +151,7 @@ export default class Initialscreen extends React.Component {
               paddingRight: 10
             }}
           >
-            <Text style={{ fontSize: 20, fontWeight: "bold" }}> Test ID </Text>
-            <TouchableOpacity
-              onPress={this.props.navigation.navigate("Switch2")}
-            >
+            <TouchableOpacity style={styles.ButtonViewStyle}>
               <Text> Go to Home Screen</Text>
             </TouchableOpacity>
           </View>
@@ -161,3 +160,14 @@ export default class Initialscreen extends React.Component {
     );
   }
 }
+
+const styles = {
+  ButtonViewStyle: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginLeft: 40,
+    marginRight: 40,
+    height: 70
+  }
+};

@@ -3,9 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 import HomeScreen from "./components/homeScreen";
 import { Header } from "react-native-elements";
 import InitialScreen from "./components/entryscreen";
-import * as Switcher from "./switchnavigator";
+import { NHTContainer } from "./components//switchnavigator";
 
 // TODO: overflow scroll to be added
+
 export default class App extends React.Component {
   render() {
     return (
@@ -16,7 +17,7 @@ export default class App extends React.Component {
             style: { color: "#fff" }
           }}
         />
-        <Switcher />
+        <NHTContainer />
       </View>
     );
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
@@ -28,7 +28,7 @@ import * as AudioFiles from "./audioSelector";
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
 
-export default class HomeScreen extends React.Component {
+export default class HomeScreen extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
