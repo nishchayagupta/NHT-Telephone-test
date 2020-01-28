@@ -46,68 +46,35 @@ export default class HomeScreen extends Component<Props> {
     this.returnButton = this.returnButton.bind(this);
   }
 
-  earChange(ear) {
-    console.log("in method");
-    if (ear === "right") {
-      this.setState({ currentEar: "left" });
-      this.setState({ counter: 0 });
-      this.setState({ correctResponses: 0 });
-    }
-  }
+  // earChange(ear) {
+  //   console.log("in method");
+  //   if (ear === "right") {
+  //     this.setState({ currentEar: "left" });
+  //     this.setState({ counter: 0 });
+  //     this.setState({ correctResponses: 0 });
+  //   }
+  // }
 
   displaySelectEarButton() {
-    if (this.state.currentEar === "") {
-      return (
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignContent: "center"
-          }}
-        >
-          <TouchableOpacity
-            title="Select Ear"
-            onPress={() => {
-              this.setState({ overlayActivate: true });
-            }}
-            style={{
-              height: 50,
-              width: DeviceWidth - DeviceWidth / 4,
-              display: "flex",
-              flexDirection: "row",
-              backgroundColor: "#C5CAE9",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: 5,
-              margin: 10
-            }}
-          >
-            <Text style={{ fontSize: 20 }}>Select Ear</Text>
-          </TouchableOpacity>
-        </View>
-      );
-    } else {
-      return (
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignContent: "center"
-          }}
-        >
-          <SpaceView />
-          <Text style={{ fontSize: 20 }}>
-            Testing {this.state.currentEar} ear currently and track no is{" "}
-            {this.state.currentTrack}_{this.state.currentLevel}
-          </Text>
-        </View>
-      );
-    }
+    return (
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignContent: "center"
+        }}
+      >
+        <SpaceView />
+        <Text style={{ fontSize: 20 }}>
+          Testing {this.state.currentEar} ear currently and track no is{" "}
+          {this.state.currentTrack}_{this.state.currentLevel}
+        </Text>
+      </View>
+    );
   }
 
-  handleOverlay = (OverlayValue, earPreference) => {
+  handleOverlay = earPreference => {
     if (earPreference == "left") {
       var array = [...this.state.left]; // make a separate copy of the array
       const currentVal = array[0];
@@ -127,7 +94,6 @@ export default class HomeScreen extends Component<Props> {
       this.setState({ currentTrack: currentVal });
       this.playAudio();
     }
-    this.setState({ overlayActivate: OverlayValue });
     this.setState({ currentEar: earPreference });
   };
 
@@ -191,7 +157,7 @@ export default class HomeScreen extends Component<Props> {
     this.playSound(currentTrackString);
   }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
-  componentDidMount() {
+  componentWillMount() {
     Leftvisited = [];
     //randomly selecting 30 files for the left ear
     while (Leftvisited.length < 30) {
@@ -220,6 +186,11 @@ export default class HomeScreen extends Component<Props> {
     }
     // setting state variable right according to the 30 files selected
     this.setState({ right: RightVisited });
+  }
+
+  componentDidMount() {
+    console.log("left array", this.state.right);
+    this.handleOverlay(this.props.navigation.state.params.selectedEar);
   }
 
   // Play audio file
@@ -330,10 +301,10 @@ export default class HomeScreen extends Component<Props> {
   render() {
     return (
       <View id="MainView" style={styles.MainView}>
-        {/* {this.displaySelectEarButton()} */}
-        <Text>
+        {this.displaySelectEarButton()}
+        {/* <Text>
           {this.props.navigation.state.params.selectedEar}
-        </Text>
+        </Text> */}
         {this.spaceView(2, "main")}
         <Toast ref="error" position="top" />
         <Text
