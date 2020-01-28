@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, Dimensions, TouchableOpacity } from "react-native";
 import { Input, Card, Button, CheckBox } from "react-native-elements";
 import SpaceView from "./spaceView";
+import Toast, { DURATION } from "react-native-easy-toast";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -63,6 +64,7 @@ export default class Initialscreen extends Component<Props> {
           width: DeviceWidth
         }}
       >
+        <Toast ref="error" position="bottom" />
         {this.spaceView(3, "first")}
         <Card>
           <View
@@ -162,10 +164,15 @@ export default class Initialscreen extends Component<Props> {
           >
             <TouchableOpacity
               style={styles.ButtonViewStyle}
-              onPress={() =>
-                this.props.navigation.navigate("HomeScreen", {
-                  selectedEar: this.state.selectedEar
-                })}
+              onPress={() => {
+                if (this.state.selectedEar === "") {
+                  this.refs.error.show("please select an ear");
+                } else {
+                  this.props.navigation.navigate("HomeScreen", {
+                    selectedEar: this.state.selectedEar
+                  });
+                }
+              }}
             >
               <Text> Go to Home Screen</Text>
             </TouchableOpacity>

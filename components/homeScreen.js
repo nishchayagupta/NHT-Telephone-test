@@ -41,7 +41,7 @@ export default class HomeScreen extends Component<Props> {
       counter: 0,
       correctResponses: 0,
       currentEar: "",
-      overlayActivate: false
+      soundFlag: 0
     };
     this.returnButton = this.returnButton.bind(this);
   }
@@ -83,7 +83,6 @@ export default class HomeScreen extends Component<Props> {
         this.state.currentTrack + "_" + this.state.currentLevel;
       this.setState({ left: newArray });
       this.setState({ currentTrack: currentVal });
-      this.playAudio();
     } else if (earPreference == "right") {
       var array = [...this.state.right]; // make a separate copy of the array
       const currentVal = array[0];
@@ -92,7 +91,6 @@ export default class HomeScreen extends Component<Props> {
         this.state.currentTrack + "_" + this.state.currentLevel;
       this.setState({ right: newArray });
       this.setState({ currentTrack: currentVal });
-      this.playAudio();
     }
     this.setState({ currentEar: earPreference });
   };
@@ -155,6 +153,7 @@ export default class HomeScreen extends Component<Props> {
     currentTrackString =
       this.state.currentTrack + "_" + this.state.currentLevel;
     this.playSound(currentTrackString);
+    console.log(this.state.audioFlag);
   }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
   componentWillMount() {
@@ -202,6 +201,8 @@ export default class HomeScreen extends Component<Props> {
       console.log("in the playsound method");
       await soundObject.loadAsync(AudioFiles.audioSelector(audioTrack));
       await soundObject.playAsync();
+      this.setState({ soundFlag: 1 });
+
       // Your sound is playing!
     } catch (error) {
       console.log("error playing sound due to ", error);
@@ -275,6 +276,7 @@ export default class HomeScreen extends Component<Props> {
       } else {
         var currentLevel = this.state.currentLevel;
       }
+      this.setState({ soundFlag: 0 });
       this.setState({ correctResponses: this.state.correctResponses + 1 });
       this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
@@ -288,13 +290,64 @@ export default class HomeScreen extends Component<Props> {
 
       if (this.state.currentLevel > 1) {
         var currentLevel = this.state.currentLevel - 1;
+        this.setState({ soundFlag: 0 });
         this.trackChange();
       } else {
+        this.setState({ soundFlag: 0 });
         this.trackChange();
         var currentLevel = this.state.currentLevel;
       }
       this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
+    }
+  }
+
+  renderAudioButton() {
+    if (this.state.soundFlag === 0) {
+      return (
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <TouchableOpacity
+            onPress={() => {
+              this.playAudio();
+            }}
+            style={{ margin: 20 }}
+          >
+            <Icon
+              name="play-circle-outline"
+              type="material"
+              color="black"
+              size={100}
+            />
+          </TouchableOpacity>
+        </View>
+      );
+    } else {
+      return (
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <TouchableOpacity
+            onPress={() => {
+              this.verifyRegister();
+            }}
+            style={{ margin: 20 }}
+          >
+            <Icon name="done" type="material" color="black" size={100} />
+          </TouchableOpacity>
+        </View>
+      );
     }
   }
 
@@ -353,44 +406,7 @@ export default class HomeScreen extends Component<Props> {
           </TouchableOpacity>
         </View>
         {this.spaceView(2, "numpad3")}
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center"
-          }}
-        >
-          <TouchableOpacity
-            onPress={() => {
-              this.playAudio();
-            }}
-            style={{ margin: 20 }}
-          >
-            <Icon
-              name="play-circle-outline"
-              type="material"
-              color="black"
-              size={100}
-            />
-          </TouchableOpacity>
-          <SpaceView />
-          {this.spaceView(2, "numpad3")}
-          <TouchableOpacity
-            onPress={() => {
-              this.verifyRegister();
-            }}
-            style={{ margin: 20 }}
-          >
-            <Icon name="done" type="material" color="black" size={100} />
-          </TouchableOpacity>
-        </View>
-        <View>
-          <EarSelect
-            visible={this.state.overlayActivate}
-            onValueChange={this.handleOverlay}
-          />
-        </View>
+        {this.renderAudioButton()}
       </View>
     );
   }
