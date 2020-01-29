@@ -3,6 +3,7 @@ import { View, Text, Dimensions, TouchableOpacity } from "react-native";
 import { Input, Card, Button, CheckBox } from "react-native-elements";
 import SpaceView from "./spaceView";
 import Toast, { DURATION } from "react-native-easy-toast";
+import * as FileSystem from "expo-file-system";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -55,6 +56,7 @@ export default class Initialscreen extends Component<Props> {
   };
 
   render() {
+    console.log("FileSystem", FileSystem);
     return (
       <View
         style={{
@@ -174,7 +176,7 @@ export default class Initialscreen extends Component<Props> {
                 }
               }}
             >
-              <Text> Go to Home Screen</Text>
+              <Text> Begin Test </Text>
             </TouchableOpacity>
           </View>
         </Card>
@@ -190,6 +192,8 @@ const styles = {
     justifyContent: "space-between",
     marginLeft: 40,
     marginRight: 40,
+    backgroundColor: "#DDDDDD",
+
     height: 70
   }
 };
