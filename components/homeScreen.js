@@ -96,7 +96,7 @@ export default class HomeScreen extends Component<Props> {
   };
 
   trackChange() {
-    if (this.state.currentEar === "right" && this.state.right.length !== 0) {
+    if (this.state.currentEar === "right" && this.state.counter <= 30) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
         this.setState({ right: [] });
         console.log("right deleted", this.state.right.length);
@@ -120,10 +120,7 @@ export default class HomeScreen extends Component<Props> {
         this.setState({ currentTrack: currentVal });
         this.setState({ right: newArray });
       }
-    } else if (
-      this.state.currentEar === "left" &&
-      this.state.left.length !== 0
-    ) {
+    } else if (this.state.currentEar === "left" && this.state.counter <= 30) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
         this.setState({ left: [] });
         console.log("left deleted", this.state.right.length);
@@ -147,11 +144,6 @@ export default class HomeScreen extends Component<Props> {
         this.setState({ currentTrack: currentVal });
         this.setState({ left: newArray });
       }
-    } else {
-      console.log("please select an ear");
-      this.setState({ currentEar: "" });
-      this.setState({ currentTrack: "" });
-      this.refs.error.show("Please select an ear");
     }
   }
 
