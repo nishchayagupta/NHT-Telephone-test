@@ -99,7 +99,7 @@ export default class HomeScreen extends Component<Props> {
     if (this.state.currentEar === "right" && this.state.counter <= 30) {
       if (this.state.correctResponses == 0 && this.state.counter > 5) {
         this.setState({ right: [] });
-        console.log("right deleted", this.state.right.length);
+        console.log("right deleted", this.state.right);
         this.setState({ currentEar: "left" });
         this.setState({ counter: 0 });
         this.setState({ correctResponses: 0 });
@@ -113,6 +113,8 @@ export default class HomeScreen extends Component<Props> {
         const currentVal = array[0];
         const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
         if (newArray.length === 0 && this.state.left.length !== 0) {
+          this.setState({ right: [] });
+          console.log("right deleted", this.state.right);
           this.setState({ currentEar: "left" });
           this.setState({ counter: 0 });
           this.setState({ correctResponses: 0 });
@@ -137,6 +139,8 @@ export default class HomeScreen extends Component<Props> {
         const currentVal = array[0];
         const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
         if (newArray.length === 0 && this.state.right.length !== 0) {
+          this.setState({ left: [] });
+          console.log("left deleted", this.state.right.length);
           this.setState({ currentEar: "right" });
           this.setState({ counter: 0 });
           this.setState({ correctResponses: 0 });
@@ -144,6 +148,8 @@ export default class HomeScreen extends Component<Props> {
         this.setState({ currentTrack: currentVal });
         this.setState({ left: newArray });
       }
+    } else {
+      console.log("counter above 30");
     }
   }
 
