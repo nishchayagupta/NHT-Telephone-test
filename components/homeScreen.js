@@ -148,8 +148,28 @@ export default class HomeScreen extends Component<Props> {
         this.setState({ currentTrack: currentVal });
         this.setState({ left: newArray });
       }
+    } else if (
+      this.state.currentEar == "left" &&
+      this.state.counter > 30 &&
+      this.state.right.length !== 0
+    ) {
+      this.setState({ left: [] });
+      console.log("left deleted", this.state.right.length);
+      this.setState({ currentEar: "right" });
+      this.setState({ counter: 0 });
+      this.setState({ correctResponses: 0 });
+    } else if (
+      this.state.currentEar == "right" &&
+      this.state.counter > 30 &&
+      this.state.left.length !== 0
+    ) {
+      this.setState({ right: [] });
+      console.log("right deleted", this.state.right.length);
+      this.setState({ currentEar: "left" });
+      this.setState({ counter: 0 });
+      this.setState({ correctResponses: 0 });
     } else {
-      console.log("counter above 30");
+      console.log("test complete");
     }
   }
 
@@ -194,7 +214,8 @@ export default class HomeScreen extends Component<Props> {
   }
 
   componentDidMount() {
-    console.log("left array", this.state.right);
+    console.log("riggt array" + this.state.right);
+    console.log("left array" + this.state.left);
     this.handleOverlay(this.props.navigation.state.params.selectedEar);
   }
 
