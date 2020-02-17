@@ -205,12 +205,19 @@ export default class HomeScreen extends Component<Props> {
             " left counter as " +
             this.state.leftCounter
         );
-        var array = [...this.state.right]; // make a separate copy of the array
-        const currentVal = array[0];
-        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-        this.setState({ currentTrack: currentVal });
-        this.setState({ right: newArray });
-        this.setState({ currentEar: "right" });
+        if (this.state.rightStatus == false) {
+          var array = [...this.state.right]; // make a separate copy of the array
+          const currentVal = array[0];
+          const newArray = array
+            .slice(1, 0)
+            .concat(array.slice(1, array.length));
+          this.setState({ currentTrack: currentVal });
+          this.setState({ right: newArray });
+          this.setState({ currentEar: "right" });
+        } else {
+          this.setState({ currentTrack: 0 });
+          this.setState({ currentEar: "" });
+        }
         this.setState({ leftStatus: true });
       } else if (
         this.state.leftCorrectResponses >= 0 &&
@@ -222,12 +229,19 @@ export default class HomeScreen extends Component<Props> {
         this.setState({ currentTrack: currentVal });
         this.setState({ left: newArray });
       } else {
-        var array = [...this.state.right]; // make a separate copy of the array
-        const currentVal = array[0];
-        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-        this.setState({ currentTrack: currentVal });
-        this.setState({ right: newArray });
-        this.setState({ currentEar: "right" });
+        if (this.state.rightStatus == false) {
+          var array = [...this.state.right]; // make a separate copy of the array
+          const currentVal = array[0];
+          const newArray = array
+            .slice(1, 0)
+            .concat(array.slice(1, array.length));
+          this.setState({ currentTrack: currentVal });
+          this.setState({ right: newArray });
+          this.setState({ currentEar: "right" });
+        } else {
+          this.setState({ currentTrack: 0 });
+          this.setState({ currentEar: "" });
+        }
         this.setState({ leftStatus: true });
       }
     }
@@ -245,12 +259,19 @@ export default class HomeScreen extends Component<Props> {
             " right counter as " +
             this.state.rightCounter
         );
-        var array = [...this.state.left]; // make a separate copy of the array
-        const currentVal = array[0];
-        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-        this.setState({ currentTrack: currentVal });
-        this.setState({ left: newArray });
-        this.setState({ currentEar: "left" });
+        if (this.state.leftStatus == false) {
+          var array = [...this.state.left]; // make a separate copy of the array
+          const currentVal = array[0];
+          const newArray = array
+            .slice(1, 0)
+            .concat(array.slice(1, array.length));
+          this.setState({ currentTrack: currentVal });
+          this.setState({ left: newArray });
+          this.setState({ currentEar: "left" });
+        } else {
+          this.setState({ currentTrack: 0 });
+          this.setState({ currentEar: "" });
+        }
         this.setState({ rightStatus: true });
       } else if (
         this.state.rightCorrectResponses >= 0 &&
@@ -262,21 +283,41 @@ export default class HomeScreen extends Component<Props> {
         this.setState({ currentTrack: currentVal });
         this.setState({ right: newArray });
       } else {
-        var array = [...this.state.left]; // make a separate copy of the array
-        const currentVal = array[0];
-        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-        this.setState({ currentTrack: currentVal });
-        this.setState({ left: newArray });
-        this.setState({ currentEar: "left" });
+        if (this.state.leftStatus == false) {
+          var array = [...this.state.left]; // make a separate copy of the array
+          const currentVal = array[0];
+          const newArray = array
+            .slice(1, 0)
+            .concat(array.slice(1, array.length));
+          this.setState({ currentTrack: currentVal });
+          this.setState({ left: newArray });
+          this.setState({ currentEar: "left" });
+        } else {
+          this.setState({ currentTrack: 0 });
+          this.setState({ currentEar: "" });
+        }
         this.setState({ rightStatus: true });
       }
     }
   }
 
   async trackChange() {
-    if (this.state.currentEar == "left") {
+    console.log(
+      "right status is " +
+        this.state.rightStatus +
+        " and left status is " +
+        this.state.leftStatus
+    );
+    if (this.state.rightStatus == true && this.state.leftStatus == true) {
+      console.log("test complete");
+      return;
+    }
+    if (this.state.currentEar == "left" && this.state.leftStatus == false) {
       await this.leftTrackChange();
-    } else if (this.state.currentEar == "right") {
+    } else if (
+      this.state.currentEar == "right" &&
+      this.state.rightStatus == false
+    ) {
       await this.rightTrackChange();
     }
   }
