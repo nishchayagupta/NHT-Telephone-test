@@ -24,6 +24,7 @@ import * as Constants from "./constants";
 import EarSelect from "./earSelection";
 import Toast, { DURATION } from "react-native-easy-toast";
 import * as AudioFiles from "./audioSelector";
+import EntryScreen from "./entryscreen";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -98,103 +99,6 @@ export default class HomeScreen extends Component<Props> {
     }
     this.setState({ currentEar: earPreference });
   };
-
-  // trackChange() {
-  //   if (this.state.currentEar === "right" && this.state.counter <= 30) {
-  //     if (this.state.correctResponses == 0 && this.state.counter > 5) {
-  //       this.setState({ right: [] });
-  //       console.log("right deleted", this.state.right);
-  //       this.setState({ currentEar: "left" });
-  //       this.setState({ counter: 0 });
-  //       this.setState({ correctResponses: 0 });
-  //       var array = [...this.state.left]; // make a separate copy of the array
-  //       const currentVal = array[0];
-  //       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-  //       this.setState({ currentTrack: currentVal });
-  //       this.setState({ left: newArray });
-  //     } else {
-  //       var array = [...this.state.right]; // make a separate copy of the array
-  //       const currentVal = array[0];
-  //       if (array.length === 1) {
-  //         const currentVal = array[0];
-  //         const newArray = array
-  //           .slice(1, 0)
-  //           .concat(array.slice(1, array.length));
-  //         this.setState({ currentTrack: currentVal });
-  //         this.setState({ right: newArray });
-  //         return;
-  //       }
-  //       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-  //       if (newArray.length === 0 && this.state.left.length !== 0) {
-  //         this.setState({ right: [] });
-  //         console.log("right deleted", this.state.right);
-  //         this.setState({ currentEar: "left" });
-  //         this.setState({ counter: 0 });
-  //         this.setState({ correctResponses: 0 });
-  //       }
-  //       this.setState({ currentTrack: currentVal });
-  //       this.setState({ right: newArray });
-  //     }
-  //   } else if (this.state.currentEar === "left" && this.state.counter <= 30) {
-  //     if (this.state.correctResponses == 0 && this.state.counter > 5) {
-  //       this.setState({ left: [] });
-  //       console.log("left deleted", this.state.right.length);
-  //       this.setState({ currentEar: "right" });
-  //       this.setState({ counter: 0 });
-  //       this.setState({ correctResponses: 0 });
-  //       var array = [...this.state.right]; // make a separate copy of the array
-  //       const currentVal = array[0];
-  //       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-  //       this.setState({ currentTrack: currentVal });
-  //       this.setState({ right: newArray });
-  //     } else {
-  //       var array = [...this.state.left]; // make a separate copy of the array
-  //       const currentVal = array[0];
-  //       if (this.state.left.length == 1) {
-  //         console.log("counter value in last emelent " + this.state.counter);
-  //         const currentVal = array[0];
-  //         const newArray = array
-  //           .slice(1, 0)
-  //           .concat(array.slice(1, array.length));
-  //         this.setState({ currentTrack: currentVal });
-  //         this.setState({ left: newArray });
-  //         return;
-  //       }
-  //       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-  //       if (newArray.length === 0 && this.state.right.length !== 0) {
-  //         this.setState({ left: [] });
-  //         console.log("left deleted", this.state.right.length);
-  //         this.setState({ currentEar: "right" });
-  //         this.setState({ counter: 0 });
-  //         this.setState({ correctResponses: 0 });
-  //       }
-  //       this.setState({ currentTrack: currentVal });
-  //       this.setState({ left: newArray });
-  //     }
-  //   } else if (
-  //     this.state.currentEar == "left" &&
-  //     this.state.counter > 30 &&
-  //     this.state.right.length !== 0
-  //   ) {
-  //     this.setState({ left: [] });
-  //     console.log("left deleted", this.state.right.length);
-  //     this.setState({ currentEar: "right" });
-  //     this.setState({ counter: 0 });
-  //     this.setState({ correctResponses: 0 });
-  //   } else if (
-  //     this.state.currentEar == "right" &&
-  //     this.state.counter > 30 &&
-  //     this.state.left.length !== 0
-  //   ) {
-  //     this.setState({ right: [] });
-  //     console.log("right deleted", this.state.right.length);
-  //     this.setState({ currentEar: "left" });
-  //     this.setState({ counter: 0 });
-  //     this.setState({ correctResponses: 0 });
-  //   } else {
-  //     console.log("test complete");
-  //   }
-  // }
 
   leftTrackChange() {
     if (this.state.currentEar == "left") {
@@ -547,63 +451,67 @@ export default class HomeScreen extends Component<Props> {
   }
 
   render() {
-    return (
-      <View id="MainView" style={styles.MainView}>
-        {this.displaySelectEarButton()}
-        {/* <Text>
+    if (this.state.leftStatus == true && this.state.rightStatus == true) {
+      return <EntryScreen />;
+    } else {
+      return (
+        <View id="MainView" style={styles.MainView}>
+          {this.displaySelectEarButton()}
+          {/* <Text>
           {this.props.navigation.state.params.selectedEar}
         </Text> */}
-        {this.spaceView(2, "main")}
-        <Toast ref="error" position="top" />
-        <Text
-          style={{
-            textAlign: "center",
-            fontSize: 40,
-            height: 60
-          }}
-        >
-          {this.state.inputText}
-        </Text>
-        {this.spaceView(5, "numpad")}
-        <View style={styles.ButtonViewStyle}>
-          {this.returnButton("1")}
-          {this.returnButton("2")}
-          {this.returnButton("3")}
-        </View>
-        {this.spaceView(2, "numpad1")}
-        <View style={styles.ButtonViewStyle}>
-          {this.returnButton("4")}
-          {this.returnButton("5")}
-          {this.returnButton("6")}
-        </View>
-        {this.spaceView(2, "numpad2")}
-        <View style={styles.ButtonViewStyle}>
-          {this.returnButton("7")}
-          {this.returnButton("8")}
-          {this.returnButton("9")}
-        </View>
-        {this.spaceView(2, "numpad3")}
-        <View style={styles.ButtonViewStyle}>
-          <TouchableOpacity
-            onPress={() => {
-              this.clear();
+          {this.spaceView(2, "main")}
+          <Toast ref="error" position="top" />
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 40,
+              height: 60
             }}
           >
-            <Icon name="clear" color="black" size={50} />
-          </TouchableOpacity>
-          {this.returnButton("0")}
-          <TouchableOpacity
-            onPress={() => {
-              this.backspace();
-            }}
-          >
-            <Icon name="backspace" color="black" size={50} />
-          </TouchableOpacity>
+            {this.state.inputText}
+          </Text>
+          {this.spaceView(5, "numpad")}
+          <View style={styles.ButtonViewStyle}>
+            {this.returnButton("1")}
+            {this.returnButton("2")}
+            {this.returnButton("3")}
+          </View>
+          {this.spaceView(2, "numpad1")}
+          <View style={styles.ButtonViewStyle}>
+            {this.returnButton("4")}
+            {this.returnButton("5")}
+            {this.returnButton("6")}
+          </View>
+          {this.spaceView(2, "numpad2")}
+          <View style={styles.ButtonViewStyle}>
+            {this.returnButton("7")}
+            {this.returnButton("8")}
+            {this.returnButton("9")}
+          </View>
+          {this.spaceView(2, "numpad3")}
+          <View style={styles.ButtonViewStyle}>
+            <TouchableOpacity
+              onPress={() => {
+                this.clear();
+              }}
+            >
+              <Icon name="clear" color="black" size={50} />
+            </TouchableOpacity>
+            {this.returnButton("0")}
+            <TouchableOpacity
+              onPress={() => {
+                this.backspace();
+              }}
+            >
+              <Icon name="backspace" color="black" size={50} />
+            </TouchableOpacity>
+          </View>
+          {this.spaceView(2, "numpad3")}
+          {this.renderAudioButton()}
         </View>
-        {this.spaceView(2, "numpad3")}
-        {this.renderAudioButton()}
-      </View>
-    );
+      );
+    }
   }
 }
 
