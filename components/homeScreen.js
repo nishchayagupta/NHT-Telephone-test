@@ -281,7 +281,11 @@ export default class HomeScreen extends Component<Props> {
     const soundObject = new Audio.Sound();
     try {
       await soundObject.loadAsync(AudioFiles.audioSelector(audioTrack));
-      await soundObject.playAsync();
+      setTimeout(() => {
+        soundObject.playAsync();
+        console.log("play the sound");
+      }, 3000);
+
       this.setState({ soundFlag: 1 });
       if (this.state.currentEar == "left") {
         var leftCount = this.state.leftCounter + 1;
