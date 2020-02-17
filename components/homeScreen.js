@@ -38,10 +38,14 @@ export default class HomeScreen extends Component<Props> {
       currentTrack: "",
       currentLevel: 2,
       inputValue: "",
-      counter: 0,
-      correctResponses: 0,
+      leftCounter: 0,
+      rightCounter: 0,
+      leftCorrectResponses: 0,
+      rightCorrectResponses: 0,
       currentEar: "",
-      soundFlag: 0
+      soundFlag: 0,
+      leftStatus: false,
+      rightStatus: false
     };
     this.returnButton = this.returnButton.bind(this);
   }
@@ -95,41 +99,164 @@ export default class HomeScreen extends Component<Props> {
     this.setState({ currentEar: earPreference });
   };
 
-  trackChange() {
-    if (this.state.currentEar === "right" && this.state.counter <= 30) {
-      if (this.state.correctResponses == 0 && this.state.counter > 5) {
-        this.setState({ right: [] });
-        console.log("right deleted", this.state.right);
-        this.setState({ currentEar: "left" });
-        this.setState({ counter: 0 });
-        this.setState({ correctResponses: 0 });
-        var array = [...this.state.left]; // make a separate copy of the array
-        const currentVal = array[0];
-        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-        this.setState({ currentTrack: currentVal });
-        this.setState({ left: newArray });
-      } else {
+  // trackChange() {
+  //   if (this.state.currentEar === "right" && this.state.counter <= 30) {
+  //     if (this.state.correctResponses == 0 && this.state.counter > 5) {
+  //       this.setState({ right: [] });
+  //       console.log("right deleted", this.state.right);
+  //       this.setState({ currentEar: "left" });
+  //       this.setState({ counter: 0 });
+  //       this.setState({ correctResponses: 0 });
+  //       var array = [...this.state.left]; // make a separate copy of the array
+  //       const currentVal = array[0];
+  //       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+  //       this.setState({ currentTrack: currentVal });
+  //       this.setState({ left: newArray });
+  //     } else {
+  //       var array = [...this.state.right]; // make a separate copy of the array
+  //       const currentVal = array[0];
+  //       if (array.length === 1) {
+  //         const currentVal = array[0];
+  //         const newArray = array
+  //           .slice(1, 0)
+  //           .concat(array.slice(1, array.length));
+  //         this.setState({ currentTrack: currentVal });
+  //         this.setState({ right: newArray });
+  //         return;
+  //       }
+  //       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+  //       if (newArray.length === 0 && this.state.left.length !== 0) {
+  //         this.setState({ right: [] });
+  //         console.log("right deleted", this.state.right);
+  //         this.setState({ currentEar: "left" });
+  //         this.setState({ counter: 0 });
+  //         this.setState({ correctResponses: 0 });
+  //       }
+  //       this.setState({ currentTrack: currentVal });
+  //       this.setState({ right: newArray });
+  //     }
+  //   } else if (this.state.currentEar === "left" && this.state.counter <= 30) {
+  //     if (this.state.correctResponses == 0 && this.state.counter > 5) {
+  //       this.setState({ left: [] });
+  //       console.log("left deleted", this.state.right.length);
+  //       this.setState({ currentEar: "right" });
+  //       this.setState({ counter: 0 });
+  //       this.setState({ correctResponses: 0 });
+  //       var array = [...this.state.right]; // make a separate copy of the array
+  //       const currentVal = array[0];
+  //       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+  //       this.setState({ currentTrack: currentVal });
+  //       this.setState({ right: newArray });
+  //     } else {
+  //       var array = [...this.state.left]; // make a separate copy of the array
+  //       const currentVal = array[0];
+  //       if (this.state.left.length == 1) {
+  //         console.log("counter value in last emelent " + this.state.counter);
+  //         const currentVal = array[0];
+  //         const newArray = array
+  //           .slice(1, 0)
+  //           .concat(array.slice(1, array.length));
+  //         this.setState({ currentTrack: currentVal });
+  //         this.setState({ left: newArray });
+  //         return;
+  //       }
+  //       const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+  //       if (newArray.length === 0 && this.state.right.length !== 0) {
+  //         this.setState({ left: [] });
+  //         console.log("left deleted", this.state.right.length);
+  //         this.setState({ currentEar: "right" });
+  //         this.setState({ counter: 0 });
+  //         this.setState({ correctResponses: 0 });
+  //       }
+  //       this.setState({ currentTrack: currentVal });
+  //       this.setState({ left: newArray });
+  //     }
+  //   } else if (
+  //     this.state.currentEar == "left" &&
+  //     this.state.counter > 30 &&
+  //     this.state.right.length !== 0
+  //   ) {
+  //     this.setState({ left: [] });
+  //     console.log("left deleted", this.state.right.length);
+  //     this.setState({ currentEar: "right" });
+  //     this.setState({ counter: 0 });
+  //     this.setState({ correctResponses: 0 });
+  //   } else if (
+  //     this.state.currentEar == "right" &&
+  //     this.state.counter > 30 &&
+  //     this.state.left.length !== 0
+  //   ) {
+  //     this.setState({ right: [] });
+  //     console.log("right deleted", this.state.right.length);
+  //     this.setState({ currentEar: "left" });
+  //     this.setState({ counter: 0 });
+  //     this.setState({ correctResponses: 0 });
+  //   } else {
+  //     console.log("test complete");
+  //   }
+  // }
+
+  leftTrackChange() {
+    if (this.state.currentEar == "left") {
+      if (this.state.leftCorrectResponses == 0 && this.state.leftCounter > 5) {
+        console.log(
+          "entered ear changing in left with leftCorrect " +
+            this.state.leftCorrectResponses +
+            " left counter as " +
+            this.state.leftCounter
+        );
         var array = [...this.state.right]; // make a separate copy of the array
         const currentVal = array[0];
         const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-        if (newArray.length === 0 && this.state.left.length !== 0) {
-          this.setState({ right: [] });
-          console.log("right deleted", this.state.right);
-          this.setState({ currentEar: "left" });
-          this.setState({ counter: 0 });
-          this.setState({ correctResponses: 0 });
-        }
         this.setState({ currentTrack: currentVal });
         this.setState({ right: newArray });
-      }
-    } else if (this.state.currentEar === "left" && this.state.counter <= 30) {
-      if (this.state.correctResponses == 0 && this.state.counter > 5) {
-        this.setState({ left: [] });
-        console.log("left deleted", this.state.right.length);
         this.setState({ currentEar: "right" });
-        this.setState({ counter: 0 });
-        this.setState({ correctResponses: 0 });
+        this.setState({ leftStatus: true });
+      } else if (
+        this.state.leftCorrectResponses >= 0 &&
+        this.state.leftCounter < 30
+      ) {
+        var array = [...this.state.left];
+        const currentVal = array[0];
+        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+        this.setState({ currentTrack: currentVal });
+        this.setState({ left: newArray });
+      } else {
         var array = [...this.state.right]; // make a separate copy of the array
+        const currentVal = array[0];
+        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+        this.setState({ currentTrack: currentVal });
+        this.setState({ right: newArray });
+        this.setState({ currentEar: "right" });
+        this.setState({ leftStatus: true });
+      }
+    }
+  }
+
+  rightTrackChange() {
+    if (this.state.currentEar == "right") {
+      if (
+        this.state.rightCorrectResponses == 0 &&
+        this.state.rightCounter > 5
+      ) {
+        console.log(
+          "entered ear changing in right with rightCorrect " +
+            this.state.rightCorrectResponses +
+            " right counter as " +
+            this.state.rightCounter
+        );
+        var array = [...this.state.left]; // make a separate copy of the array
+        const currentVal = array[0];
+        const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
+        this.setState({ currentTrack: currentVal });
+        this.setState({ left: newArray });
+        this.setState({ currentEar: "left" });
+        this.setState({ rightStatus: true });
+      } else if (
+        this.state.rightCorrectResponses >= 0 &&
+        this.state.rightCounter < 30
+      ) {
+        var array = [...this.state.right];
         const currentVal = array[0];
         const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
         this.setState({ currentTrack: currentVal });
@@ -138,48 +265,32 @@ export default class HomeScreen extends Component<Props> {
         var array = [...this.state.left]; // make a separate copy of the array
         const currentVal = array[0];
         const newArray = array.slice(1, 0).concat(array.slice(1, array.length));
-        if (newArray.length === 0 && this.state.right.length !== 0) {
-          this.setState({ left: [] });
-          console.log("left deleted", this.state.right.length);
-          this.setState({ currentEar: "right" });
-          this.setState({ counter: 0 });
-          this.setState({ correctResponses: 0 });
-        }
         this.setState({ currentTrack: currentVal });
         this.setState({ left: newArray });
+        this.setState({ currentEar: "left" });
+        this.setState({ rightStatus: true });
       }
-    } else if (
-      this.state.currentEar == "left" &&
-      this.state.counter > 30 &&
-      this.state.right.length !== 0
-    ) {
-      this.setState({ left: [] });
-      console.log("left deleted", this.state.right.length);
-      this.setState({ currentEar: "right" });
-      this.setState({ counter: 0 });
-      this.setState({ correctResponses: 0 });
-    } else if (
-      this.state.currentEar == "right" &&
-      this.state.counter > 30 &&
-      this.state.left.length !== 0
-    ) {
-      this.setState({ right: [] });
-      console.log("right deleted", this.state.right.length);
-      this.setState({ currentEar: "left" });
-      this.setState({ counter: 0 });
-      this.setState({ correctResponses: 0 });
-    } else {
-      console.log("test complete");
+    }
+  }
+
+  async trackChange() {
+    if (this.state.currentEar == "left") {
+      await this.leftTrackChange();
+    } else if (this.state.currentEar == "right") {
+      await this.rightTrackChange();
     }
   }
 
   playAudio() {
     currentTrackString =
       this.state.currentTrack + "_" + this.state.currentLevel;
-    this.setState({ counter: this.state.counter + 1 });
 
     this.playSound(currentTrackString);
-    console.log(this.state.audioFlag);
+    if (this.state.currentEar == "left") {
+      console.log("current count for left ear is " + this.state.leftCounter);
+    } else if (this.state.currentEar == "right") {
+      console.log("current count for right ear is " + this.state.rightCounter);
+    }
   }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
   componentWillMount() {
@@ -214,21 +325,26 @@ export default class HomeScreen extends Component<Props> {
   }
 
   componentDidMount() {
-    console.log("riggt array" + this.state.right);
+    console.log("right array" + this.state.right);
     console.log("left array" + this.state.left);
     this.handleOverlay(this.props.navigation.state.params.selectedEar);
   }
 
   // Play audio file
   async playSound(audioTrack) {
-    console.log(audioTrack);
     var filePath = this.state.value;
     const soundObject = new Audio.Sound();
     try {
-      console.log("in the playsound method");
       await soundObject.loadAsync(AudioFiles.audioSelector(audioTrack));
       await soundObject.playAsync();
       this.setState({ soundFlag: 1 });
+      if (this.state.currentEar == "left") {
+        var leftCount = this.state.leftCounter + 1;
+        this.setState({ leftCounter: leftCount });
+      } else if (this.state.currentEar == "right") {
+        var rightCount = this.state.rightCounter + 1;
+        this.setState({ rightCounter: rightCount });
+      }
 
       // Your sound is playing!
     } catch (error) {
@@ -295,16 +411,27 @@ export default class HomeScreen extends Component<Props> {
     this.componentDidMount();
   }
 
-  verifyRegister() {
+  async correctResponseChanger() {
+    if (this.state.currentEar == "left") {
+      await this.setState({
+        leftCorrectResponses: this.state.leftCorrectResponses + 1
+      });
+    } else if (this.state.currentEar == "right") {
+      await this.setState({
+        rightCorrectResponses: this.state.rightCorrectResponses + 1
+      });
+    }
+  }
+
+  async verifyRegister() {
     if (this.state.inputText == this.state.currentTrack) {
-      console.log(this.state.inputText, "matches", this.state.currentTrack);
       if (this.state.currentLevel < 11) {
         var currentLevel = this.state.currentLevel + 1;
       } else {
         var currentLevel = this.state.currentLevel;
       }
       this.setState({ soundFlag: 0 });
-      this.setState({ correctResponses: this.state.correctResponses + 1 });
+      await this.correctResponseChanger();
       this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
       this.trackChange();
@@ -327,7 +454,6 @@ export default class HomeScreen extends Component<Props> {
       this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
     }
-    console.log("current count ", this.state.counter);
   }
 
   renderAudioButton() {

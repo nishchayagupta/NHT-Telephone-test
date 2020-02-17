@@ -56,7 +56,7 @@ export default class Initialscreen extends Component<Props> {
   };
 
   render() {
-    console.log("FileSystem", FileSystem);
+    // console.log("FileSystem", FileSystem);
     return (
       <View
         style={{
