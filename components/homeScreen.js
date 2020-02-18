@@ -374,6 +374,7 @@ export default class HomeScreen extends Component<Props> {
 
   async verifyRegister() {
     if (this.state.inputText == this.state.currentTrack) {
+      console.log("match");
       if (this.state.currentLevel < 11) {
         var currentLevel = this.state.currentLevel + 1;
       } else {
@@ -384,6 +385,7 @@ export default class HomeScreen extends Component<Props> {
       this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
       this.trackChange();
+      await this.playAudio();
     } else {
       console.log(
         this.state.inputText,
@@ -395,9 +397,12 @@ export default class HomeScreen extends Component<Props> {
         var currentLevel = this.state.currentLevel - 1;
         this.setState({ soundFlag: 0 });
         this.trackChange();
+        await this.playAudio();
       } else {
         this.setState({ soundFlag: 0 });
+
         this.trackChange();
+        await this.playAudio();
         var currentLevel = this.state.currentLevel;
       }
       this.setState({ currentLevel: currentLevel });
@@ -406,7 +411,12 @@ export default class HomeScreen extends Component<Props> {
   }
 
   renderAudioButton() {
-    if (this.state.soundFlag === 0) {
+    if (
+      ((this.state.selectedEar == null || this.state.selectedEar == "left") &&
+        this.state.leftCounter == 0) ||
+      ((this.state.selectedEar == null || this.state.selectedEar == "right") &&
+        (this.state.rightCounter = 0))
+    ) {
       return (
         <View
           style={{
