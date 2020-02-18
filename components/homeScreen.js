@@ -51,15 +51,6 @@ export default class HomeScreen extends Component<Props> {
     this.returnButton = this.returnButton.bind(this);
   }
 
-  // earChange(ear) {
-  //   console.log("in method");
-  //   if (ear === "right") {
-  //     this.setState({ currentEar: "left" });
-  //     this.setState({ counter: 0 });
-  //     this.setState({ correctResponses: 0 });
-  //   }
-  // }
-
   displaySelectEarButton() {
     return (
       <View
@@ -103,12 +94,6 @@ export default class HomeScreen extends Component<Props> {
   leftTrackChange() {
     if (this.state.currentEar == "left") {
       if (this.state.leftCorrectResponses == 0 && this.state.leftCounter > 5) {
-        console.log(
-          "entered ear changing in left with leftCorrect " +
-            this.state.leftCorrectResponses +
-            " left counter as " +
-            this.state.leftCounter
-        );
         if (this.state.rightStatus == false) {
           var array = [...this.state.right]; // make a separate copy of the array
           const currentVal = array[0];
@@ -157,12 +142,6 @@ export default class HomeScreen extends Component<Props> {
         this.state.rightCorrectResponses == 0 &&
         this.state.rightCounter > 5
       ) {
-        console.log(
-          "entered ear changing in right with rightCorrect " +
-            this.state.rightCorrectResponses +
-            " right counter as " +
-            this.state.rightCounter
-        );
         if (this.state.leftStatus == false) {
           var array = [...this.state.left]; // make a separate copy of the array
           const currentVal = array[0];
@@ -207,10 +186,16 @@ export default class HomeScreen extends Component<Props> {
 
   async trackChange() {
     console.log(
-      "right status is " +
-        this.state.rightStatus +
+      "Left counter is " +
+        this.state.leftCounter +
         " and left status is " +
         this.state.leftStatus
+    );
+    console.log(
+      "right counter is " +
+        this.state.rightCounter +
+        " and right status is " +
+        this.state.rightStatus
     );
     if (this.state.rightStatus == true && this.state.leftStatus == true) {
       console.log("test complete");
@@ -226,16 +211,16 @@ export default class HomeScreen extends Component<Props> {
     }
   }
 
-  playAudio() {
+  async playAudio() {
     currentTrackString =
       this.state.currentTrack + "_" + this.state.currentLevel;
 
-    this.playSound(currentTrackString);
-    if (this.state.currentEar == "left") {
-      console.log("current count for left ear is " + this.state.leftCounter);
-    } else if (this.state.currentEar == "right") {
-      console.log("current count for right ear is " + this.state.rightCounter);
-    }
+    await this.playSound(currentTrackString);
+    // if (this.state.currentEar == "left") {
+    //   console.log("current count for left ear is " + this.state.leftCounter);
+    // } else if (this.state.currentEar == "right") {
+    //   console.log("current count for right ear is " + this.state.rightCounter);
+    // }
   }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
   componentWillMount() {
@@ -269,10 +254,10 @@ export default class HomeScreen extends Component<Props> {
     this.setState({ right: RightVisited });
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     console.log("right array" + this.state.right);
     console.log("left array" + this.state.left);
-    this.handleOverlay(this.props.navigation.state.params.selectedEar);
+    await this.handleOverlay(this.props.navigation.state.params.selectedEar);
   }
 
   // Play audio file
@@ -292,6 +277,7 @@ export default class HomeScreen extends Component<Props> {
         this.setState({ leftCounter: leftCount });
       } else if (this.state.currentEar == "right") {
         var rightCount = this.state.rightCounter + 1;
+        console.log("new right count is " + rightCount);
         this.setState({ rightCounter: rightCount });
       }
 
@@ -384,7 +370,7 @@ export default class HomeScreen extends Component<Props> {
       await this.correctResponseChanger();
       this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
-      this.trackChange();
+      await this.trackChange();
       await this.playAudio();
     } else {
       console.log(
@@ -395,15 +381,12 @@ export default class HomeScreen extends Component<Props> {
 
       if (this.state.currentLevel > 1) {
         var currentLevel = this.state.currentLevel - 1;
-        this.setState({ soundFlag: 0 });
-        this.trackChange();
+        await this.trackChange();
         await this.playAudio();
       } else {
-        this.setState({ soundFlag: 0 });
-
-        this.trackChange();
-        await this.playAudio();
         var currentLevel = this.state.currentLevel;
+        await this.trackChange();
+        await this.playAudio();
       }
       this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
@@ -411,11 +394,17 @@ export default class HomeScreen extends Component<Props> {
   }
 
   renderAudioButton() {
+    console.log(
+      "selected ear is " +
+        this.state.currentEar +
+        " and leftCounter is " +
+        this.state.leftCounter +
+        " and right counter is " +
+        this.state.rightCounter
+    );
     if (
-      ((this.state.selectedEar == null || this.state.selectedEar == "left") &&
-        this.state.leftCounter == 0) ||
-      ((this.state.selectedEar == null || this.state.selectedEar == "right") &&
-        (this.state.rightCounter = 0))
+      (this.state.currentEar == "left" && this.state.leftCounter == 0) ||
+      (this.state.currentEar == "right" && this.state.rightCounter == 0)
     ) {
       return (
         <View
