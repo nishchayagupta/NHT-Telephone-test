@@ -394,14 +394,14 @@ export default class HomeScreen extends Component<Props> {
   }
 
   renderAudioButton() {
-    console.log(
-      "selected ear is " +
-        this.state.currentEar +
-        " and leftCounter is " +
-        this.state.leftCounter +
-        " and right counter is " +
-        this.state.rightCounter
-    );
+    // console.log(
+    //   "selected ear is " +
+    //     this.state.currentEar +
+    //     " and leftCounter is " +
+    //     this.state.leftCounter +
+    //     " and right counter is " +
+    //     this.state.rightCounter
+    // );
     if (
       (this.state.currentEar == "left" && this.state.leftCounter == 0) ||
       (this.state.currentEar == "right" && this.state.rightCounter == 0)
