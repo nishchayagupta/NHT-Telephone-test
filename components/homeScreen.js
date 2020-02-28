@@ -214,7 +214,20 @@ export default class HomeScreen extends Component<Props> {
   async playAudio() {
     currentTrackString =
       this.state.currentTrack + "_" + this.state.currentLevel;
-
+    if (
+      this.state.currentEar == "right" &&
+      this.state.rightCounter == 0 &&
+      this.state.leftStatus == true
+    ) {
+      return;
+    }
+    if (
+      this.state.currentEar == "left" &&
+      this.state.leftCounter == 0 &&
+      this.state.rightStatus == true
+    ) {
+      return;
+    }
     await this.playSound(currentTrackString);
     // if (this.state.currentEar == "left") {
     //   console.log("current count for left ear is " + this.state.leftCounter);
@@ -394,14 +407,16 @@ export default class HomeScreen extends Component<Props> {
   }
 
   renderAudioButton() {
-    console.log(
-      "selected ear is " +
-        this.state.currentEar +
-        " and leftCounter is " +
-        this.state.leftCounter +
-        " and right counter is " +
-        this.state.rightCounter
-    );
+    if (this.state.leftCounter == 30 || this.state.rightCounter == 30) {
+      console.log(
+        "selected ear is " +
+          this.state.currentEar +
+          " and leftCounter is " +
+          this.state.leftCounter +
+          " and right counter is " +
+          this.state.rightCounter
+      );
+    }
     if (
       (this.state.currentEar == "left" && this.state.leftCounter == 0) ||
       (this.state.currentEar == "right" && this.state.rightCounter == 0)
