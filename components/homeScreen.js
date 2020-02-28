@@ -50,7 +50,8 @@ export default class HomeScreen extends Component<Props> {
       soundFlag: 0,
       leftStatus: false,
       rightStatus: false,
-      testContinue: false
+      testContinue: false,
+      fileWrite: []
     };
     this.returnButton = this.returnButton.bind(this);
   }
@@ -480,9 +481,13 @@ export default class HomeScreen extends Component<Props> {
     const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
     if (status === "granted") {
       let fileUri = FileSystem.documentDirectory + "text.txt";
-      await FileSystem.writeAsStringAsync(fileUri, "Hello World", {
-        encoding: FileSystem.EncodingType.UTF8
-      });
+      await FileSystem.writeAsStringAsync(
+        fileUri,
+        "Hello World\n Hello guard",
+        {
+          encoding: FileSystem.EncodingType.UTF8
+        }
+      );
       const asset = await MediaLibrary.createAssetAsync(fileUri);
       await MediaLibrary.createAlbumAsync("Download", asset, false);
     }
