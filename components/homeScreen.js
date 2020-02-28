@@ -46,7 +46,8 @@ export default class HomeScreen extends Component<Props> {
       currentEar: "",
       soundFlag: 0,
       leftStatus: false,
-      rightStatus: false
+      rightStatus: false,
+      testContinue: false
     };
     this.returnButton = this.returnButton.bind(this);
   }
@@ -217,15 +218,19 @@ export default class HomeScreen extends Component<Props> {
     if (
       this.state.currentEar == "right" &&
       this.state.rightCounter == 0 &&
-      this.state.leftStatus == true
+      this.state.leftStatus == true &&
+      this.state.testContinue == false
     ) {
+      this.setState({ testContinue: true });
       return;
     }
     if (
       this.state.currentEar == "left" &&
       this.state.leftCounter == 0 &&
-      this.state.rightStatus == true
+      this.state.rightStatus == true &&
+      this.state.testContinue == false
     ) {
+      this.setState({ testContinue: true });
       return;
     }
     await this.playSound(currentTrackString);
