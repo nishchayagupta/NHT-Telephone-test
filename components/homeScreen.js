@@ -25,6 +25,9 @@ import EarSelect from "./earSelection";
 import Toast, { DURATION } from "react-native-easy-toast";
 import * as AudioFiles from "./audioSelector";
 import EntryScreen from "./entryscreen";
+import * as MediaLibrary from "expo-media-library";
+import * as FileSystem from "expo-file-system";
+import * as Permissions from "expo-permissions";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -473,8 +476,21 @@ export default class HomeScreen extends Component<Props> {
     }
   }
 
+  saveFile = async () => {
+    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+    if (status === "granted") {
+      let fileUri = FileSystem.documentDirectory + "text.txt";
+      await FileSystem.writeAsStringAsync(fileUri, "Hello World", {
+        encoding: FileSystem.EncodingType.UTF8
+      });
+      const asset = await MediaLibrary.createAssetAsync(fileUri);
+      await MediaLibrary.createAlbumAsync("Download", asset, false);
+    }
+  };
+
   render() {
     if (this.state.leftStatus == true && this.state.rightStatus == true) {
+      this.saveFile();
       return <EntryScreen />;
     } else {
       return (
