@@ -31,7 +31,7 @@ import * as Permissions from "expo-permissions";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
-
+var fileWriter = [];
 export default class HomeScreen extends Component<Props> {
   constructor(props) {
     super(props);
@@ -93,6 +93,8 @@ export default class HomeScreen extends Component<Props> {
       this.setState({ right: newArray });
       this.setState({ currentTrack: currentVal });
     }
+    let str = "First ear selection is " + earPreference;
+    fileWriter.push(str);
     this.setState({ currentEar: earPreference });
   };
 
@@ -238,11 +240,6 @@ export default class HomeScreen extends Component<Props> {
       return;
     }
     await this.playSound(currentTrackString);
-    // if (this.state.currentEar == "left") {
-    //   console.log("current count for left ear is " + this.state.leftCounter);
-    // } else if (this.state.currentEar == "right") {
-    //   console.log("current count for right ear is " + this.state.rightCounter);
-    // }
   }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
   componentWillMount() {
@@ -291,7 +288,7 @@ export default class HomeScreen extends Component<Props> {
       setTimeout(() => {
         soundObject.playAsync();
         console.log("play the sound");
-      }, 3000);
+      }, 2500);
 
       this.setState({ soundFlag: 1 });
       if (this.state.currentEar == "left") {
