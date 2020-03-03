@@ -227,8 +227,6 @@ export default class HomeScreen extends Component<Props> {
   }
 
   async playAudio() {
-    currentTrackString =
-      this.state.currentTrack + "_" + this.state.currentLevel;
     if (
       this.state.currentEar == "right" &&
       this.state.rightCounter == 0 &&
@@ -247,6 +245,13 @@ export default class HomeScreen extends Component<Props> {
       this.setState({ testContinue: true });
       return;
     }
+    currentTrackString =
+      this.state.currentTrack +
+      "_" +
+      this.state.currentLevel +
+      "_" +
+      (this.state.currentEar == "left" ? "_L" : "_R");
+    console.log("audio is " + currentTrackString);
     await this.playSound(currentTrackString);
   }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
