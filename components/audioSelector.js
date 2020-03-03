@@ -1,708 +1,2825 @@
 export const audioSelector = audio => {
-switch(audio){
- case "128_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_1.wav")
- case "152_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_1.wav")
- case "154_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_1.wav")
- case "161_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_1.wav")
- case "181_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_1.wav")
- case "182_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_1.wav")
- case "185_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_1.wav")
- case "193_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_1.wav")
- case "194_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_1.wav")
- case "199_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_1.wav")
- case "213_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_1.wav")
- case "216_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_1.wav")
- case "218_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_1.wav")
- case "233_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_1.wav")
- case "243_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_1.wav")
- case "254_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_1.wav")
- case "256_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_1.wav")
- case "261_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_1.wav")
- case "294_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_1.wav")
- case "295_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_1.wav")
- case "296_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_1.wav")
- case "313_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_1.wav")
- case "318_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_1.wav")
- case "321_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_1.wav")
- case "322_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_1.wav")
- case "324_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_1.wav")
- case "342_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_1.wav")
- case "343_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_1.wav")
- case "345_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_1.wav")
- case "346_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_1.wav")
- case "353_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_1.wav")
- case "362_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_1.wav")
- case "383_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_1.wav")
- case "384_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_1.wav")
- case "393_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_1.wav")
- case "398_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_1.wav")
- case "436_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_1.wav")
- case "439_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_1.wav")
- case "441_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_1.wav")
- case "452_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_1.wav")
- case "453_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_1.wav")
- case "454_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_1.wav")
- case "464_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_1.wav")
- case "483_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_1.wav")
- case "534_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_1.wav")
- case "556_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_1.wav")
- case "568_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_1.wav")
- case "593_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_1.wav")
- case "599_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_1.wav")
- case "639_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_1.wav")
- case "649_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_1.wav")
- case "658_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_1.wav")
- case "823_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_1.wav")
- case "825_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_1.wav")
- case "828_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_1.wav")
- case "833_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_1.wav")
- case "854_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_1.wav")
- case "856_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_1.wav")
- case "862_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_1.wav")
- case "891_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_1.wav")
- case "916_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_1.wav")
- case "929_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_1.wav")
- case "942_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_1.wav")
- case "989_1":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_1.wav")
- case "128_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_2.wav")
- case "152_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_2.wav")
- case "154_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_2.wav")
- case "161_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_2.wav")
- case "181_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_2.wav")
- case "182_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_2.wav")
- case "185_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_2.wav")
- case "193_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_2.wav")
- case "194_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_2.wav")
- case "199_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_2.wav")
- case "213_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_2.wav")
- case "216_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_2.wav")
- case "218_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_2.wav")
- case "233_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_2.wav")
- case "243_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_2.wav")
- case "254_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_2.wav")
- case "256_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_2.wav")
- case "261_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_2.wav")
- case "294_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_2.wav")
- case "295_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_2.wav")
- case "296_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_2.wav")
- case "313_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_2.wav")
- case "318_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_2.wav")
- case "321_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_2.wav")
- case "322_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_2.wav")
- case "324_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_2.wav")
- case "342_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_2.wav")
- case "343_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_2.wav")
- case "345_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_2.wav")
- case "346_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_2.wav")
- case "353_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_2.wav")
- case "362_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_2.wav")
- case "383_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_2.wav")
- case "384_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_2.wav")
- case "393_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_2.wav")
- case "398_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_2.wav")
- case "436_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_2.wav")
- case "439_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_2.wav")
- case "441_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_2.wav")
- case "452_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_2.wav")
- case "453_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_2.wav")
- case "454_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_2.wav")
- case "464_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_2.wav")
- case "483_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_2.wav")
- case "534_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_2.wav")
- case "556_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_2.wav")
- case "568_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_2.wav")
- case "593_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_2.wav")
- case "599_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_2.wav")
- case "639_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_2.wav")
- case "649_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_2.wav")
- case "658_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_2.wav")
- case "823_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_2.wav")
- case "825_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_2.wav")
- case "828_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_2.wav")
- case "833_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_2.wav")
- case "854_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_2.wav")
- case "856_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_2.wav")
- case "862_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_2.wav")
- case "891_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_2.wav")
- case "916_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_2.wav")
- case "929_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_2.wav")
- case "942_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_2.wav")
- case "989_2":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_2.wav")
- case "128_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_3.wav")
- case "152_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_3.wav")
- case "154_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_3.wav")
- case "161_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_3.wav")
- case "181_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_3.wav")
- case "182_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_3.wav")
- case "185_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_3.wav")
- case "193_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_3.wav")
- case "194_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_3.wav")
- case "199_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_3.wav")
- case "213_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_3.wav")
- case "216_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_3.wav")
- case "218_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_3.wav")
- case "233_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_3.wav")
- case "243_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_3.wav")
- case "254_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_3.wav")
- case "256_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_3.wav")
- case "261_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_3.wav")
- case "294_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_3.wav")
- case "295_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_3.wav")
- case "296_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_3.wav")
- case "313_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_3.wav")
- case "318_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_3.wav")
- case "321_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_3.wav")
- case "322_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_3.wav")
- case "324_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_3.wav")
- case "342_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_3.wav")
- case "343_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_3.wav")
- case "345_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_3.wav")
- case "346_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_3.wav")
- case "353_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_3.wav")
- case "362_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_3.wav")
- case "383_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_3.wav")
- case "384_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_3.wav")
- case "393_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_3.wav")
- case "398_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_3.wav")
- case "436_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_3.wav")
- case "439_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_3.wav")
- case "441_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_3.wav")
- case "452_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_3.wav")
- case "453_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_3.wav")
- case "454_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_3.wav")
- case "464_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_3.wav")
- case "483_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_3.wav")
- case "534_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_3.wav")
- case "556_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_3.wav")
- case "568_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_3.wav")
- case "593_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_3.wav")
- case "599_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_3.wav")
- case "639_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_3.wav")
- case "649_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_3.wav")
- case "658_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_3.wav")
- case "823_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_3.wav")
- case "825_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_3.wav")
- case "828_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_3.wav")
- case "833_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_3.wav")
- case "854_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_3.wav")
- case "856_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_3.wav")
- case "862_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_3.wav")
- case "891_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_3.wav")
- case "916_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_3.wav")
- case "929_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_3.wav")
- case "942_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_3.wav")
- case "989_3":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_3.wav")
- case "128_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_4.wav")
- case "152_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_4.wav")
- case "154_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_4.wav")
- case "161_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_4.wav")
- case "181_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_4.wav")
- case "182_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_4.wav")
- case "185_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_4.wav")
- case "193_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_4.wav")
- case "194_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_4.wav")
- case "199_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_4.wav")
- case "213_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_4.wav")
- case "216_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_4.wav")
- case "218_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_4.wav")
- case "233_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_4.wav")
- case "243_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_4.wav")
- case "254_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_4.wav")
- case "256_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_4.wav")
- case "261_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_4.wav")
- case "294_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_4.wav")
- case "295_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_4.wav")
- case "296_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_4.wav")
- case "313_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_4.wav")
- case "318_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_4.wav")
- case "321_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_4.wav")
- case "322_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_4.wav")
- case "324_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_4.wav")
- case "342_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_4.wav")
- case "343_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_4.wav")
- case "345_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_4.wav")
- case "346_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_4.wav")
- case "353_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_4.wav")
- case "362_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_4.wav")
- case "383_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_4.wav")
- case "384_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_4.wav")
- case "393_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_4.wav")
- case "398_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_4.wav")
- case "436_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_4.wav")
- case "439_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_4.wav")
- case "441_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_4.wav")
- case "452_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_4.wav")
- case "453_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_4.wav")
- case "454_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_4.wav")
- case "464_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_4.wav")
- case "483_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_4.wav")
- case "534_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_4.wav")
- case "556_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_4.wav")
- case "568_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_4.wav")
- case "593_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_4.wav")
- case "599_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_4.wav")
- case "639_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_4.wav")
- case "649_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_4.wav")
- case "658_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_4.wav")
- case "823_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_4.wav")
- case "825_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_4.wav")
- case "828_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_4.wav")
- case "833_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_4.wav")
- case "854_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_4.wav")
- case "856_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_4.wav")
- case "862_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_4.wav")
- case "891_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_4.wav")
- case "916_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_4.wav")
- case "929_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_4.wav")
- case "942_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_4.wav")
- case "989_4":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_4.wav")
- case "128_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_5.wav")
- case "152_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_5.wav")
- case "154_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_5.wav")
- case "161_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_5.wav")
- case "181_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_5.wav")
- case "182_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_5.wav")
- case "185_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_5.wav")
- case "193_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_5.wav")
- case "194_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_5.wav")
- case "199_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_5.wav")
- case "213_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_5.wav")
- case "216_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_5.wav")
- case "218_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_5.wav")
- case "233_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_5.wav")
- case "243_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_5.wav")
- case "254_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_5.wav")
- case "256_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_5.wav")
- case "261_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_5.wav")
- case "294_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_5.wav")
- case "295_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_5.wav")
- case "296_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_5.wav")
- case "313_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_5.wav")
- case "318_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_5.wav")
- case "321_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_5.wav")
- case "322_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_5.wav")
- case "324_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_5.wav")
- case "342_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_5.wav")
- case "343_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_5.wav")
- case "345_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_5.wav")
- case "346_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_5.wav")
- case "353_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_5.wav")
- case "362_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_5.wav")
- case "383_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_5.wav")
- case "384_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_5.wav")
- case "393_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_5.wav")
- case "398_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_5.wav")
- case "436_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_5.wav")
- case "439_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_5.wav")
- case "441_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_5.wav")
- case "452_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_5.wav")
- case "453_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_5.wav")
- case "454_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_5.wav")
- case "464_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_5.wav")
- case "483_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_5.wav")
- case "534_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_5.wav")
- case "556_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_5.wav")
- case "568_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_5.wav")
- case "593_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_5.wav")
- case "599_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_5.wav")
- case "639_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_5.wav")
- case "649_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_5.wav")
- case "658_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_5.wav")
- case "823_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_5.wav")
- case "825_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_5.wav")
- case "828_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_5.wav")
- case "833_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_5.wav")
- case "854_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_5.wav")
- case "856_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_5.wav")
- case "862_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_5.wav")
- case "891_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_5.wav")
- case "916_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_5.wav")
- case "929_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_5.wav")
- case "942_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_5.wav")
- case "989_5":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_5.wav")
- case "128_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_6.wav")
- case "152_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_6.wav")
- case "154_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_6.wav")
- case "161_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_6.wav")
- case "181_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_6.wav")
- case "182_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_6.wav")
- case "185_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_6.wav")
- case "193_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_6.wav")
- case "194_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_6.wav")
- case "199_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_6.wav")
- case "213_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_6.wav")
- case "216_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_6.wav")
- case "218_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_6.wav")
- case "233_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_6.wav")
- case "243_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_6.wav")
- case "254_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_6.wav")
- case "256_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_6.wav")
- case "261_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_6.wav")
- case "294_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_6.wav")
- case "295_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_6.wav")
- case "296_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_6.wav")
- case "313_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_6.wav")
- case "318_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_6.wav")
- case "321_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_6.wav")
- case "322_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_6.wav")
- case "324_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_6.wav")
- case "342_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_6.wav")
- case "343_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_6.wav")
- case "345_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_6.wav")
- case "346_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_6.wav")
- case "353_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_6.wav")
- case "362_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_6.wav")
- case "383_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_6.wav")
- case "384_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_6.wav")
- case "393_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_6.wav")
- case "398_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_6.wav")
- case "436_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_6.wav")
- case "439_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_6.wav")
- case "441_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_6.wav")
- case "452_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_6.wav")
- case "453_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_6.wav")
- case "454_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_6.wav")
- case "464_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_6.wav")
- case "483_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_6.wav")
- case "534_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_6.wav")
- case "556_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_6.wav")
- case "568_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_6.wav")
- case "593_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_6.wav")
- case "599_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_6.wav")
- case "639_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_6.wav")
- case "649_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_6.wav")
- case "658_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_6.wav")
- case "823_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_6.wav")
- case "825_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_6.wav")
- case "828_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_6.wav")
- case "833_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_6.wav")
- case "854_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_6.wav")
- case "856_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_6.wav")
- case "862_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_6.wav")
- case "891_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_6.wav")
- case "916_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_6.wav")
- case "929_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_6.wav")
- case "942_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_6.wav")
- case "989_6":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_6.wav")
- case "128_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_7.wav")
- case "152_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_7.wav")
- case "154_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_7.wav")
- case "161_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_7.wav")
- case "181_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_7.wav")
- case "182_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_7.wav")
- case "185_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_7.wav")
- case "193_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_7.wav")
- case "194_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_7.wav")
- case "199_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_7.wav")
- case "213_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_7.wav")
- case "216_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_7.wav")
- case "218_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_7.wav")
- case "233_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_7.wav")
- case "243_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_7.wav")
- case "254_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_7.wav")
- case "256_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_7.wav")
- case "261_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_7.wav")
- case "294_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_7.wav")
- case "295_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_7.wav")
- case "296_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_7.wav")
- case "313_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_7.wav")
- case "318_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_7.wav")
- case "321_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_7.wav")
- case "322_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_7.wav")
- case "324_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_7.wav")
- case "342_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_7.wav")
- case "343_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_7.wav")
- case "345_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_7.wav")
- case "346_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_7.wav")
- case "353_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_7.wav")
- case "362_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_7.wav")
- case "383_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_7.wav")
- case "384_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_7.wav")
- case "393_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_7.wav")
- case "398_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_7.wav")
- case "436_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_7.wav")
- case "439_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_7.wav")
- case "441_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_7.wav")
- case "452_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_7.wav")
- case "453_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_7.wav")
- case "454_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_7.wav")
- case "464_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_7.wav")
- case "483_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_7.wav")
- case "534_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_7.wav")
- case "556_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_7.wav")
- case "568_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_7.wav")
- case "593_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_7.wav")
- case "599_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_7.wav")
- case "639_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_7.wav")
- case "649_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_7.wav")
- case "658_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_7.wav")
- case "823_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_7.wav")
- case "825_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_7.wav")
- case "828_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_7.wav")
- case "833_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_7.wav")
- case "854_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_7.wav")
- case "856_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_7.wav")
- case "862_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_7.wav")
- case "891_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_7.wav")
- case "916_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_7.wav")
- case "929_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_7.wav")
- case "942_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_7.wav")
- case "989_7":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_7.wav")
- case "128_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_8.wav")
- case "152_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_8.wav")
- case "154_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_8.wav")
- case "161_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_8.wav")
- case "181_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_8.wav")
- case "182_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_8.wav")
- case "185_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_8.wav")
- case "193_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_8.wav")
- case "194_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_8.wav")
- case "199_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_8.wav")
- case "213_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_8.wav")
- case "216_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_8.wav")
- case "218_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_8.wav")
- case "233_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_8.wav")
- case "243_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_8.wav")
- case "254_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_8.wav")
- case "256_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_8.wav")
- case "261_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_8.wav")
- case "294_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_8.wav")
- case "295_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_8.wav")
- case "296_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_8.wav")
- case "313_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_8.wav")
- case "318_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_8.wav")
- case "321_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_8.wav")
- case "322_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_8.wav")
- case "324_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_8.wav")
- case "342_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_8.wav")
- case "343_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_8.wav")
- case "345_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_8.wav")
- case "346_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_8.wav")
- case "353_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_8.wav")
- case "362_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_8.wav")
- case "383_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_8.wav")
- case "384_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_8.wav")
- case "393_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_8.wav")
- case "398_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_8.wav")
- case "436_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_8.wav")
- case "439_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_8.wav")
- case "441_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_8.wav")
- case "452_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_8.wav")
- case "453_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_8.wav")
- case "454_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_8.wav")
- case "464_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_8.wav")
- case "483_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_8.wav")
- case "534_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_8.wav")
- case "556_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_8.wav")
- case "568_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_8.wav")
- case "593_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_8.wav")
- case "599_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_8.wav")
- case "639_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_8.wav")
- case "649_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_8.wav")
- case "658_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_8.wav")
- case "823_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_8.wav")
- case "825_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_8.wav")
- case "828_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_8.wav")
- case "833_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_8.wav")
- case "854_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_8.wav")
- case "856_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_8.wav")
- case "862_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_8.wav")
- case "891_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_8.wav")
- case "916_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_8.wav")
- case "929_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_8.wav")
- case "942_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_8.wav")
- case "989_8":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_8.wav")
- case "128_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_9.wav")
- case "152_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_9.wav")
- case "154_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_9.wav")
- case "161_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_9.wav")
- case "181_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_9.wav")
- case "182_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_9.wav")
- case "185_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_9.wav")
- case "193_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_9.wav")
- case "194_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_9.wav")
- case "199_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_9.wav")
- case "213_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_9.wav")
- case "216_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_9.wav")
- case "218_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_9.wav")
- case "233_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_9.wav")
- case "243_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_9.wav")
- case "254_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_9.wav")
- case "256_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_9.wav")
- case "261_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_9.wav")
- case "294_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_9.wav")
- case "295_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_9.wav")
- case "296_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_9.wav")
- case "313_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_9.wav")
- case "318_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_9.wav")
- case "321_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_9.wav")
- case "322_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_9.wav")
- case "324_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_9.wav")
- case "342_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_9.wav")
- case "343_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_9.wav")
- case "345_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_9.wav")
- case "346_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_9.wav")
- case "353_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_9.wav")
- case "362_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_9.wav")
- case "383_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_9.wav")
- case "384_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_9.wav")
- case "393_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_9.wav")
- case "398_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_9.wav")
- case "436_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_9.wav")
- case "439_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_9.wav")
- case "441_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_9.wav")
- case "452_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_9.wav")
- case "453_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_9.wav")
- case "454_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_9.wav")
- case "464_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_9.wav")
- case "483_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_9.wav")
- case "534_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_9.wav")
- case "556_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_9.wav")
- case "568_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_9.wav")
- case "593_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_9.wav")
- case "599_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_9.wav")
- case "639_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_9.wav")
- case "649_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_9.wav")
- case "658_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_9.wav")
- case "823_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_9.wav")
- case "825_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_9.wav")
- case "828_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_9.wav")
- case "833_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_9.wav")
- case "854_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_9.wav")
- case "856_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_9.wav")
- case "862_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_9.wav")
- case "891_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_9.wav")
- case "916_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_9.wav")
- case "929_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_9.wav")
- case "942_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_9.wav")
- case "989_9":   return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_9.wav")
-  case "128_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_10.wav")
-  case "152_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_10.wav")
-  case "154_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_10.wav")
-  case "161_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_10.wav")
-  case "181_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_10.wav")
-  case "182_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_10.wav")
-  case "185_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_10.wav")
-  case "193_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_10.wav")
-  case "194_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_10.wav")
-  case "199_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_10.wav")
-  case "213_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_10.wav")
-  case "216_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_10.wav")
-  case "218_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_10.wav")
-  case "233_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_10.wav")
-  case "243_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_10.wav")
-  case "254_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_10.wav")
-  case "256_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_10.wav")
-  case "261_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_10.wav")
-  case "294_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_10.wav")
-  case "295_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_10.wav")
-  case "296_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_10.wav")
-  case "313_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_10.wav")
-  case "318_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_10.wav")
-  case "321_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_10.wav")
-  case "322_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_10.wav")
-  case "324_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_10.wav")
-  case "342_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_10.wav")
-  case "343_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_10.wav")
-  case "345_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_10.wav")
-  case "346_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_10.wav")
-  case "353_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_10.wav")
-  case "362_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_10.wav")
-  case "383_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_10.wav")
-  case "384_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_10.wav")
-  case "393_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_10.wav")
-  case "398_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_10.wav")
-  case "436_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_10.wav")
-  case "439_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_10.wav")
-  case "441_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_10.wav")
-  case "452_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_10.wav")
-  case "453_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_10.wav")
-  case "454_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_10.wav")
-  case "464_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_10.wav")
-  case "483_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_10.wav")
-  case "534_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_10.wav")
-  case "556_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_10.wav")
-  case "568_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_10.wav")
-  case "593_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_10.wav")
-  case "599_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_10.wav")
-  case "639_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_10.wav")
-  case "649_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_10.wav")
-  case "658_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_10.wav")
-  case "823_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_10.wav")
-  case "825_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_10.wav")
-  case "828_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_10.wav")
-  case "833_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_10.wav")
-  case "854_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_10.wav")
-  case "856_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_10.wav")
-  case "862_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_10.wav")
-  case "891_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_10.wav")
-  case "916_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_10.wav")
-  case "929_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_10.wav")
-  case "942_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_10.wav")
-  case "989_10": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_10.wav")
-  case "128_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/128_11.wav")
-  case "152_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/152_11.wav")
-  case "154_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/154_11.wav")
-  case "161_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/161_11.wav")
-  case "181_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/181_11.wav")
-  case "182_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/182_11.wav")
-  case "185_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/185_11.wav")
-  case "193_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/193_11.wav")
-  case "194_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/194_11.wav")
-  case "199_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/199_11.wav")
-  case "213_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/213_11.wav")
-  case "216_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/216_11.wav")
-  case "218_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/218_11.wav")
-  case "233_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/233_11.wav")
-  case "243_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/243_11.wav")
-  case "254_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/254_11.wav")
-  case "256_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/256_11.wav")
-  case "261_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/261_11.wav")
-  case "294_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/294_11.wav")
-  case "295_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/295_11.wav")
-  case "296_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/296_11.wav")
-  case "313_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/313_11.wav")
-  case "318_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/318_11.wav")
-  case "321_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/321_11.wav")
-  case "322_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/322_11.wav")
-  case "324_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/324_11.wav")
-  case "342_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/342_11.wav")
-  case "343_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/343_11.wav")
-  case "345_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/345_11.wav")
-  case "346_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/346_11.wav")
-  case "353_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/353_11.wav")
-  case "362_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/362_11.wav")
-  case "383_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/383_11.wav")
-  case "384_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/384_11.wav")
-  case "393_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/393_11.wav")
-  case "398_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/398_11.wav")
-  case "436_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/436_11.wav")
-  case "439_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/439_11.wav")
-  case "441_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/441_11.wav")
-  case "452_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/452_11.wav")
-  case "453_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/453_11.wav")
-  case "454_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/454_11.wav")
-  case "464_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/464_11.wav")
-  case "483_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/483_11.wav")
-  case "534_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/534_11.wav")
-  case "556_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/556_11.wav")
-  case "568_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/568_11.wav")
-  case "593_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/593_11.wav")
-  case "599_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/599_11.wav")
-  case "639_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/639_11.wav")
-  case "649_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/649_11.wav")
-  case "658_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/658_11.wav")
-  case "823_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/823_11.wav")
-  case "825_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/825_11.wav")
-  case "828_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/828_11.wav")
-  case "833_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/833_11.wav")
-  case "854_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/854_11.wav")
-  case "856_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/856_11.wav")
-  case "862_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/862_11.wav")
-  case "891_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/891_11.wav")
-  case "916_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/916_11.wav")
-  case "929_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/929_11.wav")
-  case "942_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/942_11.wav")
-  case "989_11": return require("../audioTestFiles/audioAssets/NHT_DigitSequences64/989_11.wav")
-}
-}
+  switch (audio) {
+    case "128_1_L":
+      return require("../audioTestFiles/audioAssets/Left/128_1_L.wav");
+    case "152_1_L":
+      return require("../audioTestFiles/audioAssets/Left/152_1_L.wav");
+    case "154_1_L":
+      return require("../audioTestFiles/audioAssets/Left/154_1_L.wav");
+    case "161_1_L":
+      return require("../audioTestFiles/audioAssets/Left/161_1_L.wav");
+    case "181_1_L":
+      return require("../audioTestFiles/audioAssets/Left/181_1_L.wav");
+    case "182_1_L":
+      return require("../audioTestFiles/audioAssets/Left/182_1_L.wav");
+    case "185_1_L":
+      return require("../audioTestFiles/audioAssets/Left/185_1_L.wav");
+    case "193_1_L":
+      return require("../audioTestFiles/audioAssets/Left/193_1_L.wav");
+    case "194_1_L":
+      return require("../audioTestFiles/audioAssets/Left/194_1_L.wav");
+    case "199_1_L":
+      return require("../audioTestFiles/audioAssets/Left/199_1_L.wav");
+    case "213_1_L":
+      return require("../audioTestFiles/audioAssets/Left/213_1_L.wav");
+    case "216_1_L":
+      return require("../audioTestFiles/audioAssets/Left/216_1_L.wav");
+    case "218_1_L":
+      return require("../audioTestFiles/audioAssets/Left/218_1_L.wav");
+    case "233_1_L":
+      return require("../audioTestFiles/audioAssets/Left/233_1_L.wav");
+    case "243_1_L":
+      return require("../audioTestFiles/audioAssets/Left/243_1_L.wav");
+    case "254_1_L":
+      return require("../audioTestFiles/audioAssets/Left/254_1_L.wav");
+    case "256_1_L":
+      return require("../audioTestFiles/audioAssets/Left/256_1_L.wav");
+    case "261_1_L":
+      return require("../audioTestFiles/audioAssets/Left/261_1_L.wav");
+    case "294_1_L":
+      return require("../audioTestFiles/audioAssets/Left/294_1_L.wav");
+    case "295_1_L":
+      return require("../audioTestFiles/audioAssets/Left/295_1_L.wav");
+    case "296_1_L":
+      return require("../audioTestFiles/audioAssets/Left/296_1_L.wav");
+    case "313_1_L":
+      return require("../audioTestFiles/audioAssets/Left/313_1_L.wav");
+    case "318_1_L":
+      return require("../audioTestFiles/audioAssets/Left/318_1_L.wav");
+    case "321_1_L":
+      return require("../audioTestFiles/audioAssets/Left/321_1_L.wav");
+    case "322_1_L":
+      return require("../audioTestFiles/audioAssets/Left/322_1_L.wav");
+    case "324_1_L":
+      return require("../audioTestFiles/audioAssets/Left/324_1_L.wav");
+    case "342_1_L":
+      return require("../audioTestFiles/audioAssets/Left/342_1_L.wav");
+    case "343_1_L":
+      return require("../audioTestFiles/audioAssets/Left/343_1_L.wav");
+    case "345_1_L":
+      return require("../audioTestFiles/audioAssets/Left/345_1_L.wav");
+    case "346_1_L":
+      return require("../audioTestFiles/audioAssets/Left/346_1_L.wav");
+    case "353_1_L":
+      return require("../audioTestFiles/audioAssets/Left/353_1_L.wav");
+    case "362_1_L":
+      return require("../audioTestFiles/audioAssets/Left/362_1_L.wav");
+    case "383_1_L":
+      return require("../audioTestFiles/audioAssets/Left/383_1_L.wav");
+    case "384_1_L":
+      return require("../audioTestFiles/audioAssets/Left/384_1_L.wav");
+    case "393_1_L":
+      return require("../audioTestFiles/audioAssets/Left/393_1_L.wav");
+    case "398_1_L":
+      return require("../audioTestFiles/audioAssets/Left/398_1_L.wav");
+    case "436_1_L":
+      return require("../audioTestFiles/audioAssets/Left/436_1_L.wav");
+    case "439_1_L":
+      return require("../audioTestFiles/audioAssets/Left/439_1_L.wav");
+    case "441_1_L":
+      return require("../audioTestFiles/audioAssets/Left/441_1_L.wav");
+    case "452_1_L":
+      return require("../audioTestFiles/audioAssets/Left/452_1_L.wav");
+    case "453_1_L":
+      return require("../audioTestFiles/audioAssets/Left/453_1_L.wav");
+    case "454_1_L":
+      return require("../audioTestFiles/audioAssets/Left/454_1_L.wav");
+    case "464_1_L":
+      return require("../audioTestFiles/audioAssets/Left/464_1_L.wav");
+    case "483_1_L":
+      return require("../audioTestFiles/audioAssets/Left/483_1_L.wav");
+    case "534_1_L":
+      return require("../audioTestFiles/audioAssets/Left/534_1_L.wav");
+    case "556_1_L":
+      return require("../audioTestFiles/audioAssets/Left/556_1_L.wav");
+    case "568_1_L":
+      return require("../audioTestFiles/audioAssets/Left/568_1_L.wav");
+    case "593_1_L":
+      return require("../audioTestFiles/audioAssets/Left/593_1_L.wav");
+    case "599_1_L":
+      return require("../audioTestFiles/audioAssets/Left/599_1_L.wav");
+    case "639_1_L":
+      return require("../audioTestFiles/audioAssets/Left/639_1_L.wav");
+    case "649_1_L":
+      return require("../audioTestFiles/audioAssets/Left/649_1_L.wav");
+    case "658_1_L":
+      return require("../audioTestFiles/audioAssets/Left/658_1_L.wav");
+    case "823_1_L":
+      return require("../audioTestFiles/audioAssets/Left/823_1_L.wav");
+    case "825_1_L":
+      return require("../audioTestFiles/audioAssets/Left/825_1_L.wav");
+    case "828_1_L":
+      return require("../audioTestFiles/audioAssets/Left/828_1_L.wav");
+    case "833_1_L":
+      return require("../audioTestFiles/audioAssets/Left/833_1_L.wav");
+    case "854_1_L":
+      return require("../audioTestFiles/audioAssets/Left/854_1_L.wav");
+    case "856_1_L":
+      return require("../audioTestFiles/audioAssets/Left/856_1_L.wav");
+    case "862_1_L":
+      return require("../audioTestFiles/audioAssets/Left/862_1_L.wav");
+    case "891_1_L":
+      return require("../audioTestFiles/audioAssets/Left/891_1_L.wav");
+    case "916_1_L":
+      return require("../audioTestFiles/audioAssets/Left/916_1_L.wav");
+    case "929_1_L":
+      return require("../audioTestFiles/audioAssets/Left/929_1_L.wav");
+    case "942_1_L":
+      return require("../audioTestFiles/audioAssets/Left/942_1_L.wav");
+    case "989_1_L":
+      return require("../audioTestFiles/audioAssets/Left/989_1_L.wav");
+    case "128_2_L":
+      return require("../audioTestFiles/audioAssets/Left/128_2_L.wav");
+    case "152_2_L":
+      return require("../audioTestFiles/audioAssets/Left/152_2_L.wav");
+    case "154_2_L":
+      return require("../audioTestFiles/audioAssets/Left/154_2_L.wav");
+    case "161_2_L":
+      return require("../audioTestFiles/audioAssets/Left/161_2_L.wav");
+    case "181_2_L":
+      return require("../audioTestFiles/audioAssets/Left/181_2_L.wav");
+    case "182_2_L":
+      return require("../audioTestFiles/audioAssets/Left/182_2_L.wav");
+    case "185_2_L":
+      return require("../audioTestFiles/audioAssets/Left/185_2_L.wav");
+    case "193_2_L":
+      return require("../audioTestFiles/audioAssets/Left/193_2_L.wav");
+    case "194_2_L":
+      return require("../audioTestFiles/audioAssets/Left/194_2_L.wav");
+    case "199_2_L":
+      return require("../audioTestFiles/audioAssets/Left/199_2_L.wav");
+    case "213_2_L":
+      return require("../audioTestFiles/audioAssets/Left/213_2_L.wav");
+    case "216_2_L":
+      return require("../audioTestFiles/audioAssets/Left/216_2_L.wav");
+    case "218_2_L":
+      return require("../audioTestFiles/audioAssets/Left/218_2_L.wav");
+    case "233_2_L":
+      return require("../audioTestFiles/audioAssets/Left/233_2_L.wav");
+    case "243_2_L":
+      return require("../audioTestFiles/audioAssets/Left/243_2_L.wav");
+    case "254_2_L":
+      return require("../audioTestFiles/audioAssets/Left/254_2_L.wav");
+    case "256_2_L":
+      return require("../audioTestFiles/audioAssets/Left/256_2_L.wav");
+    case "261_2_L":
+      return require("../audioTestFiles/audioAssets/Left/261_2_L.wav");
+    case "294_2_L":
+      return require("../audioTestFiles/audioAssets/Left/294_2_L.wav");
+    case "295_2_L":
+      return require("../audioTestFiles/audioAssets/Left/295_2_L.wav");
+    case "296_2_L":
+      return require("../audioTestFiles/audioAssets/Left/296_2_L.wav");
+    case "313_2_L":
+      return require("../audioTestFiles/audioAssets/Left/313_2_L.wav");
+    case "318_2_L":
+      return require("../audioTestFiles/audioAssets/Left/318_2_L.wav");
+    case "321_2_L":
+      return require("../audioTestFiles/audioAssets/Left/321_2_L.wav");
+    case "322_2_L":
+      return require("../audioTestFiles/audioAssets/Left/322_2_L.wav");
+    case "324_2_L":
+      return require("../audioTestFiles/audioAssets/Left/324_2_L.wav");
+    case "342_2_L":
+      return require("../audioTestFiles/audioAssets/Left/342_2_L.wav");
+    case "343_2_L":
+      return require("../audioTestFiles/audioAssets/Left/343_2_L.wav");
+    case "345_2_L":
+      return require("../audioTestFiles/audioAssets/Left/345_2_L.wav");
+    case "346_2_L":
+      return require("../audioTestFiles/audioAssets/Left/346_2_L.wav");
+    case "353_2_L":
+      return require("../audioTestFiles/audioAssets/Left/353_2_L.wav");
+    case "362_2_L":
+      return require("../audioTestFiles/audioAssets/Left/362_2_L.wav");
+    case "383_2_L":
+      return require("../audioTestFiles/audioAssets/Left/383_2_L.wav");
+    case "384_2_L":
+      return require("../audioTestFiles/audioAssets/Left/384_2_L.wav");
+    case "393_2_L":
+      return require("../audioTestFiles/audioAssets/Left/393_2_L.wav");
+    case "398_2_L":
+      return require("../audioTestFiles/audioAssets/Left/398_2_L.wav");
+    case "436_2_L":
+      return require("../audioTestFiles/audioAssets/Left/436_2_L.wav");
+    case "439_2_L":
+      return require("../audioTestFiles/audioAssets/Left/439_2_L.wav");
+    case "441_2_L":
+      return require("../audioTestFiles/audioAssets/Left/441_2_L.wav");
+    case "452_2_L":
+      return require("../audioTestFiles/audioAssets/Left/452_2_L.wav");
+    case "453_2_L":
+      return require("../audioTestFiles/audioAssets/Left/453_2_L.wav");
+    case "454_2_L":
+      return require("../audioTestFiles/audioAssets/Left/454_2_L.wav");
+    case "464_2_L":
+      return require("../audioTestFiles/audioAssets/Left/464_2_L.wav");
+    case "483_2_L":
+      return require("../audioTestFiles/audioAssets/Left/483_2_L.wav");
+    case "534_2_L":
+      return require("../audioTestFiles/audioAssets/Left/534_2_L.wav");
+    case "556_2_L":
+      return require("../audioTestFiles/audioAssets/Left/556_2_L.wav");
+    case "568_2_L":
+      return require("../audioTestFiles/audioAssets/Left/568_2_L.wav");
+    case "593_2_L":
+      return require("../audioTestFiles/audioAssets/Left/593_2_L.wav");
+    case "599_2_L":
+      return require("../audioTestFiles/audioAssets/Left/599_2_L.wav");
+    case "639_2_L":
+      return require("../audioTestFiles/audioAssets/Left/639_2_L.wav");
+    case "649_2_L":
+      return require("../audioTestFiles/audioAssets/Left/649_2_L.wav");
+    case "658_2_L":
+      return require("../audioTestFiles/audioAssets/Left/658_2_L.wav");
+    case "823_2_L":
+      return require("../audioTestFiles/audioAssets/Left/823_2_L.wav");
+    case "825_2_L":
+      return require("../audioTestFiles/audioAssets/Left/825_2_L.wav");
+    case "828_2_L":
+      return require("../audioTestFiles/audioAssets/Left/828_2_L.wav");
+    case "833_2_L":
+      return require("../audioTestFiles/audioAssets/Left/833_2_L.wav");
+    case "854_2_L":
+      return require("../audioTestFiles/audioAssets/Left/854_2_L.wav");
+    case "856_2_L":
+      return require("../audioTestFiles/audioAssets/Left/856_2_L.wav");
+    case "862_2_L":
+      return require("../audioTestFiles/audioAssets/Left/862_2_L.wav");
+    case "891_2_L":
+      return require("../audioTestFiles/audioAssets/Left/891_2_L.wav");
+    case "916_2_L":
+      return require("../audioTestFiles/audioAssets/Left/916_2_L.wav");
+    case "929_2_L":
+      return require("../audioTestFiles/audioAssets/Left/929_2_L.wav");
+    case "942_2_L":
+      return require("../audioTestFiles/audioAssets/Left/942_2_L.wav");
+    case "989_2_L":
+      return require("../audioTestFiles/audioAssets/Left/989_2_L.wav");
+    case "128_3_L":
+      return require("../audioTestFiles/audioAssets/Left/128_3_L.wav");
+    case "152_3_L":
+      return require("../audioTestFiles/audioAssets/Left/152_3_L.wav");
+    case "154_3_L":
+      return require("../audioTestFiles/audioAssets/Left/154_3_L.wav");
+    case "161_3_L":
+      return require("../audioTestFiles/audioAssets/Left/161_3_L.wav");
+    case "181_3_L":
+      return require("../audioTestFiles/audioAssets/Left/181_3_L.wav");
+    case "182_3_L":
+      return require("../audioTestFiles/audioAssets/Left/182_3_L.wav");
+    case "185_3_L":
+      return require("../audioTestFiles/audioAssets/Left/185_3_L.wav");
+    case "193_3_L":
+      return require("../audioTestFiles/audioAssets/Left/193_3_L.wav");
+    case "194_3_L":
+      return require("../audioTestFiles/audioAssets/Left/194_3_L.wav");
+    case "199_3_L":
+      return require("../audioTestFiles/audioAssets/Left/199_3_L.wav");
+    case "213_3_L":
+      return require("../audioTestFiles/audioAssets/Left/213_3_L.wav");
+    case "216_3_L":
+      return require("../audioTestFiles/audioAssets/Left/216_3_L.wav");
+    case "218_3_L":
+      return require("../audioTestFiles/audioAssets/Left/218_3_L.wav");
+    case "233_3_L":
+      return require("../audioTestFiles/audioAssets/Left/233_3_L.wav");
+    case "243_3_L":
+      return require("../audioTestFiles/audioAssets/Left/243_3_L.wav");
+    case "254_3_L":
+      return require("../audioTestFiles/audioAssets/Left/254_3_L.wav");
+    case "256_3_L":
+      return require("../audioTestFiles/audioAssets/Left/256_3_L.wav");
+    case "261_3_L":
+      return require("../audioTestFiles/audioAssets/Left/261_3_L.wav");
+    case "294_3_L":
+      return require("../audioTestFiles/audioAssets/Left/294_3_L.wav");
+    case "295_3_L":
+      return require("../audioTestFiles/audioAssets/Left/295_3_L.wav");
+    case "296_3_L":
+      return require("../audioTestFiles/audioAssets/Left/296_3_L.wav");
+    case "313_3_L":
+      return require("../audioTestFiles/audioAssets/Left/313_3_L.wav");
+    case "318_3_L":
+      return require("../audioTestFiles/audioAssets/Left/318_3_L.wav");
+    case "321_3_L":
+      return require("../audioTestFiles/audioAssets/Left/321_3_L.wav");
+    case "322_3_L":
+      return require("../audioTestFiles/audioAssets/Left/322_3_L.wav");
+    case "324_3_L":
+      return require("../audioTestFiles/audioAssets/Left/324_3_L.wav");
+    case "342_3_L":
+      return require("../audioTestFiles/audioAssets/Left/342_3_L.wav");
+    case "343_3_L":
+      return require("../audioTestFiles/audioAssets/Left/343_3_L.wav");
+    case "345_3_L":
+      return require("../audioTestFiles/audioAssets/Left/345_3_L.wav");
+    case "346_3_L":
+      return require("../audioTestFiles/audioAssets/Left/346_3_L.wav");
+    case "353_3_L":
+      return require("../audioTestFiles/audioAssets/Left/353_3_L.wav");
+    case "362_3_L":
+      return require("../audioTestFiles/audioAssets/Left/362_3_L.wav");
+    case "383_3_L":
+      return require("../audioTestFiles/audioAssets/Left/383_3_L.wav");
+    case "384_3_L":
+      return require("../audioTestFiles/audioAssets/Left/384_3_L.wav");
+    case "393_3_L":
+      return require("../audioTestFiles/audioAssets/Left/393_3_L.wav");
+    case "398_3_L":
+      return require("../audioTestFiles/audioAssets/Left/398_3_L.wav");
+    case "436_3_L":
+      return require("../audioTestFiles/audioAssets/Left/436_3_L.wav");
+    case "439_3_L":
+      return require("../audioTestFiles/audioAssets/Left/439_3_L.wav");
+    case "441_3_L":
+      return require("../audioTestFiles/audioAssets/Left/441_3_L.wav");
+    case "452_3_L":
+      return require("../audioTestFiles/audioAssets/Left/452_3_L.wav");
+    case "453_3_L":
+      return require("../audioTestFiles/audioAssets/Left/453_3_L.wav");
+    case "454_3_L":
+      return require("../audioTestFiles/audioAssets/Left/454_3_L.wav");
+    case "464_3_L":
+      return require("../audioTestFiles/audioAssets/Left/464_3_L.wav");
+    case "483_3_L":
+      return require("../audioTestFiles/audioAssets/Left/483_3_L.wav");
+    case "534_3_L":
+      return require("../audioTestFiles/audioAssets/Left/534_3_L.wav");
+    case "556_3_L":
+      return require("../audioTestFiles/audioAssets/Left/556_3_L.wav");
+    case "568_3_L":
+      return require("../audioTestFiles/audioAssets/Left/568_3_L.wav");
+    case "593_3_L":
+      return require("../audioTestFiles/audioAssets/Left/593_3_L.wav");
+    case "599_3_L":
+      return require("../audioTestFiles/audioAssets/Left/599_3_L.wav");
+    case "639_3_L":
+      return require("../audioTestFiles/audioAssets/Left/639_3_L.wav");
+    case "649_3_L":
+      return require("../audioTestFiles/audioAssets/Left/649_3_L.wav");
+    case "658_3_L":
+      return require("../audioTestFiles/audioAssets/Left/658_3_L.wav");
+    case "823_3_L":
+      return require("../audioTestFiles/audioAssets/Left/823_3_L.wav");
+    case "825_3_L":
+      return require("../audioTestFiles/audioAssets/Left/825_3_L.wav");
+    case "828_3_L":
+      return require("../audioTestFiles/audioAssets/Left/828_3_L.wav");
+    case "833_3_L":
+      return require("../audioTestFiles/audioAssets/Left/833_3_L.wav");
+    case "854_3_L":
+      return require("../audioTestFiles/audioAssets/Left/854_3_L.wav");
+    case "856_3_L":
+      return require("../audioTestFiles/audioAssets/Left/856_3_L.wav");
+    case "862_3_L":
+      return require("../audioTestFiles/audioAssets/Left/862_3_L.wav");
+    case "891_3_L":
+      return require("../audioTestFiles/audioAssets/Left/891_3_L.wav");
+    case "916_3_L":
+      return require("../audioTestFiles/audioAssets/Left/916_3_L.wav");
+    case "929_3_L":
+      return require("../audioTestFiles/audioAssets/Left/929_3_L.wav");
+    case "942_3_L":
+      return require("../audioTestFiles/audioAssets/Left/942_3_L.wav");
+    case "989_3_L":
+      return require("../audioTestFiles/audioAssets/Left/989_3_L.wav");
+    case "128_4_L":
+      return require("../audioTestFiles/audioAssets/Left/128_4_L.wav");
+    case "152_4_L":
+      return require("../audioTestFiles/audioAssets/Left/152_4_L.wav");
+    case "154_4_L":
+      return require("../audioTestFiles/audioAssets/Left/154_4_L.wav");
+    case "161_4_L":
+      return require("../audioTestFiles/audioAssets/Left/161_4_L.wav");
+    case "181_4_L":
+      return require("../audioTestFiles/audioAssets/Left/181_4_L.wav");
+    case "182_4_L":
+      return require("../audioTestFiles/audioAssets/Left/182_4_L.wav");
+    case "185_4_L":
+      return require("../audioTestFiles/audioAssets/Left/185_4_L.wav");
+    case "193_4_L":
+      return require("../audioTestFiles/audioAssets/Left/193_4_L.wav");
+    case "194_4_L":
+      return require("../audioTestFiles/audioAssets/Left/194_4_L.wav");
+    case "199_4_L":
+      return require("../audioTestFiles/audioAssets/Left/199_4_L.wav");
+    case "213_4_L":
+      return require("../audioTestFiles/audioAssets/Left/213_4_L.wav");
+    case "216_4_L":
+      return require("../audioTestFiles/audioAssets/Left/216_4_L.wav");
+    case "218_4_L":
+      return require("../audioTestFiles/audioAssets/Left/218_4_L.wav");
+    case "233_4_L":
+      return require("../audioTestFiles/audioAssets/Left/233_4_L.wav");
+    case "243_4_L":
+      return require("../audioTestFiles/audioAssets/Left/243_4_L.wav");
+    case "254_4_L":
+      return require("../audioTestFiles/audioAssets/Left/254_4_L.wav");
+    case "256_4_L":
+      return require("../audioTestFiles/audioAssets/Left/256_4_L.wav");
+    case "261_4_L":
+      return require("../audioTestFiles/audioAssets/Left/261_4_L.wav");
+    case "294_4_L":
+      return require("../audioTestFiles/audioAssets/Left/294_4_L.wav");
+    case "295_4_L":
+      return require("../audioTestFiles/audioAssets/Left/295_4_L.wav");
+    case "296_4_L":
+      return require("../audioTestFiles/audioAssets/Left/296_4_L.wav");
+    case "313_4_L":
+      return require("../audioTestFiles/audioAssets/Left/313_4_L.wav");
+    case "318_4_L":
+      return require("../audioTestFiles/audioAssets/Left/318_4_L.wav");
+    case "321_4_L":
+      return require("../audioTestFiles/audioAssets/Left/321_4_L.wav");
+    case "322_4_L":
+      return require("../audioTestFiles/audioAssets/Left/322_4_L.wav");
+    case "324_4_L":
+      return require("../audioTestFiles/audioAssets/Left/324_4_L.wav");
+    case "342_4_L":
+      return require("../audioTestFiles/audioAssets/Left/342_4_L.wav");
+    case "343_4_L":
+      return require("../audioTestFiles/audioAssets/Left/343_4_L.wav");
+    case "345_4_L":
+      return require("../audioTestFiles/audioAssets/Left/345_4_L.wav");
+    case "346_4_L":
+      return require("../audioTestFiles/audioAssets/Left/346_4_L.wav");
+    case "353_4_L":
+      return require("../audioTestFiles/audioAssets/Left/353_4_L.wav");
+    case "362_4_L":
+      return require("../audioTestFiles/audioAssets/Left/362_4_L.wav");
+    case "383_4_L":
+      return require("../audioTestFiles/audioAssets/Left/383_4_L.wav");
+    case "384_4_L":
+      return require("../audioTestFiles/audioAssets/Left/384_4_L.wav");
+    case "393_4_L":
+      return require("../audioTestFiles/audioAssets/Left/393_4_L.wav");
+    case "398_4_L":
+      return require("../audioTestFiles/audioAssets/Left/398_4_L.wav");
+    case "436_4_L":
+      return require("../audioTestFiles/audioAssets/Left/436_4_L.wav");
+    case "439_4_L":
+      return require("../audioTestFiles/audioAssets/Left/439_4_L.wav");
+    case "441_4_L":
+      return require("../audioTestFiles/audioAssets/Left/441_4_L.wav");
+    case "452_4_L":
+      return require("../audioTestFiles/audioAssets/Left/452_4_L.wav");
+    case "453_4_L":
+      return require("../audioTestFiles/audioAssets/Left/453_4_L.wav");
+    case "454_4_L":
+      return require("../audioTestFiles/audioAssets/Left/454_4_L.wav");
+    case "464_4_L":
+      return require("../audioTestFiles/audioAssets/Left/464_4_L.wav");
+    case "483_4_L":
+      return require("../audioTestFiles/audioAssets/Left/483_4_L.wav");
+    case "534_4_L":
+      return require("../audioTestFiles/audioAssets/Left/534_4_L.wav");
+    case "556_4_L":
+      return require("../audioTestFiles/audioAssets/Left/556_4_L.wav");
+    case "568_4_L":
+      return require("../audioTestFiles/audioAssets/Left/568_4_L.wav");
+    case "593_4_L":
+      return require("../audioTestFiles/audioAssets/Left/593_4_L.wav");
+    case "599_4_L":
+      return require("../audioTestFiles/audioAssets/Left/599_4_L.wav");
+    case "639_4_L":
+      return require("../audioTestFiles/audioAssets/Left/639_4_L.wav");
+    case "649_4_L":
+      return require("../audioTestFiles/audioAssets/Left/649_4_L.wav");
+    case "658_4_L":
+      return require("../audioTestFiles/audioAssets/Left/658_4_L.wav");
+    case "823_4_L":
+      return require("../audioTestFiles/audioAssets/Left/823_4_L.wav");
+    case "825_4_L":
+      return require("../audioTestFiles/audioAssets/Left/825_4_L.wav");
+    case "828_4_L":
+      return require("../audioTestFiles/audioAssets/Left/828_4_L.wav");
+    case "833_4_L":
+      return require("../audioTestFiles/audioAssets/Left/833_4_L.wav");
+    case "854_4_L":
+      return require("../audioTestFiles/audioAssets/Left/854_4_L.wav");
+    case "856_4_L":
+      return require("../audioTestFiles/audioAssets/Left/856_4_L.wav");
+    case "862_4_L":
+      return require("../audioTestFiles/audioAssets/Left/862_4_L.wav");
+    case "891_4_L":
+      return require("../audioTestFiles/audioAssets/Left/891_4_L.wav");
+    case "916_4_L":
+      return require("../audioTestFiles/audioAssets/Left/916_4_L.wav");
+    case "929_4_L":
+      return require("../audioTestFiles/audioAssets/Left/929_4_L.wav");
+    case "942_4_L":
+      return require("../audioTestFiles/audioAssets/Left/942_4_L.wav");
+    case "989_4_L":
+      return require("../audioTestFiles/audioAssets/Left/989_4_L.wav");
+    case "128_5_L":
+      return require("../audioTestFiles/audioAssets/Left/128_5_L.wav");
+    case "152_5_L":
+      return require("../audioTestFiles/audioAssets/Left/152_5_L.wav");
+    case "154_5_L":
+      return require("../audioTestFiles/audioAssets/Left/154_5_L.wav");
+    case "161_5_L":
+      return require("../audioTestFiles/audioAssets/Left/161_5_L.wav");
+    case "181_5_L":
+      return require("../audioTestFiles/audioAssets/Left/181_5_L.wav");
+    case "182_5_L":
+      return require("../audioTestFiles/audioAssets/Left/182_5_L.wav");
+    case "185_5_L":
+      return require("../audioTestFiles/audioAssets/Left/185_5_L.wav");
+    case "193_5_L":
+      return require("../audioTestFiles/audioAssets/Left/193_5_L.wav");
+    case "194_5_L":
+      return require("../audioTestFiles/audioAssets/Left/194_5_L.wav");
+    case "199_5_L":
+      return require("../audioTestFiles/audioAssets/Left/199_5_L.wav");
+    case "213_5_L":
+      return require("../audioTestFiles/audioAssets/Left/213_5_L.wav");
+    case "216_5_L":
+      return require("../audioTestFiles/audioAssets/Left/216_5_L.wav");
+    case "218_5_L":
+      return require("../audioTestFiles/audioAssets/Left/218_5_L.wav");
+    case "233_5_L":
+      return require("../audioTestFiles/audioAssets/Left/233_5_L.wav");
+    case "243_5_L":
+      return require("../audioTestFiles/audioAssets/Left/243_5_L.wav");
+    case "254_5_L":
+      return require("../audioTestFiles/audioAssets/Left/254_5_L.wav");
+    case "256_5_L":
+      return require("../audioTestFiles/audioAssets/Left/256_5_L.wav");
+    case "261_5_L":
+      return require("../audioTestFiles/audioAssets/Left/261_5_L.wav");
+    case "294_5_L":
+      return require("../audioTestFiles/audioAssets/Left/294_5_L.wav");
+    case "295_5_L":
+      return require("../audioTestFiles/audioAssets/Left/295_5_L.wav");
+    case "296_5_L":
+      return require("../audioTestFiles/audioAssets/Left/296_5_L.wav");
+    case "313_5_L":
+      return require("../audioTestFiles/audioAssets/Left/313_5_L.wav");
+    case "318_5_L":
+      return require("../audioTestFiles/audioAssets/Left/318_5_L.wav");
+    case "321_5_L":
+      return require("../audioTestFiles/audioAssets/Left/321_5_L.wav");
+    case "322_5_L":
+      return require("../audioTestFiles/audioAssets/Left/322_5_L.wav");
+    case "324_5_L":
+      return require("../audioTestFiles/audioAssets/Left/324_5_L.wav");
+    case "342_5_L":
+      return require("../audioTestFiles/audioAssets/Left/342_5_L.wav");
+    case "343_5_L":
+      return require("../audioTestFiles/audioAssets/Left/343_5_L.wav");
+    case "345_5_L":
+      return require("../audioTestFiles/audioAssets/Left/345_5_L.wav");
+    case "346_5_L":
+      return require("../audioTestFiles/audioAssets/Left/346_5_L.wav");
+    case "353_5_L":
+      return require("../audioTestFiles/audioAssets/Left/353_5_L.wav");
+    case "362_5_L":
+      return require("../audioTestFiles/audioAssets/Left/362_5_L.wav");
+    case "383_5_L":
+      return require("../audioTestFiles/audioAssets/Left/383_5_L.wav");
+    case "384_5_L":
+      return require("../audioTestFiles/audioAssets/Left/384_5_L.wav");
+    case "393_5_L":
+      return require("../audioTestFiles/audioAssets/Left/393_5_L.wav");
+    case "398_5_L":
+      return require("../audioTestFiles/audioAssets/Left/398_5_L.wav");
+    case "436_5_L":
+      return require("../audioTestFiles/audioAssets/Left/436_5_L.wav");
+    case "439_5_L":
+      return require("../audioTestFiles/audioAssets/Left/439_5_L.wav");
+    case "441_5_L":
+      return require("../audioTestFiles/audioAssets/Left/441_5_L.wav");
+    case "452_5_L":
+      return require("../audioTestFiles/audioAssets/Left/452_5_L.wav");
+    case "453_5_L":
+      return require("../audioTestFiles/audioAssets/Left/453_5_L.wav");
+    case "454_5_L":
+      return require("../audioTestFiles/audioAssets/Left/454_5_L.wav");
+    case "464_5_L":
+      return require("../audioTestFiles/audioAssets/Left/464_5_L.wav");
+    case "483_5_L":
+      return require("../audioTestFiles/audioAssets/Left/483_5_L.wav");
+    case "534_5_L":
+      return require("../audioTestFiles/audioAssets/Left/534_5_L.wav");
+    case "556_5_L":
+      return require("../audioTestFiles/audioAssets/Left/556_5_L.wav");
+    case "568_5_L":
+      return require("../audioTestFiles/audioAssets/Left/568_5_L.wav");
+    case "593_5_L":
+      return require("../audioTestFiles/audioAssets/Left/593_5_L.wav");
+    case "599_5_L":
+      return require("../audioTestFiles/audioAssets/Left/599_5_L.wav");
+    case "639_5_L":
+      return require("../audioTestFiles/audioAssets/Left/639_5_L.wav");
+    case "649_5_L":
+      return require("../audioTestFiles/audioAssets/Left/649_5_L.wav");
+    case "658_5_L":
+      return require("../audioTestFiles/audioAssets/Left/658_5_L.wav");
+    case "823_5_L":
+      return require("../audioTestFiles/audioAssets/Left/823_5_L.wav");
+    case "825_5_L":
+      return require("../audioTestFiles/audioAssets/Left/825_5_L.wav");
+    case "828_5_L":
+      return require("../audioTestFiles/audioAssets/Left/828_5_L.wav");
+    case "833_5_L":
+      return require("../audioTestFiles/audioAssets/Left/833_5_L.wav");
+    case "854_5_L":
+      return require("../audioTestFiles/audioAssets/Left/854_5_L.wav");
+    case "856_5_L":
+      return require("../audioTestFiles/audioAssets/Left/856_5_L.wav");
+    case "862_5_L":
+      return require("../audioTestFiles/audioAssets/Left/862_5_L.wav");
+    case "891_5_L":
+      return require("../audioTestFiles/audioAssets/Left/891_5_L.wav");
+    case "916_5_L":
+      return require("../audioTestFiles/audioAssets/Left/916_5_L.wav");
+    case "929_5_L":
+      return require("../audioTestFiles/audioAssets/Left/929_5_L.wav");
+    case "942_5_L":
+      return require("../audioTestFiles/audioAssets/Left/942_5_L.wav");
+    case "989_5_L":
+      return require("../audioTestFiles/audioAssets/Left/989_5_L.wav");
+    case "128_6_L":
+      return require("../audioTestFiles/audioAssets/Left/128_6_L.wav");
+    case "152_6_L":
+      return require("../audioTestFiles/audioAssets/Left/152_6_L.wav");
+    case "154_6_L":
+      return require("../audioTestFiles/audioAssets/Left/154_6_L.wav");
+    case "161_6_L":
+      return require("../audioTestFiles/audioAssets/Left/161_6_L.wav");
+    case "181_6_L":
+      return require("../audioTestFiles/audioAssets/Left/181_6_L.wav");
+    case "182_6_L":
+      return require("../audioTestFiles/audioAssets/Left/182_6_L.wav");
+    case "185_6_L":
+      return require("../audioTestFiles/audioAssets/Left/185_6_L.wav");
+    case "193_6_L":
+      return require("../audioTestFiles/audioAssets/Left/193_6_L.wav");
+    case "194_6_L":
+      return require("../audioTestFiles/audioAssets/Left/194_6_L.wav");
+    case "199_6_L":
+      return require("../audioTestFiles/audioAssets/Left/199_6_L.wav");
+    case "213_6_L":
+      return require("../audioTestFiles/audioAssets/Left/213_6_L.wav");
+    case "216_6_L":
+      return require("../audioTestFiles/audioAssets/Left/216_6_L.wav");
+    case "218_6_L":
+      return require("../audioTestFiles/audioAssets/Left/218_6_L.wav");
+    case "233_6_L":
+      return require("../audioTestFiles/audioAssets/Left/233_6_L.wav");
+    case "243_6_L":
+      return require("../audioTestFiles/audioAssets/Left/243_6_L.wav");
+    case "254_6_L":
+      return require("../audioTestFiles/audioAssets/Left/254_6_L.wav");
+    case "256_6_L":
+      return require("../audioTestFiles/audioAssets/Left/256_6_L.wav");
+    case "261_6_L":
+      return require("../audioTestFiles/audioAssets/Left/261_6_L.wav");
+    case "294_6_L":
+      return require("../audioTestFiles/audioAssets/Left/294_6_L.wav");
+    case "295_6_L":
+      return require("../audioTestFiles/audioAssets/Left/295_6_L.wav");
+    case "296_6_L":
+      return require("../audioTestFiles/audioAssets/Left/296_6_L.wav");
+    case "313_6_L":
+      return require("../audioTestFiles/audioAssets/Left/313_6_L.wav");
+    case "318_6_L":
+      return require("../audioTestFiles/audioAssets/Left/318_6_L.wav");
+    case "321_6_L":
+      return require("../audioTestFiles/audioAssets/Left/321_6_L.wav");
+    case "322_6_L":
+      return require("../audioTestFiles/audioAssets/Left/322_6_L.wav");
+    case "324_6_L":
+      return require("../audioTestFiles/audioAssets/Left/324_6_L.wav");
+    case "342_6_L":
+      return require("../audioTestFiles/audioAssets/Left/342_6_L.wav");
+    case "343_6_L":
+      return require("../audioTestFiles/audioAssets/Left/343_6_L.wav");
+    case "345_6_L":
+      return require("../audioTestFiles/audioAssets/Left/345_6_L.wav");
+    case "346_6_L":
+      return require("../audioTestFiles/audioAssets/Left/346_6_L.wav");
+    case "353_6_L":
+      return require("../audioTestFiles/audioAssets/Left/353_6_L.wav");
+    case "362_6_L":
+      return require("../audioTestFiles/audioAssets/Left/362_6_L.wav");
+    case "383_6_L":
+      return require("../audioTestFiles/audioAssets/Left/383_6_L.wav");
+    case "384_6_L":
+      return require("../audioTestFiles/audioAssets/Left/384_6_L.wav");
+    case "393_6_L":
+      return require("../audioTestFiles/audioAssets/Left/393_6_L.wav");
+    case "398_6_L":
+      return require("../audioTestFiles/audioAssets/Left/398_6_L.wav");
+    case "436_6_L":
+      return require("../audioTestFiles/audioAssets/Left/436_6_L.wav");
+    case "439_6_L":
+      return require("../audioTestFiles/audioAssets/Left/439_6_L.wav");
+    case "441_6_L":
+      return require("../audioTestFiles/audioAssets/Left/441_6_L.wav");
+    case "452_6_L":
+      return require("../audioTestFiles/audioAssets/Left/452_6_L.wav");
+    case "453_6_L":
+      return require("../audioTestFiles/audioAssets/Left/453_6_L.wav");
+    case "454_6_L":
+      return require("../audioTestFiles/audioAssets/Left/454_6_L.wav");
+    case "464_6_L":
+      return require("../audioTestFiles/audioAssets/Left/464_6_L.wav");
+    case "483_6_L":
+      return require("../audioTestFiles/audioAssets/Left/483_6_L.wav");
+    case "534_6_L":
+      return require("../audioTestFiles/audioAssets/Left/534_6_L.wav");
+    case "556_6_L":
+      return require("../audioTestFiles/audioAssets/Left/556_6_L.wav");
+    case "568_6_L":
+      return require("../audioTestFiles/audioAssets/Left/568_6_L.wav");
+    case "593_6_L":
+      return require("../audioTestFiles/audioAssets/Left/593_6_L.wav");
+    case "599_6_L":
+      return require("../audioTestFiles/audioAssets/Left/599_6_L.wav");
+    case "639_6_L":
+      return require("../audioTestFiles/audioAssets/Left/639_6_L.wav");
+    case "649_6_L":
+      return require("../audioTestFiles/audioAssets/Left/649_6_L.wav");
+    case "658_6_L":
+      return require("../audioTestFiles/audioAssets/Left/658_6_L.wav");
+    case "823_6_L":
+      return require("../audioTestFiles/audioAssets/Left/823_6_L.wav");
+    case "825_6_L":
+      return require("../audioTestFiles/audioAssets/Left/825_6_L.wav");
+    case "828_6_L":
+      return require("../audioTestFiles/audioAssets/Left/828_6_L.wav");
+    case "833_6_L":
+      return require("../audioTestFiles/audioAssets/Left/833_6_L.wav");
+    case "854_6_L":
+      return require("../audioTestFiles/audioAssets/Left/854_6_L.wav");
+    case "856_6_L":
+      return require("../audioTestFiles/audioAssets/Left/856_6_L.wav");
+    case "862_6_L":
+      return require("../audioTestFiles/audioAssets/Left/862_6_L.wav");
+    case "891_6_L":
+      return require("../audioTestFiles/audioAssets/Left/891_6_L.wav");
+    case "916_6_L":
+      return require("../audioTestFiles/audioAssets/Left/916_6_L.wav");
+    case "929_6_L":
+      return require("../audioTestFiles/audioAssets/Left/929_6_L.wav");
+    case "942_6_L":
+      return require("../audioTestFiles/audioAssets/Left/942_6_L.wav");
+    case "989_6_L":
+      return require("../audioTestFiles/audioAssets/Left/989_6_L.wav");
+    case "128_7_L":
+      return require("../audioTestFiles/audioAssets/Left/128_7_L.wav");
+    case "152_7_L":
+      return require("../audioTestFiles/audioAssets/Left/152_7_L.wav");
+    case "154_7_L":
+      return require("../audioTestFiles/audioAssets/Left/154_7_L.wav");
+    case "161_7_L":
+      return require("../audioTestFiles/audioAssets/Left/161_7_L.wav");
+    case "181_7_L":
+      return require("../audioTestFiles/audioAssets/Left/181_7_L.wav");
+    case "182_7_L":
+      return require("../audioTestFiles/audioAssets/Left/182_7_L.wav");
+    case "185_7_L":
+      return require("../audioTestFiles/audioAssets/Left/185_7_L.wav");
+    case "193_7_L":
+      return require("../audioTestFiles/audioAssets/Left/193_7_L.wav");
+    case "194_7_L":
+      return require("../audioTestFiles/audioAssets/Left/194_7_L.wav");
+    case "199_7_L":
+      return require("../audioTestFiles/audioAssets/Left/199_7_L.wav");
+    case "213_7_L":
+      return require("../audioTestFiles/audioAssets/Left/213_7_L.wav");
+    case "216_7_L":
+      return require("../audioTestFiles/audioAssets/Left/216_7_L.wav");
+    case "218_7_L":
+      return require("../audioTestFiles/audioAssets/Left/218_7_L.wav");
+    case "233_7_L":
+      return require("../audioTestFiles/audioAssets/Left/233_7_L.wav");
+    case "243_7_L":
+      return require("../audioTestFiles/audioAssets/Left/243_7_L.wav");
+    case "254_7_L":
+      return require("../audioTestFiles/audioAssets/Left/254_7_L.wav");
+    case "256_7_L":
+      return require("../audioTestFiles/audioAssets/Left/256_7_L.wav");
+    case "261_7_L":
+      return require("../audioTestFiles/audioAssets/Left/261_7_L.wav");
+    case "294_7_L":
+      return require("../audioTestFiles/audioAssets/Left/294_7_L.wav");
+    case "295_7_L":
+      return require("../audioTestFiles/audioAssets/Left/295_7_L.wav");
+    case "296_7_L":
+      return require("../audioTestFiles/audioAssets/Left/296_7_L.wav");
+    case "313_7_L":
+      return require("../audioTestFiles/audioAssets/Left/313_7_L.wav");
+    case "318_7_L":
+      return require("../audioTestFiles/audioAssets/Left/318_7_L.wav");
+    case "321_7_L":
+      return require("../audioTestFiles/audioAssets/Left/321_7_L.wav");
+    case "322_7_L":
+      return require("../audioTestFiles/audioAssets/Left/322_7_L.wav");
+    case "324_7_L":
+      return require("../audioTestFiles/audioAssets/Left/324_7_L.wav");
+    case "342_7_L":
+      return require("../audioTestFiles/audioAssets/Left/342_7_L.wav");
+    case "343_7_L":
+      return require("../audioTestFiles/audioAssets/Left/343_7_L.wav");
+    case "345_7_L":
+      return require("../audioTestFiles/audioAssets/Left/345_7_L.wav");
+    case "346_7_L":
+      return require("../audioTestFiles/audioAssets/Left/346_7_L.wav");
+    case "353_7_L":
+      return require("../audioTestFiles/audioAssets/Left/353_7_L.wav");
+    case "362_7_L":
+      return require("../audioTestFiles/audioAssets/Left/362_7_L.wav");
+    case "383_7_L":
+      return require("../audioTestFiles/audioAssets/Left/383_7_L.wav");
+    case "384_7_L":
+      return require("../audioTestFiles/audioAssets/Left/384_7_L.wav");
+    case "393_7_L":
+      return require("../audioTestFiles/audioAssets/Left/393_7_L.wav");
+    case "398_7_L":
+      return require("../audioTestFiles/audioAssets/Left/398_7_L.wav");
+    case "436_7_L":
+      return require("../audioTestFiles/audioAssets/Left/436_7_L.wav");
+    case "439_7_L":
+      return require("../audioTestFiles/audioAssets/Left/439_7_L.wav");
+    case "441_7_L":
+      return require("../audioTestFiles/audioAssets/Left/441_7_L.wav");
+    case "452_7_L":
+      return require("../audioTestFiles/audioAssets/Left/452_7_L.wav");
+    case "453_7_L":
+      return require("../audioTestFiles/audioAssets/Left/453_7_L.wav");
+    case "454_7_L":
+      return require("../audioTestFiles/audioAssets/Left/454_7_L.wav");
+    case "464_7_L":
+      return require("../audioTestFiles/audioAssets/Left/464_7_L.wav");
+    case "483_7_L":
+      return require("../audioTestFiles/audioAssets/Left/483_7_L.wav");
+    case "534_7_L":
+      return require("../audioTestFiles/audioAssets/Left/534_7_L.wav");
+    case "556_7_L":
+      return require("../audioTestFiles/audioAssets/Left/556_7_L.wav");
+    case "568_7_L":
+      return require("../audioTestFiles/audioAssets/Left/568_7_L.wav");
+    case "593_7_L":
+      return require("../audioTestFiles/audioAssets/Left/593_7_L.wav");
+    case "599_7_L":
+      return require("../audioTestFiles/audioAssets/Left/599_7_L.wav");
+    case "639_7_L":
+      return require("../audioTestFiles/audioAssets/Left/639_7_L.wav");
+    case "649_7_L":
+      return require("../audioTestFiles/audioAssets/Left/649_7_L.wav");
+    case "658_7_L":
+      return require("../audioTestFiles/audioAssets/Left/658_7_L.wav");
+    case "823_7_L":
+      return require("../audioTestFiles/audioAssets/Left/823_7_L.wav");
+    case "825_7_L":
+      return require("../audioTestFiles/audioAssets/Left/825_7_L.wav");
+    case "828_7_L":
+      return require("../audioTestFiles/audioAssets/Left/828_7_L.wav");
+    case "833_7_L":
+      return require("../audioTestFiles/audioAssets/Left/833_7_L.wav");
+    case "854_7_L":
+      return require("../audioTestFiles/audioAssets/Left/854_7_L.wav");
+    case "856_7_L":
+      return require("../audioTestFiles/audioAssets/Left/856_7_L.wav");
+    case "862_7_L":
+      return require("../audioTestFiles/audioAssets/Left/862_7_L.wav");
+    case "891_7_L":
+      return require("../audioTestFiles/audioAssets/Left/891_7_L.wav");
+    case "916_7_L":
+      return require("../audioTestFiles/audioAssets/Left/916_7_L.wav");
+    case "929_7_L":
+      return require("../audioTestFiles/audioAssets/Left/929_7_L.wav");
+    case "942_7_L":
+      return require("../audioTestFiles/audioAssets/Left/942_7_L.wav");
+    case "989_7_L":
+      return require("../audioTestFiles/audioAssets/Left/989_7_L.wav");
+    case "128_8_L":
+      return require("../audioTestFiles/audioAssets/Left/128_8_L.wav");
+    case "152_8_L":
+      return require("../audioTestFiles/audioAssets/Left/152_8_L.wav");
+    case "154_8_L":
+      return require("../audioTestFiles/audioAssets/Left/154_8_L.wav");
+    case "161_8_L":
+      return require("../audioTestFiles/audioAssets/Left/161_8_L.wav");
+    case "181_8_L":
+      return require("../audioTestFiles/audioAssets/Left/181_8_L.wav");
+    case "182_8_L":
+      return require("../audioTestFiles/audioAssets/Left/182_8_L.wav");
+    case "185_8_L":
+      return require("../audioTestFiles/audioAssets/Left/185_8_L.wav");
+    case "193_8_L":
+      return require("../audioTestFiles/audioAssets/Left/193_8_L.wav");
+    case "194_8_L":
+      return require("../audioTestFiles/audioAssets/Left/194_8_L.wav");
+    case "199_8_L":
+      return require("../audioTestFiles/audioAssets/Left/199_8_L.wav");
+    case "213_8_L":
+      return require("../audioTestFiles/audioAssets/Left/213_8_L.wav");
+    case "216_8_L":
+      return require("../audioTestFiles/audioAssets/Left/216_8_L.wav");
+    case "218_8_L":
+      return require("../audioTestFiles/audioAssets/Left/218_8_L.wav");
+    case "233_8_L":
+      return require("../audioTestFiles/audioAssets/Left/233_8_L.wav");
+    case "243_8_L":
+      return require("../audioTestFiles/audioAssets/Left/243_8_L.wav");
+    case "254_8_L":
+      return require("../audioTestFiles/audioAssets/Left/254_8_L.wav");
+    case "256_8_L":
+      return require("../audioTestFiles/audioAssets/Left/256_8_L.wav");
+    case "261_8_L":
+      return require("../audioTestFiles/audioAssets/Left/261_8_L.wav");
+    case "294_8_L":
+      return require("../audioTestFiles/audioAssets/Left/294_8_L.wav");
+    case "295_8_L":
+      return require("../audioTestFiles/audioAssets/Left/295_8_L.wav");
+    case "296_8_L":
+      return require("../audioTestFiles/audioAssets/Left/296_8_L.wav");
+    case "313_8_L":
+      return require("../audioTestFiles/audioAssets/Left/313_8_L.wav");
+    case "318_8_L":
+      return require("../audioTestFiles/audioAssets/Left/318_8_L.wav");
+    case "321_8_L":
+      return require("../audioTestFiles/audioAssets/Left/321_8_L.wav");
+    case "322_8_L":
+      return require("../audioTestFiles/audioAssets/Left/322_8_L.wav");
+    case "324_8_L":
+      return require("../audioTestFiles/audioAssets/Left/324_8_L.wav");
+    case "342_8_L":
+      return require("../audioTestFiles/audioAssets/Left/342_8_L.wav");
+    case "343_8_L":
+      return require("../audioTestFiles/audioAssets/Left/343_8_L.wav");
+    case "345_8_L":
+      return require("../audioTestFiles/audioAssets/Left/345_8_L.wav");
+    case "346_8_L":
+      return require("../audioTestFiles/audioAssets/Left/346_8_L.wav");
+    case "353_8_L":
+      return require("../audioTestFiles/audioAssets/Left/353_8_L.wav");
+    case "362_8_L":
+      return require("../audioTestFiles/audioAssets/Left/362_8_L.wav");
+    case "383_8_L":
+      return require("../audioTestFiles/audioAssets/Left/383_8_L.wav");
+    case "384_8_L":
+      return require("../audioTestFiles/audioAssets/Left/384_8_L.wav");
+    case "393_8_L":
+      return require("../audioTestFiles/audioAssets/Left/393_8_L.wav");
+    case "398_8_L":
+      return require("../audioTestFiles/audioAssets/Left/398_8_L.wav");
+    case "436_8_L":
+      return require("../audioTestFiles/audioAssets/Left/436_8_L.wav");
+    case "439_8_L":
+      return require("../audioTestFiles/audioAssets/Left/439_8_L.wav");
+    case "441_8_L":
+      return require("../audioTestFiles/audioAssets/Left/441_8_L.wav");
+    case "452_8_L":
+      return require("../audioTestFiles/audioAssets/Left/452_8_L.wav");
+    case "453_8_L":
+      return require("../audioTestFiles/audioAssets/Left/453_8_L.wav");
+    case "454_8_L":
+      return require("../audioTestFiles/audioAssets/Left/454_8_L.wav");
+    case "464_8_L":
+      return require("../audioTestFiles/audioAssets/Left/464_8_L.wav");
+    case "483_8_L":
+      return require("../audioTestFiles/audioAssets/Left/483_8_L.wav");
+    case "534_8_L":
+      return require("../audioTestFiles/audioAssets/Left/534_8_L.wav");
+    case "556_8_L":
+      return require("../audioTestFiles/audioAssets/Left/556_8_L.wav");
+    case "568_8_L":
+      return require("../audioTestFiles/audioAssets/Left/568_8_L.wav");
+    case "593_8_L":
+      return require("../audioTestFiles/audioAssets/Left/593_8_L.wav");
+    case "599_8_L":
+      return require("../audioTestFiles/audioAssets/Left/599_8_L.wav");
+    case "639_8_L":
+      return require("../audioTestFiles/audioAssets/Left/639_8_L.wav");
+    case "649_8_L":
+      return require("../audioTestFiles/audioAssets/Left/649_8_L.wav");
+    case "658_8_L":
+      return require("../audioTestFiles/audioAssets/Left/658_8_L.wav");
+    case "823_8_L":
+      return require("../audioTestFiles/audioAssets/Left/823_8_L.wav");
+    case "825_8_L":
+      return require("../audioTestFiles/audioAssets/Left/825_8_L.wav");
+    case "828_8_L":
+      return require("../audioTestFiles/audioAssets/Left/828_8_L.wav");
+    case "833_8_L":
+      return require("../audioTestFiles/audioAssets/Left/833_8_L.wav");
+    case "854_8_L":
+      return require("../audioTestFiles/audioAssets/Left/854_8_L.wav");
+    case "856_8_L":
+      return require("../audioTestFiles/audioAssets/Left/856_8_L.wav");
+    case "862_8_L":
+      return require("../audioTestFiles/audioAssets/Left/862_8_L.wav");
+    case "891_8_L":
+      return require("../audioTestFiles/audioAssets/Left/891_8_L.wav");
+    case "916_8_L":
+      return require("../audioTestFiles/audioAssets/Left/916_8_L.wav");
+    case "929_8_L":
+      return require("../audioTestFiles/audioAssets/Left/929_8_L.wav");
+    case "942_8_L":
+      return require("../audioTestFiles/audioAssets/Left/942_8_L.wav");
+    case "989_8_L":
+      return require("../audioTestFiles/audioAssets/Left/989_8_L.wav");
+    case "128_9_L":
+      return require("../audioTestFiles/audioAssets/Left/128_9_L.wav");
+    case "152_9_L":
+      return require("../audioTestFiles/audioAssets/Left/152_9_L.wav");
+    case "154_9_L":
+      return require("../audioTestFiles/audioAssets/Left/154_9_L.wav");
+    case "161_9_L":
+      return require("../audioTestFiles/audioAssets/Left/161_9_L.wav");
+    case "181_9_L":
+      return require("../audioTestFiles/audioAssets/Left/181_9_L.wav");
+    case "182_9_L":
+      return require("../audioTestFiles/audioAssets/Left/182_9_L.wav");
+    case "185_9_L":
+      return require("../audioTestFiles/audioAssets/Left/185_9_L.wav");
+    case "193_9_L":
+      return require("../audioTestFiles/audioAssets/Left/193_9_L.wav");
+    case "194_9_L":
+      return require("../audioTestFiles/audioAssets/Left/194_9_L.wav");
+    case "199_9_L":
+      return require("../audioTestFiles/audioAssets/Left/199_9_L.wav");
+    case "213_9_L":
+      return require("../audioTestFiles/audioAssets/Left/213_9_L.wav");
+    case "216_9_L":
+      return require("../audioTestFiles/audioAssets/Left/216_9_L.wav");
+    case "218_9_L":
+      return require("../audioTestFiles/audioAssets/Left/218_9_L.wav");
+    case "233_9_L":
+      return require("../audioTestFiles/audioAssets/Left/233_9_L.wav");
+    case "243_9_L":
+      return require("../audioTestFiles/audioAssets/Left/243_9_L.wav");
+    case "254_9_L":
+      return require("../audioTestFiles/audioAssets/Left/254_9_L.wav");
+    case "256_9_L":
+      return require("../audioTestFiles/audioAssets/Left/256_9_L.wav");
+    case "261_9_L":
+      return require("../audioTestFiles/audioAssets/Left/261_9_L.wav");
+    case "294_9_L":
+      return require("../audioTestFiles/audioAssets/Left/294_9_L.wav");
+    case "295_9_L":
+      return require("../audioTestFiles/audioAssets/Left/295_9_L.wav");
+    case "296_9_L":
+      return require("../audioTestFiles/audioAssets/Left/296_9_L.wav");
+    case "313_9_L":
+      return require("../audioTestFiles/audioAssets/Left/313_9_L.wav");
+    case "318_9_L":
+      return require("../audioTestFiles/audioAssets/Left/318_9_L.wav");
+    case "321_9_L":
+      return require("../audioTestFiles/audioAssets/Left/321_9_L.wav");
+    case "322_9_L":
+      return require("../audioTestFiles/audioAssets/Left/322_9_L.wav");
+    case "324_9_L":
+      return require("../audioTestFiles/audioAssets/Left/324_9_L.wav");
+    case "342_9_L":
+      return require("../audioTestFiles/audioAssets/Left/342_9_L.wav");
+    case "343_9_L":
+      return require("../audioTestFiles/audioAssets/Left/343_9_L.wav");
+    case "345_9_L":
+      return require("../audioTestFiles/audioAssets/Left/345_9_L.wav");
+    case "346_9_L":
+      return require("../audioTestFiles/audioAssets/Left/346_9_L.wav");
+    case "353_9_L":
+      return require("../audioTestFiles/audioAssets/Left/353_9_L.wav");
+    case "362_9_L":
+      return require("../audioTestFiles/audioAssets/Left/362_9_L.wav");
+    case "383_9_L":
+      return require("../audioTestFiles/audioAssets/Left/383_9_L.wav");
+    case "384_9_L":
+      return require("../audioTestFiles/audioAssets/Left/384_9_L.wav");
+    case "393_9_L":
+      return require("../audioTestFiles/audioAssets/Left/393_9_L.wav");
+    case "398_9_L":
+      return require("../audioTestFiles/audioAssets/Left/398_9_L.wav");
+    case "436_9_L":
+      return require("../audioTestFiles/audioAssets/Left/436_9_L.wav");
+    case "439_9_L":
+      return require("../audioTestFiles/audioAssets/Left/439_9_L.wav");
+    case "441_9_L":
+      return require("../audioTestFiles/audioAssets/Left/441_9_L.wav");
+    case "452_9_L":
+      return require("../audioTestFiles/audioAssets/Left/452_9_L.wav");
+    case "453_9_L":
+      return require("../audioTestFiles/audioAssets/Left/453_9_L.wav");
+    case "454_9_L":
+      return require("../audioTestFiles/audioAssets/Left/454_9_L.wav");
+    case "464_9_L":
+      return require("../audioTestFiles/audioAssets/Left/464_9_L.wav");
+    case "483_9_L":
+      return require("../audioTestFiles/audioAssets/Left/483_9_L.wav");
+    case "534_9_L":
+      return require("../audioTestFiles/audioAssets/Left/534_9_L.wav");
+    case "556_9_L":
+      return require("../audioTestFiles/audioAssets/Left/556_9_L.wav");
+    case "568_9_L":
+      return require("../audioTestFiles/audioAssets/Left/568_9_L.wav");
+    case "593_9_L":
+      return require("../audioTestFiles/audioAssets/Left/593_9_L.wav");
+    case "599_9_L":
+      return require("../audioTestFiles/audioAssets/Left/599_9_L.wav");
+    case "639_9_L":
+      return require("../audioTestFiles/audioAssets/Left/639_9_L.wav");
+    case "649_9_L":
+      return require("../audioTestFiles/audioAssets/Left/649_9_L.wav");
+    case "658_9_L":
+      return require("../audioTestFiles/audioAssets/Left/658_9_L.wav");
+    case "823_9_L":
+      return require("../audioTestFiles/audioAssets/Left/823_9_L.wav");
+    case "825_9_L":
+      return require("../audioTestFiles/audioAssets/Left/825_9_L.wav");
+    case "828_9_L":
+      return require("../audioTestFiles/audioAssets/Left/828_9_L.wav");
+    case "833_9_L":
+      return require("../audioTestFiles/audioAssets/Left/833_9_L.wav");
+    case "854_9_L":
+      return require("../audioTestFiles/audioAssets/Left/854_9_L.wav");
+    case "856_9_L":
+      return require("../audioTestFiles/audioAssets/Left/856_9_L.wav");
+    case "862_9_L":
+      return require("../audioTestFiles/audioAssets/Left/862_9_L.wav");
+    case "891_9_L":
+      return require("../audioTestFiles/audioAssets/Left/891_9_L.wav");
+    case "916_9_L":
+      return require("../audioTestFiles/audioAssets/Left/916_9_L.wav");
+    case "929_9_L":
+      return require("../audioTestFiles/audioAssets/Left/929_9_L.wav");
+    case "942_9_L":
+      return require("../audioTestFiles/audioAssets/Left/942_9_L.wav");
+    case "989_9_L":
+      return require("../audioTestFiles/audioAssets/Left/989_9_L.wav");
+
+    // right ear values
+    case "128_1_R":
+      return require("../audioTestFiles/audioAssets/Right/128_1_R.wav");
+    case "152_1_R":
+      return require("../audioTestFiles/audioAssets/Right/152_1_R.wav");
+    case "154_1_R":
+      return require("../audioTestFiles/audioAssets/Right/154_1_R.wav");
+    case "161_1_R":
+      return require("../audioTestFiles/audioAssets/Right/161_1_R.wav");
+    case "181_1_R":
+      return require("../audioTestFiles/audioAssets/Right/181_1_R.wav");
+    case "182_1_R":
+      return require("../audioTestFiles/audioAssets/Right/182_1_R.wav");
+    case "185_1_R":
+      return require("../audioTestFiles/audioAssets/Right/185_1_R.wav");
+    case "193_1_R":
+      return require("../audioTestFiles/audioAssets/Right/193_1_R.wav");
+    case "194_1_R":
+      return require("../audioTestFiles/audioAssets/Right/194_1_R.wav");
+    case "199_1_R":
+      return require("../audioTestFiles/audioAssets/Right/199_1_R.wav");
+    case "213_1_R":
+      return require("../audioTestFiles/audioAssets/Right/213_1_R.wav");
+    case "216_1_R":
+      return require("../audioTestFiles/audioAssets/Right/216_1_R.wav");
+    case "218_1_R":
+      return require("../audioTestFiles/audioAssets/Right/218_1_R.wav");
+    case "233_1_R":
+      return require("../audioTestFiles/audioAssets/Right/233_1_R.wav");
+    case "243_1_R":
+      return require("../audioTestFiles/audioAssets/Right/243_1_R.wav");
+    case "254_1_R":
+      return require("../audioTestFiles/audioAssets/Right/254_1_R.wav");
+    case "256_1_R":
+      return require("../audioTestFiles/audioAssets/Right/256_1_R.wav");
+    case "261_1_R":
+      return require("../audioTestFiles/audioAssets/Right/261_1_R.wav");
+    case "294_1_R":
+      return require("../audioTestFiles/audioAssets/Right/294_1_R.wav");
+    case "295_1_R":
+      return require("../audioTestFiles/audioAssets/Right/295_1_R.wav");
+    case "296_1_R":
+      return require("../audioTestFiles/audioAssets/Right/296_1_R.wav");
+    case "313_1_R":
+      return require("../audioTestFiles/audioAssets/Right/313_1_R.wav");
+    case "318_1_R":
+      return require("../audioTestFiles/audioAssets/Right/318_1_R.wav");
+    case "321_1_R":
+      return require("../audioTestFiles/audioAssets/Right/321_1_R.wav");
+    case "322_1_R":
+      return require("../audioTestFiles/audioAssets/Right/322_1_R.wav");
+    case "324_1_R":
+      return require("../audioTestFiles/audioAssets/Right/324_1_R.wav");
+    case "342_1_R":
+      return require("../audioTestFiles/audioAssets/Right/342_1_R.wav");
+    case "343_1_R":
+      return require("../audioTestFiles/audioAssets/Right/343_1_R.wav");
+    case "345_1_R":
+      return require("../audioTestFiles/audioAssets/Right/345_1_R.wav");
+    case "346_1_R":
+      return require("../audioTestFiles/audioAssets/Right/346_1_R.wav");
+    case "353_1_R":
+      return require("../audioTestFiles/audioAssets/Right/353_1_R.wav");
+    case "362_1_R":
+      return require("../audioTestFiles/audioAssets/Right/362_1_R.wav");
+    case "383_1_R":
+      return require("../audioTestFiles/audioAssets/Right/383_1_R.wav");
+    case "384_1_R":
+      return require("../audioTestFiles/audioAssets/Right/384_1_R.wav");
+    case "393_1_R":
+      return require("../audioTestFiles/audioAssets/Right/393_1_R.wav");
+    case "398_1_R":
+      return require("../audioTestFiles/audioAssets/Right/398_1_R.wav");
+    case "436_1_R":
+      return require("../audioTestFiles/audioAssets/Right/436_1_R.wav");
+    case "439_1_R":
+      return require("../audioTestFiles/audioAssets/Right/439_1_R.wav");
+    case "441_1_R":
+      return require("../audioTestFiles/audioAssets/Right/441_1_R.wav");
+    case "452_1_R":
+      return require("../audioTestFiles/audioAssets/Right/452_1_R.wav");
+    case "453_1_R":
+      return require("../audioTestFiles/audioAssets/Right/453_1_R.wav");
+    case "454_1_R":
+      return require("../audioTestFiles/audioAssets/Right/454_1_R.wav");
+    case "464_1_R":
+      return require("../audioTestFiles/audioAssets/Right/464_1_R.wav");
+    case "483_1_R":
+      return require("../audioTestFiles/audioAssets/Right/483_1_R.wav");
+    case "534_1_R":
+      return require("../audioTestFiles/audioAssets/Right/534_1_R.wav");
+    case "556_1_R":
+      return require("../audioTestFiles/audioAssets/Right/556_1_R.wav");
+    case "568_1_R":
+      return require("../audioTestFiles/audioAssets/Right/568_1_R.wav");
+    case "593_1_R":
+      return require("../audioTestFiles/audioAssets/Right/593_1_R.wav");
+    case "599_1_R":
+      return require("../audioTestFiles/audioAssets/Right/599_1_R.wav");
+    case "639_1_R":
+      return require("../audioTestFiles/audioAssets/Right/639_1_R.wav");
+    case "649_1_R":
+      return require("../audioTestFiles/audioAssets/Right/649_1_R.wav");
+    case "658_1_R":
+      return require("../audioTestFiles/audioAssets/Right/658_1_R.wav");
+    case "823_1_R":
+      return require("../audioTestFiles/audioAssets/Right/823_1_R.wav");
+    case "825_1_R":
+      return require("../audioTestFiles/audioAssets/Right/825_1_R.wav");
+    case "828_1_R":
+      return require("../audioTestFiles/audioAssets/Right/828_1_R.wav");
+    case "833_1_R":
+      return require("../audioTestFiles/audioAssets/Right/833_1_R.wav");
+    case "854_1_R":
+      return require("../audioTestFiles/audioAssets/Right/854_1_R.wav");
+    case "856_1_R":
+      return require("../audioTestFiles/audioAssets/Right/856_1_R.wav");
+    case "862_1_R":
+      return require("../audioTestFiles/audioAssets/Right/862_1_R.wav");
+    case "891_1_R":
+      return require("../audioTestFiles/audioAssets/Right/891_1_R.wav");
+    case "916_1_R":
+      return require("../audioTestFiles/audioAssets/Right/916_1_R.wav");
+    case "929_1_R":
+      return require("../audioTestFiles/audioAssets/Right/929_1_R.wav");
+    case "942_1_R":
+      return require("../audioTestFiles/audioAssets/Right/942_1_R.wav");
+    case "989_1_R":
+      return require("../audioTestFiles/audioAssets/Right/989_1_R.wav");
+    case "128_2_R":
+      return require("../audioTestFiles/audioAssets/Right/128_2_R.wav");
+    case "152_2_R":
+      return require("../audioTestFiles/audioAssets/Right/152_2_R.wav");
+    case "154_2_R":
+      return require("../audioTestFiles/audioAssets/Right/154_2_R.wav");
+    case "161_2_R":
+      return require("../audioTestFiles/audioAssets/Right/161_2_R.wav");
+    case "181_2_R":
+      return require("../audioTestFiles/audioAssets/Right/181_2_R.wav");
+    case "182_2_R":
+      return require("../audioTestFiles/audioAssets/Right/182_2_R.wav");
+    case "185_2_R":
+      return require("../audioTestFiles/audioAssets/Right/185_2_R.wav");
+    case "193_2_R":
+      return require("../audioTestFiles/audioAssets/Right/193_2_R.wav");
+    case "194_2_R":
+      return require("../audioTestFiles/audioAssets/Right/194_2_R.wav");
+    case "199_2_R":
+      return require("../audioTestFiles/audioAssets/Right/199_2_R.wav");
+    case "213_2_R":
+      return require("../audioTestFiles/audioAssets/Right/213_2_R.wav");
+    case "216_2_R":
+      return require("../audioTestFiles/audioAssets/Right/216_2_R.wav");
+    case "218_2_R":
+      return require("../audioTestFiles/audioAssets/Right/218_2_R.wav");
+    case "233_2_R":
+      return require("../audioTestFiles/audioAssets/Right/233_2_R.wav");
+    case "243_2_R":
+      return require("../audioTestFiles/audioAssets/Right/243_2_R.wav");
+    case "254_2_R":
+      return require("../audioTestFiles/audioAssets/Right/254_2_R.wav");
+    case "256_2_R":
+      return require("../audioTestFiles/audioAssets/Right/256_2_R.wav");
+    case "261_2_R":
+      return require("../audioTestFiles/audioAssets/Right/261_2_R.wav");
+    case "294_2_R":
+      return require("../audioTestFiles/audioAssets/Right/294_2_R.wav");
+    case "295_2_R":
+      return require("../audioTestFiles/audioAssets/Right/295_2_R.wav");
+    case "296_2_R":
+      return require("../audioTestFiles/audioAssets/Right/296_2_R.wav");
+    case "313_2_R":
+      return require("../audioTestFiles/audioAssets/Right/313_2_R.wav");
+    case "318_2_R":
+      return require("../audioTestFiles/audioAssets/Right/318_2_R.wav");
+    case "321_2_R":
+      return require("../audioTestFiles/audioAssets/Right/321_2_R.wav");
+    case "322_2_R":
+      return require("../audioTestFiles/audioAssets/Right/322_2_R.wav");
+    case "324_2_R":
+      return require("../audioTestFiles/audioAssets/Right/324_2_R.wav");
+    case "342_2_R":
+      return require("../audioTestFiles/audioAssets/Right/342_2_R.wav");
+    case "343_2_R":
+      return require("../audioTestFiles/audioAssets/Right/343_2_R.wav");
+    case "345_2_R":
+      return require("../audioTestFiles/audioAssets/Right/345_2_R.wav");
+    case "346_2_R":
+      return require("../audioTestFiles/audioAssets/Right/346_2_R.wav");
+    case "353_2_R":
+      return require("../audioTestFiles/audioAssets/Right/353_2_R.wav");
+    case "362_2_R":
+      return require("../audioTestFiles/audioAssets/Right/362_2_R.wav");
+    case "383_2_R":
+      return require("../audioTestFiles/audioAssets/Right/383_2_R.wav");
+    case "384_2_R":
+      return require("../audioTestFiles/audioAssets/Right/384_2_R.wav");
+    case "393_2_R":
+      return require("../audioTestFiles/audioAssets/Right/393_2_R.wav");
+    case "398_2_R":
+      return require("../audioTestFiles/audioAssets/Right/398_2_R.wav");
+    case "436_2_R":
+      return require("../audioTestFiles/audioAssets/Right/436_2_R.wav");
+    case "439_2_R":
+      return require("../audioTestFiles/audioAssets/Right/439_2_R.wav");
+    case "441_2_R":
+      return require("../audioTestFiles/audioAssets/Right/441_2_R.wav");
+    case "452_2_R":
+      return require("../audioTestFiles/audioAssets/Right/452_2_R.wav");
+    case "453_2_R":
+      return require("../audioTestFiles/audioAssets/Right/453_2_R.wav");
+    case "454_2_R":
+      return require("../audioTestFiles/audioAssets/Right/454_2_R.wav");
+    case "464_2_R":
+      return require("../audioTestFiles/audioAssets/Right/464_2_R.wav");
+    case "483_2_R":
+      return require("../audioTestFiles/audioAssets/Right/483_2_R.wav");
+    case "534_2_R":
+      return require("../audioTestFiles/audioAssets/Right/534_2_R.wav");
+    case "556_2_R":
+      return require("../audioTestFiles/audioAssets/Right/556_2_R.wav");
+    case "568_2_R":
+      return require("../audioTestFiles/audioAssets/Right/568_2_R.wav");
+    case "593_2_R":
+      return require("../audioTestFiles/audioAssets/Right/593_2_R.wav");
+    case "599_2_R":
+      return require("../audioTestFiles/audioAssets/Right/599_2_R.wav");
+    case "639_2_R":
+      return require("../audioTestFiles/audioAssets/Right/639_2_R.wav");
+    case "649_2_R":
+      return require("../audioTestFiles/audioAssets/Right/649_2_R.wav");
+    case "658_2_R":
+      return require("../audioTestFiles/audioAssets/Right/658_2_R.wav");
+    case "823_2_R":
+      return require("../audioTestFiles/audioAssets/Right/823_2_R.wav");
+    case "825_2_R":
+      return require("../audioTestFiles/audioAssets/Right/825_2_R.wav");
+    case "828_2_R":
+      return require("../audioTestFiles/audioAssets/Right/828_2_R.wav");
+    case "833_2_R":
+      return require("../audioTestFiles/audioAssets/Right/833_2_R.wav");
+    case "854_2_R":
+      return require("../audioTestFiles/audioAssets/Right/854_2_R.wav");
+    case "856_2_R":
+      return require("../audioTestFiles/audioAssets/Right/856_2_R.wav");
+    case "862_2_R":
+      return require("../audioTestFiles/audioAssets/Right/862_2_R.wav");
+    case "891_2_R":
+      return require("../audioTestFiles/audioAssets/Right/891_2_R.wav");
+    case "916_2_R":
+      return require("../audioTestFiles/audioAssets/Right/916_2_R.wav");
+    case "929_2_R":
+      return require("../audioTestFiles/audioAssets/Right/929_2_R.wav");
+    case "942_2_R":
+      return require("../audioTestFiles/audioAssets/Right/942_2_R.wav");
+    case "989_2_R":
+      return require("../audioTestFiles/audioAssets/Right/989_2_R.wav");
+    case "128_3_R":
+      return require("../audioTestFiles/audioAssets/Right/128_3_R.wav");
+    case "152_3_R":
+      return require("../audioTestFiles/audioAssets/Right/152_3_R.wav");
+    case "154_3_R":
+      return require("../audioTestFiles/audioAssets/Right/154_3_R.wav");
+    case "161_3_R":
+      return require("../audioTestFiles/audioAssets/Right/161_3_R.wav");
+    case "181_3_R":
+      return require("../audioTestFiles/audioAssets/Right/181_3_R.wav");
+    case "182_3_R":
+      return require("../audioTestFiles/audioAssets/Right/182_3_R.wav");
+    case "185_3_R":
+      return require("../audioTestFiles/audioAssets/Right/185_3_R.wav");
+    case "193_3_R":
+      return require("../audioTestFiles/audioAssets/Right/193_3_R.wav");
+    case "194_3_R":
+      return require("../audioTestFiles/audioAssets/Right/194_3_R.wav");
+    case "199_3_R":
+      return require("../audioTestFiles/audioAssets/Right/199_3_R.wav");
+    case "213_3_R":
+      return require("../audioTestFiles/audioAssets/Right/213_3_R.wav");
+    case "216_3_R":
+      return require("../audioTestFiles/audioAssets/Right/216_3_R.wav");
+    case "218_3_R":
+      return require("../audioTestFiles/audioAssets/Right/218_3_R.wav");
+    case "233_3_R":
+      return require("../audioTestFiles/audioAssets/Right/233_3_R.wav");
+    case "243_3_R":
+      return require("../audioTestFiles/audioAssets/Right/243_3_R.wav");
+    case "254_3_R":
+      return require("../audioTestFiles/audioAssets/Right/254_3_R.wav");
+    case "256_3_R":
+      return require("../audioTestFiles/audioAssets/Right/256_3_R.wav");
+    case "261_3_R":
+      return require("../audioTestFiles/audioAssets/Right/261_3_R.wav");
+    case "294_3_R":
+      return require("../audioTestFiles/audioAssets/Right/294_3_R.wav");
+    case "295_3_R":
+      return require("../audioTestFiles/audioAssets/Right/295_3_R.wav");
+    case "296_3_R":
+      return require("../audioTestFiles/audioAssets/Right/296_3_R.wav");
+    case "313_3_R":
+      return require("../audioTestFiles/audioAssets/Right/313_3_R.wav");
+    case "318_3_R":
+      return require("../audioTestFiles/audioAssets/Right/318_3_R.wav");
+    case "321_3_R":
+      return require("../audioTestFiles/audioAssets/Right/321_3_R.wav");
+    case "322_3_R":
+      return require("../audioTestFiles/audioAssets/Right/322_3_R.wav");
+    case "324_3_R":
+      return require("../audioTestFiles/audioAssets/Right/324_3_R.wav");
+    case "342_3_R":
+      return require("../audioTestFiles/audioAssets/Right/342_3_R.wav");
+    case "343_3_R":
+      return require("../audioTestFiles/audioAssets/Right/343_3_R.wav");
+    case "345_3_R":
+      return require("../audioTestFiles/audioAssets/Right/345_3_R.wav");
+    case "346_3_R":
+      return require("../audioTestFiles/audioAssets/Right/346_3_R.wav");
+    case "353_3_R":
+      return require("../audioTestFiles/audioAssets/Right/353_3_R.wav");
+    case "362_3_R":
+      return require("../audioTestFiles/audioAssets/Right/362_3_R.wav");
+    case "383_3_R":
+      return require("../audioTestFiles/audioAssets/Right/383_3_R.wav");
+    case "384_3_R":
+      return require("../audioTestFiles/audioAssets/Right/384_3_R.wav");
+    case "393_3_R":
+      return require("../audioTestFiles/audioAssets/Right/393_3_R.wav");
+    case "398_3_R":
+      return require("../audioTestFiles/audioAssets/Right/398_3_R.wav");
+    case "436_3_R":
+      return require("../audioTestFiles/audioAssets/Right/436_3_R.wav");
+    case "439_3_R":
+      return require("../audioTestFiles/audioAssets/Right/439_3_R.wav");
+    case "441_3_R":
+      return require("../audioTestFiles/audioAssets/Right/441_3_R.wav");
+    case "452_3_R":
+      return require("../audioTestFiles/audioAssets/Right/452_3_R.wav");
+    case "453_3_R":
+      return require("../audioTestFiles/audioAssets/Right/453_3_R.wav");
+    case "454_3_R":
+      return require("../audioTestFiles/audioAssets/Right/454_3_R.wav");
+    case "464_3_R":
+      return require("../audioTestFiles/audioAssets/Right/464_3_R.wav");
+    case "483_3_R":
+      return require("../audioTestFiles/audioAssets/Right/483_3_R.wav");
+    case "534_3_R":
+      return require("../audioTestFiles/audioAssets/Right/534_3_R.wav");
+    case "556_3_R":
+      return require("../audioTestFiles/audioAssets/Right/556_3_R.wav");
+    case "568_3_R":
+      return require("../audioTestFiles/audioAssets/Right/568_3_R.wav");
+    case "593_3_R":
+      return require("../audioTestFiles/audioAssets/Right/593_3_R.wav");
+    case "599_3_R":
+      return require("../audioTestFiles/audioAssets/Right/599_3_R.wav");
+    case "639_3_R":
+      return require("../audioTestFiles/audioAssets/Right/639_3_R.wav");
+    case "649_3_R":
+      return require("../audioTestFiles/audioAssets/Right/649_3_R.wav");
+    case "658_3_R":
+      return require("../audioTestFiles/audioAssets/Right/658_3_R.wav");
+    case "823_3_R":
+      return require("../audioTestFiles/audioAssets/Right/823_3_R.wav");
+    case "825_3_R":
+      return require("../audioTestFiles/audioAssets/Right/825_3_R.wav");
+    case "828_3_R":
+      return require("../audioTestFiles/audioAssets/Right/828_3_R.wav");
+    case "833_3_R":
+      return require("../audioTestFiles/audioAssets/Right/833_3_R.wav");
+    case "854_3_R":
+      return require("../audioTestFiles/audioAssets/Right/854_3_R.wav");
+    case "856_3_R":
+      return require("../audioTestFiles/audioAssets/Right/856_3_R.wav");
+    case "862_3_R":
+      return require("../audioTestFiles/audioAssets/Right/862_3_R.wav");
+    case "891_3_R":
+      return require("../audioTestFiles/audioAssets/Right/891_3_R.wav");
+    case "916_3_R":
+      return require("../audioTestFiles/audioAssets/Right/916_3_R.wav");
+    case "929_3_R":
+      return require("../audioTestFiles/audioAssets/Right/929_3_R.wav");
+    case "942_3_R":
+      return require("../audioTestFiles/audioAssets/Right/942_3_R.wav");
+    case "989_3_R":
+      return require("../audioTestFiles/audioAssets/Right/989_3_R.wav");
+    case "128_4_R":
+      return require("../audioTestFiles/audioAssets/Right/128_4_R.wav");
+    case "152_4_R":
+      return require("../audioTestFiles/audioAssets/Right/152_4_R.wav");
+    case "154_4_R":
+      return require("../audioTestFiles/audioAssets/Right/154_4_R.wav");
+    case "161_4_R":
+      return require("../audioTestFiles/audioAssets/Right/161_4_R.wav");
+    case "181_4_R":
+      return require("../audioTestFiles/audioAssets/Right/181_4_R.wav");
+    case "182_4_R":
+      return require("../audioTestFiles/audioAssets/Right/182_4_R.wav");
+    case "185_4_R":
+      return require("../audioTestFiles/audioAssets/Right/185_4_R.wav");
+    case "193_4_R":
+      return require("../audioTestFiles/audioAssets/Right/193_4_R.wav");
+    case "194_4_R":
+      return require("../audioTestFiles/audioAssets/Right/194_4_R.wav");
+    case "199_4_R":
+      return require("../audioTestFiles/audioAssets/Right/199_4_R.wav");
+    case "213_4_R":
+      return require("../audioTestFiles/audioAssets/Right/213_4_R.wav");
+    case "216_4_R":
+      return require("../audioTestFiles/audioAssets/Right/216_4_R.wav");
+    case "218_4_R":
+      return require("../audioTestFiles/audioAssets/Right/218_4_R.wav");
+    case "233_4_R":
+      return require("../audioTestFiles/audioAssets/Right/233_4_R.wav");
+    case "243_4_R":
+      return require("../audioTestFiles/audioAssets/Right/243_4_R.wav");
+    case "254_4_R":
+      return require("../audioTestFiles/audioAssets/Right/254_4_R.wav");
+    case "256_4_R":
+      return require("../audioTestFiles/audioAssets/Right/256_4_R.wav");
+    case "261_4_R":
+      return require("../audioTestFiles/audioAssets/Right/261_4_R.wav");
+    case "294_4_R":
+      return require("../audioTestFiles/audioAssets/Right/294_4_R.wav");
+    case "295_4_R":
+      return require("../audioTestFiles/audioAssets/Right/295_4_R.wav");
+    case "296_4_R":
+      return require("../audioTestFiles/audioAssets/Right/296_4_R.wav");
+    case "313_4_R":
+      return require("../audioTestFiles/audioAssets/Right/313_4_R.wav");
+    case "318_4_R":
+      return require("../audioTestFiles/audioAssets/Right/318_4_R.wav");
+    case "321_4_R":
+      return require("../audioTestFiles/audioAssets/Right/321_4_R.wav");
+    case "322_4_R":
+      return require("../audioTestFiles/audioAssets/Right/322_4_R.wav");
+    case "324_4_R":
+      return require("../audioTestFiles/audioAssets/Right/324_4_R.wav");
+    case "342_4_R":
+      return require("../audioTestFiles/audioAssets/Right/342_4_R.wav");
+    case "343_4_R":
+      return require("../audioTestFiles/audioAssets/Right/343_4_R.wav");
+    case "345_4_R":
+      return require("../audioTestFiles/audioAssets/Right/345_4_R.wav");
+    case "346_4_R":
+      return require("../audioTestFiles/audioAssets/Right/346_4_R.wav");
+    case "353_4_R":
+      return require("../audioTestFiles/audioAssets/Right/353_4_R.wav");
+    case "362_4_R":
+      return require("../audioTestFiles/audioAssets/Right/362_4_R.wav");
+    case "383_4_R":
+      return require("../audioTestFiles/audioAssets/Right/383_4_R.wav");
+    case "384_4_R":
+      return require("../audioTestFiles/audioAssets/Right/384_4_R.wav");
+    case "393_4_R":
+      return require("../audioTestFiles/audioAssets/Right/393_4_R.wav");
+    case "398_4_R":
+      return require("../audioTestFiles/audioAssets/Right/398_4_R.wav");
+    case "436_4_R":
+      return require("../audioTestFiles/audioAssets/Right/436_4_R.wav");
+    case "439_4_R":
+      return require("../audioTestFiles/audioAssets/Right/439_4_R.wav");
+    case "441_4_R":
+      return require("../audioTestFiles/audioAssets/Right/441_4_R.wav");
+    case "452_4_R":
+      return require("../audioTestFiles/audioAssets/Right/452_4_R.wav");
+    case "453_4_R":
+      return require("../audioTestFiles/audioAssets/Right/453_4_R.wav");
+    case "454_4_R":
+      return require("../audioTestFiles/audioAssets/Right/454_4_R.wav");
+    case "464_4_R":
+      return require("../audioTestFiles/audioAssets/Right/464_4_R.wav");
+    case "483_4_R":
+      return require("../audioTestFiles/audioAssets/Right/483_4_R.wav");
+    case "534_4_R":
+      return require("../audioTestFiles/audioAssets/Right/534_4_R.wav");
+    case "556_4_R":
+      return require("../audioTestFiles/audioAssets/Right/556_4_R.wav");
+    case "568_4_R":
+      return require("../audioTestFiles/audioAssets/Right/568_4_R.wav");
+    case "593_4_R":
+      return require("../audioTestFiles/audioAssets/Right/593_4_R.wav");
+    case "599_4_R":
+      return require("../audioTestFiles/audioAssets/Right/599_4_R.wav");
+    case "639_4_R":
+      return require("../audioTestFiles/audioAssets/Right/639_4_R.wav");
+    case "649_4_R":
+      return require("../audioTestFiles/audioAssets/Right/649_4_R.wav");
+    case "658_4_R":
+      return require("../audioTestFiles/audioAssets/Right/658_4_R.wav");
+    case "823_4_R":
+      return require("../audioTestFiles/audioAssets/Right/823_4_R.wav");
+    case "825_4_R":
+      return require("../audioTestFiles/audioAssets/Right/825_4_R.wav");
+    case "828_4_R":
+      return require("../audioTestFiles/audioAssets/Right/828_4_R.wav");
+    case "833_4_R":
+      return require("../audioTestFiles/audioAssets/Right/833_4_R.wav");
+    case "854_4_R":
+      return require("../audioTestFiles/audioAssets/Right/854_4_R.wav");
+    case "856_4_R":
+      return require("../audioTestFiles/audioAssets/Right/856_4_R.wav");
+    case "862_4_R":
+      return require("../audioTestFiles/audioAssets/Right/862_4_R.wav");
+    case "891_4_R":
+      return require("../audioTestFiles/audioAssets/Right/891_4_R.wav");
+    case "916_4_R":
+      return require("../audioTestFiles/audioAssets/Right/916_4_R.wav");
+    case "929_4_R":
+      return require("../audioTestFiles/audioAssets/Right/929_4_R.wav");
+    case "942_4_R":
+      return require("../audioTestFiles/audioAssets/Right/942_4_R.wav");
+    case "989_4_R":
+      return require("../audioTestFiles/audioAssets/Right/989_4_R.wav");
+    case "128_5_R":
+      return require("../audioTestFiles/audioAssets/Right/128_5_R.wav");
+    case "152_5_R":
+      return require("../audioTestFiles/audioAssets/Right/152_5_R.wav");
+    case "154_5_R":
+      return require("../audioTestFiles/audioAssets/Right/154_5_R.wav");
+    case "161_5_R":
+      return require("../audioTestFiles/audioAssets/Right/161_5_R.wav");
+    case "181_5_R":
+      return require("../audioTestFiles/audioAssets/Right/181_5_R.wav");
+    case "182_5_R":
+      return require("../audioTestFiles/audioAssets/Right/182_5_R.wav");
+    case "185_5_R":
+      return require("../audioTestFiles/audioAssets/Right/185_5_R.wav");
+    case "193_5_R":
+      return require("../audioTestFiles/audioAssets/Right/193_5_R.wav");
+    case "194_5_R":
+      return require("../audioTestFiles/audioAssets/Right/194_5_R.wav");
+    case "199_5_R":
+      return require("../audioTestFiles/audioAssets/Right/199_5_R.wav");
+    case "213_5_R":
+      return require("../audioTestFiles/audioAssets/Right/213_5_R.wav");
+    case "216_5_R":
+      return require("../audioTestFiles/audioAssets/Right/216_5_R.wav");
+    case "218_5_R":
+      return require("../audioTestFiles/audioAssets/Right/218_5_R.wav");
+    case "233_5_R":
+      return require("../audioTestFiles/audioAssets/Right/233_5_R.wav");
+    case "243_5_R":
+      return require("../audioTestFiles/audioAssets/Right/243_5_R.wav");
+    case "254_5_R":
+      return require("../audioTestFiles/audioAssets/Right/254_5_R.wav");
+    case "256_5_R":
+      return require("../audioTestFiles/audioAssets/Right/256_5_R.wav");
+    case "261_5_R":
+      return require("../audioTestFiles/audioAssets/Right/261_5_R.wav");
+    case "294_5_R":
+      return require("../audioTestFiles/audioAssets/Right/294_5_R.wav");
+    case "295_5_R":
+      return require("../audioTestFiles/audioAssets/Right/295_5_R.wav");
+    case "296_5_R":
+      return require("../audioTestFiles/audioAssets/Right/296_5_R.wav");
+    case "313_5_R":
+      return require("../audioTestFiles/audioAssets/Right/313_5_R.wav");
+    case "318_5_R":
+      return require("../audioTestFiles/audioAssets/Right/318_5_R.wav");
+    case "321_5_R":
+      return require("../audioTestFiles/audioAssets/Right/321_5_R.wav");
+    case "322_5_R":
+      return require("../audioTestFiles/audioAssets/Right/322_5_R.wav");
+    case "324_5_R":
+      return require("../audioTestFiles/audioAssets/Right/324_5_R.wav");
+    case "342_5_R":
+      return require("../audioTestFiles/audioAssets/Right/342_5_R.wav");
+    case "343_5_R":
+      return require("../audioTestFiles/audioAssets/Right/343_5_R.wav");
+    case "345_5_R":
+      return require("../audioTestFiles/audioAssets/Right/345_5_R.wav");
+    case "346_5_R":
+      return require("../audioTestFiles/audioAssets/Right/346_5_R.wav");
+    case "353_5_R":
+      return require("../audioTestFiles/audioAssets/Right/353_5_R.wav");
+    case "362_5_R":
+      return require("../audioTestFiles/audioAssets/Right/362_5_R.wav");
+    case "383_5_R":
+      return require("../audioTestFiles/audioAssets/Right/383_5_R.wav");
+    case "384_5_R":
+      return require("../audioTestFiles/audioAssets/Right/384_5_R.wav");
+    case "393_5_R":
+      return require("../audioTestFiles/audioAssets/Right/393_5_R.wav");
+    case "398_5_R":
+      return require("../audioTestFiles/audioAssets/Right/398_5_R.wav");
+    case "436_5_R":
+      return require("../audioTestFiles/audioAssets/Right/436_5_R.wav");
+    case "439_5_R":
+      return require("../audioTestFiles/audioAssets/Right/439_5_R.wav");
+    case "441_5_R":
+      return require("../audioTestFiles/audioAssets/Right/441_5_R.wav");
+    case "452_5_R":
+      return require("../audioTestFiles/audioAssets/Right/452_5_R.wav");
+    case "453_5_R":
+      return require("../audioTestFiles/audioAssets/Right/453_5_R.wav");
+    case "454_5_R":
+      return require("../audioTestFiles/audioAssets/Right/454_5_R.wav");
+    case "464_5_R":
+      return require("../audioTestFiles/audioAssets/Right/464_5_R.wav");
+    case "483_5_R":
+      return require("../audioTestFiles/audioAssets/Right/483_5_R.wav");
+    case "534_5_R":
+      return require("../audioTestFiles/audioAssets/Right/534_5_R.wav");
+    case "556_5_R":
+      return require("../audioTestFiles/audioAssets/Right/556_5_R.wav");
+    case "568_5_R":
+      return require("../audioTestFiles/audioAssets/Right/568_5_R.wav");
+    case "593_5_R":
+      return require("../audioTestFiles/audioAssets/Right/593_5_R.wav");
+    case "599_5_R":
+      return require("../audioTestFiles/audioAssets/Right/599_5_R.wav");
+    case "639_5_R":
+      return require("../audioTestFiles/audioAssets/Right/639_5_R.wav");
+    case "649_5_R":
+      return require("../audioTestFiles/audioAssets/Right/649_5_R.wav");
+    case "658_5_R":
+      return require("../audioTestFiles/audioAssets/Right/658_5_R.wav");
+    case "823_5_R":
+      return require("../audioTestFiles/audioAssets/Right/823_5_R.wav");
+    case "825_5_R":
+      return require("../audioTestFiles/audioAssets/Right/825_5_R.wav");
+    case "828_5_R":
+      return require("../audioTestFiles/audioAssets/Right/828_5_R.wav");
+    case "833_5_R":
+      return require("../audioTestFiles/audioAssets/Right/833_5_R.wav");
+    case "854_5_R":
+      return require("../audioTestFiles/audioAssets/Right/854_5_R.wav");
+    case "856_5_R":
+      return require("../audioTestFiles/audioAssets/Right/856_5_R.wav");
+    case "862_5_R":
+      return require("../audioTestFiles/audioAssets/Right/862_5_R.wav");
+    case "891_5_R":
+      return require("../audioTestFiles/audioAssets/Right/891_5_R.wav");
+    case "916_5_R":
+      return require("../audioTestFiles/audioAssets/Right/916_5_R.wav");
+    case "929_5_R":
+      return require("../audioTestFiles/audioAssets/Right/929_5_R.wav");
+    case "942_5_R":
+      return require("../audioTestFiles/audioAssets/Right/942_5_R.wav");
+    case "989_5_R":
+      return require("../audioTestFiles/audioAssets/Right/989_5_R.wav");
+    case "128_6_R":
+      return require("../audioTestFiles/audioAssets/Right/128_6_R.wav");
+    case "152_6_R":
+      return require("../audioTestFiles/audioAssets/Right/152_6_R.wav");
+    case "154_6_R":
+      return require("../audioTestFiles/audioAssets/Right/154_6_R.wav");
+    case "161_6_R":
+      return require("../audioTestFiles/audioAssets/Right/161_6_R.wav");
+    case "181_6_R":
+      return require("../audioTestFiles/audioAssets/Right/181_6_R.wav");
+    case "182_6_R":
+      return require("../audioTestFiles/audioAssets/Right/182_6_R.wav");
+    case "185_6_R":
+      return require("../audioTestFiles/audioAssets/Right/185_6_R.wav");
+    case "193_6_R":
+      return require("../audioTestFiles/audioAssets/Right/193_6_R.wav");
+    case "194_6_R":
+      return require("../audioTestFiles/audioAssets/Right/194_6_R.wav");
+    case "199_6_R":
+      return require("../audioTestFiles/audioAssets/Right/199_6_R.wav");
+    case "213_6_R":
+      return require("../audioTestFiles/audioAssets/Right/213_6_R.wav");
+    case "216_6_R":
+      return require("../audioTestFiles/audioAssets/Right/216_6_R.wav");
+    case "218_6_R":
+      return require("../audioTestFiles/audioAssets/Right/218_6_R.wav");
+    case "233_6_R":
+      return require("../audioTestFiles/audioAssets/Right/233_6_R.wav");
+    case "243_6_R":
+      return require("../audioTestFiles/audioAssets/Right/243_6_R.wav");
+    case "254_6_R":
+      return require("../audioTestFiles/audioAssets/Right/254_6_R.wav");
+    case "256_6_R":
+      return require("../audioTestFiles/audioAssets/Right/256_6_R.wav");
+    case "261_6_R":
+      return require("../audioTestFiles/audioAssets/Right/261_6_R.wav");
+    case "294_6_R":
+      return require("../audioTestFiles/audioAssets/Right/294_6_R.wav");
+    case "295_6_R":
+      return require("../audioTestFiles/audioAssets/Right/295_6_R.wav");
+    case "296_6_R":
+      return require("../audioTestFiles/audioAssets/Right/296_6_R.wav");
+    case "313_6_R":
+      return require("../audioTestFiles/audioAssets/Right/313_6_R.wav");
+    case "318_6_R":
+      return require("../audioTestFiles/audioAssets/Right/318_6_R.wav");
+    case "321_6_R":
+      return require("../audioTestFiles/audioAssets/Right/321_6_R.wav");
+    case "322_6_R":
+      return require("../audioTestFiles/audioAssets/Right/322_6_R.wav");
+    case "324_6_R":
+      return require("../audioTestFiles/audioAssets/Right/324_6_R.wav");
+    case "342_6_R":
+      return require("../audioTestFiles/audioAssets/Right/342_6_R.wav");
+    case "343_6_R":
+      return require("../audioTestFiles/audioAssets/Right/343_6_R.wav");
+    case "345_6_R":
+      return require("../audioTestFiles/audioAssets/Right/345_6_R.wav");
+    case "346_6_R":
+      return require("../audioTestFiles/audioAssets/Right/346_6_R.wav");
+    case "353_6_R":
+      return require("../audioTestFiles/audioAssets/Right/353_6_R.wav");
+    case "362_6_R":
+      return require("../audioTestFiles/audioAssets/Right/362_6_R.wav");
+    case "383_6_R":
+      return require("../audioTestFiles/audioAssets/Right/383_6_R.wav");
+    case "384_6_R":
+      return require("../audioTestFiles/audioAssets/Right/384_6_R.wav");
+    case "393_6_R":
+      return require("../audioTestFiles/audioAssets/Right/393_6_R.wav");
+    case "398_6_R":
+      return require("../audioTestFiles/audioAssets/Right/398_6_R.wav");
+    case "436_6_R":
+      return require("../audioTestFiles/audioAssets/Right/436_6_R.wav");
+    case "439_6_R":
+      return require("../audioTestFiles/audioAssets/Right/439_6_R.wav");
+    case "441_6_R":
+      return require("../audioTestFiles/audioAssets/Right/441_6_R.wav");
+    case "452_6_R":
+      return require("../audioTestFiles/audioAssets/Right/452_6_R.wav");
+    case "453_6_R":
+      return require("../audioTestFiles/audioAssets/Right/453_6_R.wav");
+    case "454_6_R":
+      return require("../audioTestFiles/audioAssets/Right/454_6_R.wav");
+    case "464_6_R":
+      return require("../audioTestFiles/audioAssets/Right/464_6_R.wav");
+    case "483_6_R":
+      return require("../audioTestFiles/audioAssets/Right/483_6_R.wav");
+    case "534_6_R":
+      return require("../audioTestFiles/audioAssets/Right/534_6_R.wav");
+    case "556_6_R":
+      return require("../audioTestFiles/audioAssets/Right/556_6_R.wav");
+    case "568_6_R":
+      return require("../audioTestFiles/audioAssets/Right/568_6_R.wav");
+    case "593_6_R":
+      return require("../audioTestFiles/audioAssets/Right/593_6_R.wav");
+    case "599_6_R":
+      return require("../audioTestFiles/audioAssets/Right/599_6_R.wav");
+    case "639_6_R":
+      return require("../audioTestFiles/audioAssets/Right/639_6_R.wav");
+    case "649_6_R":
+      return require("../audioTestFiles/audioAssets/Right/649_6_R.wav");
+    case "658_6_R":
+      return require("../audioTestFiles/audioAssets/Right/658_6_R.wav");
+    case "823_6_R":
+      return require("../audioTestFiles/audioAssets/Right/823_6_R.wav");
+    case "825_6_R":
+      return require("../audioTestFiles/audioAssets/Right/825_6_R.wav");
+    case "828_6_R":
+      return require("../audioTestFiles/audioAssets/Right/828_6_R.wav");
+    case "833_6_R":
+      return require("../audioTestFiles/audioAssets/Right/833_6_R.wav");
+    case "854_6_R":
+      return require("../audioTestFiles/audioAssets/Right/854_6_R.wav");
+    case "856_6_R":
+      return require("../audioTestFiles/audioAssets/Right/856_6_R.wav");
+    case "862_6_R":
+      return require("../audioTestFiles/audioAssets/Right/862_6_R.wav");
+    case "891_6_R":
+      return require("../audioTestFiles/audioAssets/Right/891_6_R.wav");
+    case "916_6_R":
+      return require("../audioTestFiles/audioAssets/Right/916_6_R.wav");
+    case "929_6_R":
+      return require("../audioTestFiles/audioAssets/Right/929_6_R.wav");
+    case "942_6_R":
+      return require("../audioTestFiles/audioAssets/Right/942_6_R.wav");
+    case "989_6_R":
+      return require("../audioTestFiles/audioAssets/Right/989_6_R.wav");
+    case "128_7_R":
+      return require("../audioTestFiles/audioAssets/Right/128_7_R.wav");
+    case "152_7_R":
+      return require("../audioTestFiles/audioAssets/Right/152_7_R.wav");
+    case "154_7_R":
+      return require("../audioTestFiles/audioAssets/Right/154_7_R.wav");
+    case "161_7_R":
+      return require("../audioTestFiles/audioAssets/Right/161_7_R.wav");
+    case "181_7_R":
+      return require("../audioTestFiles/audioAssets/Right/181_7_R.wav");
+    case "182_7_R":
+      return require("../audioTestFiles/audioAssets/Right/182_7_R.wav");
+    case "185_7_R":
+      return require("../audioTestFiles/audioAssets/Right/185_7_R.wav");
+    case "193_7_R":
+      return require("../audioTestFiles/audioAssets/Right/193_7_R.wav");
+    case "194_7_R":
+      return require("../audioTestFiles/audioAssets/Right/194_7_R.wav");
+    case "199_7_R":
+      return require("../audioTestFiles/audioAssets/Right/199_7_R.wav");
+    case "213_7_R":
+      return require("../audioTestFiles/audioAssets/Right/213_7_R.wav");
+    case "216_7_R":
+      return require("../audioTestFiles/audioAssets/Right/216_7_R.wav");
+    case "218_7_R":
+      return require("../audioTestFiles/audioAssets/Right/218_7_R.wav");
+    case "233_7_R":
+      return require("../audioTestFiles/audioAssets/Right/233_7_R.wav");
+    case "243_7_R":
+      return require("../audioTestFiles/audioAssets/Right/243_7_R.wav");
+    case "254_7_R":
+      return require("../audioTestFiles/audioAssets/Right/254_7_R.wav");
+    case "256_7_R":
+      return require("../audioTestFiles/audioAssets/Right/256_7_R.wav");
+    case "261_7_R":
+      return require("../audioTestFiles/audioAssets/Right/261_7_R.wav");
+    case "294_7_R":
+      return require("../audioTestFiles/audioAssets/Right/294_7_R.wav");
+    case "295_7_R":
+      return require("../audioTestFiles/audioAssets/Right/295_7_R.wav");
+    case "296_7_R":
+      return require("../audioTestFiles/audioAssets/Right/296_7_R.wav");
+    case "313_7_R":
+      return require("../audioTestFiles/audioAssets/Right/313_7_R.wav");
+    case "318_7_R":
+      return require("../audioTestFiles/audioAssets/Right/318_7_R.wav");
+    case "321_7_R":
+      return require("../audioTestFiles/audioAssets/Right/321_7_R.wav");
+    case "322_7_R":
+      return require("../audioTestFiles/audioAssets/Right/322_7_R.wav");
+    case "324_7_R":
+      return require("../audioTestFiles/audioAssets/Right/324_7_R.wav");
+    case "342_7_R":
+      return require("../audioTestFiles/audioAssets/Right/342_7_R.wav");
+    case "343_7_R":
+      return require("../audioTestFiles/audioAssets/Right/343_7_R.wav");
+    case "345_7_R":
+      return require("../audioTestFiles/audioAssets/Right/345_7_R.wav");
+    case "346_7_R":
+      return require("../audioTestFiles/audioAssets/Right/346_7_R.wav");
+    case "353_7_R":
+      return require("../audioTestFiles/audioAssets/Right/353_7_R.wav");
+    case "362_7_R":
+      return require("../audioTestFiles/audioAssets/Right/362_7_R.wav");
+    case "383_7_R":
+      return require("../audioTestFiles/audioAssets/Right/383_7_R.wav");
+    case "384_7_R":
+      return require("../audioTestFiles/audioAssets/Right/384_7_R.wav");
+    case "393_7_R":
+      return require("../audioTestFiles/audioAssets/Right/393_7_R.wav");
+    case "398_7_R":
+      return require("../audioTestFiles/audioAssets/Right/398_7_R.wav");
+    case "436_7_R":
+      return require("../audioTestFiles/audioAssets/Right/436_7_R.wav");
+    case "439_7_R":
+      return require("../audioTestFiles/audioAssets/Right/439_7_R.wav");
+    case "441_7_R":
+      return require("../audioTestFiles/audioAssets/Right/441_7_R.wav");
+    case "452_7_R":
+      return require("../audioTestFiles/audioAssets/Right/452_7_R.wav");
+    case "453_7_R":
+      return require("../audioTestFiles/audioAssets/Right/453_7_R.wav");
+    case "454_7_R":
+      return require("../audioTestFiles/audioAssets/Right/454_7_R.wav");
+    case "464_7_R":
+      return require("../audioTestFiles/audioAssets/Right/464_7_R.wav");
+    case "483_7_R":
+      return require("../audioTestFiles/audioAssets/Right/483_7_R.wav");
+    case "534_7_R":
+      return require("../audioTestFiles/audioAssets/Right/534_7_R.wav");
+    case "556_7_R":
+      return require("../audioTestFiles/audioAssets/Right/556_7_R.wav");
+    case "568_7_R":
+      return require("../audioTestFiles/audioAssets/Right/568_7_R.wav");
+    case "593_7_R":
+      return require("../audioTestFiles/audioAssets/Right/593_7_R.wav");
+    case "599_7_R":
+      return require("../audioTestFiles/audioAssets/Right/599_7_R.wav");
+    case "639_7_R":
+      return require("../audioTestFiles/audioAssets/Right/639_7_R.wav");
+    case "649_7_R":
+      return require("../audioTestFiles/audioAssets/Right/649_7_R.wav");
+    case "658_7_R":
+      return require("../audioTestFiles/audioAssets/Right/658_7_R.wav");
+    case "823_7_R":
+      return require("../audioTestFiles/audioAssets/Right/823_7_R.wav");
+    case "825_7_R":
+      return require("../audioTestFiles/audioAssets/Right/825_7_R.wav");
+    case "828_7_R":
+      return require("../audioTestFiles/audioAssets/Right/828_7_R.wav");
+    case "833_7_R":
+      return require("../audioTestFiles/audioAssets/Right/833_7_R.wav");
+    case "854_7_R":
+      return require("../audioTestFiles/audioAssets/Right/854_7_R.wav");
+    case "856_7_R":
+      return require("../audioTestFiles/audioAssets/Right/856_7_R.wav");
+    case "862_7_R":
+      return require("../audioTestFiles/audioAssets/Right/862_7_R.wav");
+    case "891_7_R":
+      return require("../audioTestFiles/audioAssets/Right/891_7_R.wav");
+    case "916_7_R":
+      return require("../audioTestFiles/audioAssets/Right/916_7_R.wav");
+    case "929_7_R":
+      return require("../audioTestFiles/audioAssets/Right/929_7_R.wav");
+    case "942_7_R":
+      return require("../audioTestFiles/audioAssets/Right/942_7_R.wav");
+    case "989_7_R":
+      return require("../audioTestFiles/audioAssets/Right/989_7_R.wav");
+    case "128_8_R":
+      return require("../audioTestFiles/audioAssets/Right/128_8_R.wav");
+    case "152_8_R":
+      return require("../audioTestFiles/audioAssets/Right/152_8_R.wav");
+    case "154_8_R":
+      return require("../audioTestFiles/audioAssets/Right/154_8_R.wav");
+    case "161_8_R":
+      return require("../audioTestFiles/audioAssets/Right/161_8_R.wav");
+    case "181_8_R":
+      return require("../audioTestFiles/audioAssets/Right/181_8_R.wav");
+    case "182_8_R":
+      return require("../audioTestFiles/audioAssets/Right/182_8_R.wav");
+    case "185_8_R":
+      return require("../audioTestFiles/audioAssets/Right/185_8_R.wav");
+    case "193_8_R":
+      return require("../audioTestFiles/audioAssets/Right/193_8_R.wav");
+    case "194_8_R":
+      return require("../audioTestFiles/audioAssets/Right/194_8_R.wav");
+    case "199_8_R":
+      return require("../audioTestFiles/audioAssets/Right/199_8_R.wav");
+    case "213_8_R":
+      return require("../audioTestFiles/audioAssets/Right/213_8_R.wav");
+    case "216_8_R":
+      return require("../audioTestFiles/audioAssets/Right/216_8_R.wav");
+    case "218_8_R":
+      return require("../audioTestFiles/audioAssets/Right/218_8_R.wav");
+    case "233_8_R":
+      return require("../audioTestFiles/audioAssets/Right/233_8_R.wav");
+    case "243_8_R":
+      return require("../audioTestFiles/audioAssets/Right/243_8_R.wav");
+    case "254_8_R":
+      return require("../audioTestFiles/audioAssets/Right/254_8_R.wav");
+    case "256_8_R":
+      return require("../audioTestFiles/audioAssets/Right/256_8_R.wav");
+    case "261_8_R":
+      return require("../audioTestFiles/audioAssets/Right/261_8_R.wav");
+    case "294_8_R":
+      return require("../audioTestFiles/audioAssets/Right/294_8_R.wav");
+    case "295_8_R":
+      return require("../audioTestFiles/audioAssets/Right/295_8_R.wav");
+    case "296_8_R":
+      return require("../audioTestFiles/audioAssets/Right/296_8_R.wav");
+    case "313_8_R":
+      return require("../audioTestFiles/audioAssets/Right/313_8_R.wav");
+    case "318_8_R":
+      return require("../audioTestFiles/audioAssets/Right/318_8_R.wav");
+    case "321_8_R":
+      return require("../audioTestFiles/audioAssets/Right/321_8_R.wav");
+    case "322_8_R":
+      return require("../audioTestFiles/audioAssets/Right/322_8_R.wav");
+    case "324_8_R":
+      return require("../audioTestFiles/audioAssets/Right/324_8_R.wav");
+    case "342_8_R":
+      return require("../audioTestFiles/audioAssets/Right/342_8_R.wav");
+    case "343_8_R":
+      return require("../audioTestFiles/audioAssets/Right/343_8_R.wav");
+    case "345_8_R":
+      return require("../audioTestFiles/audioAssets/Right/345_8_R.wav");
+    case "346_8_R":
+      return require("../audioTestFiles/audioAssets/Right/346_8_R.wav");
+    case "353_8_R":
+      return require("../audioTestFiles/audioAssets/Right/353_8_R.wav");
+    case "362_8_R":
+      return require("../audioTestFiles/audioAssets/Right/362_8_R.wav");
+    case "383_8_R":
+      return require("../audioTestFiles/audioAssets/Right/383_8_R.wav");
+    case "384_8_R":
+      return require("../audioTestFiles/audioAssets/Right/384_8_R.wav");
+    case "393_8_R":
+      return require("../audioTestFiles/audioAssets/Right/393_8_R.wav");
+    case "398_8_R":
+      return require("../audioTestFiles/audioAssets/Right/398_8_R.wav");
+    case "436_8_R":
+      return require("../audioTestFiles/audioAssets/Right/436_8_R.wav");
+    case "439_8_R":
+      return require("../audioTestFiles/audioAssets/Right/439_8_R.wav");
+    case "441_8_R":
+      return require("../audioTestFiles/audioAssets/Right/441_8_R.wav");
+    case "452_8_R":
+      return require("../audioTestFiles/audioAssets/Right/452_8_R.wav");
+    case "453_8_R":
+      return require("../audioTestFiles/audioAssets/Right/453_8_R.wav");
+    case "454_8_R":
+      return require("../audioTestFiles/audioAssets/Right/454_8_R.wav");
+    case "464_8_R":
+      return require("../audioTestFiles/audioAssets/Right/464_8_R.wav");
+    case "483_8_R":
+      return require("../audioTestFiles/audioAssets/Right/483_8_R.wav");
+    case "534_8_R":
+      return require("../audioTestFiles/audioAssets/Right/534_8_R.wav");
+    case "556_8_R":
+      return require("../audioTestFiles/audioAssets/Right/556_8_R.wav");
+    case "568_8_R":
+      return require("../audioTestFiles/audioAssets/Right/568_8_R.wav");
+    case "593_8_R":
+      return require("../audioTestFiles/audioAssets/Right/593_8_R.wav");
+    case "599_8_R":
+      return require("../audioTestFiles/audioAssets/Right/599_8_R.wav");
+    case "639_8_R":
+      return require("../audioTestFiles/audioAssets/Right/639_8_R.wav");
+    case "649_8_R":
+      return require("../audioTestFiles/audioAssets/Right/649_8_R.wav");
+    case "658_8_R":
+      return require("../audioTestFiles/audioAssets/Right/658_8_R.wav");
+    case "823_8_R":
+      return require("../audioTestFiles/audioAssets/Right/823_8_R.wav");
+    case "825_8_R":
+      return require("../audioTestFiles/audioAssets/Right/825_8_R.wav");
+    case "828_8_R":
+      return require("../audioTestFiles/audioAssets/Right/828_8_R.wav");
+    case "833_8_R":
+      return require("../audioTestFiles/audioAssets/Right/833_8_R.wav");
+    case "854_8_R":
+      return require("../audioTestFiles/audioAssets/Right/854_8_R.wav");
+    case "856_8_R":
+      return require("../audioTestFiles/audioAssets/Right/856_8_R.wav");
+    case "862_8_R":
+      return require("../audioTestFiles/audioAssets/Right/862_8_R.wav");
+    case "891_8_R":
+      return require("../audioTestFiles/audioAssets/Right/891_8_R.wav");
+    case "916_8_R":
+      return require("../audioTestFiles/audioAssets/Right/916_8_R.wav");
+    case "929_8_R":
+      return require("../audioTestFiles/audioAssets/Right/929_8_R.wav");
+    case "942_8_R":
+      return require("../audioTestFiles/audioAssets/Right/942_8_R.wav");
+    case "989_8_R":
+      return require("../audioTestFiles/audioAssets/Right/989_8_R.wav");
+    case "128_9_R":
+      return require("../audioTestFiles/audioAssets/Right/128_9_R.wav");
+    case "152_9_R":
+      return require("../audioTestFiles/audioAssets/Right/152_9_R.wav");
+    case "154_9_R":
+      return require("../audioTestFiles/audioAssets/Right/154_9_R.wav");
+    case "161_9_R":
+      return require("../audioTestFiles/audioAssets/Right/161_9_R.wav");
+    case "181_9_R":
+      return require("../audioTestFiles/audioAssets/Right/181_9_R.wav");
+    case "182_9_R":
+      return require("../audioTestFiles/audioAssets/Right/182_9_R.wav");
+    case "185_9_R":
+      return require("../audioTestFiles/audioAssets/Right/185_9_R.wav");
+    case "193_9_R":
+      return require("../audioTestFiles/audioAssets/Right/193_9_R.wav");
+    case "194_9_R":
+      return require("../audioTestFiles/audioAssets/Right/194_9_R.wav");
+    case "199_9_R":
+      return require("../audioTestFiles/audioAssets/Right/199_9_R.wav");
+    case "213_9_R":
+      return require("../audioTestFiles/audioAssets/Right/213_9_R.wav");
+    case "216_9_R":
+      return require("../audioTestFiles/audioAssets/Right/216_9_R.wav");
+    case "218_9_R":
+      return require("../audioTestFiles/audioAssets/Right/218_9_R.wav");
+    case "233_9_R":
+      return require("../audioTestFiles/audioAssets/Right/233_9_R.wav");
+    case "243_9_R":
+      return require("../audioTestFiles/audioAssets/Right/243_9_R.wav");
+    case "254_9_R":
+      return require("../audioTestFiles/audioAssets/Right/254_9_R.wav");
+    case "256_9_R":
+      return require("../audioTestFiles/audioAssets/Right/256_9_R.wav");
+    case "261_9_R":
+      return require("../audioTestFiles/audioAssets/Right/261_9_R.wav");
+    case "294_9_R":
+      return require("../audioTestFiles/audioAssets/Right/294_9_R.wav");
+    case "295_9_R":
+      return require("../audioTestFiles/audioAssets/Right/295_9_R.wav");
+    case "296_9_R":
+      return require("../audioTestFiles/audioAssets/Right/296_9_R.wav");
+    case "313_9_R":
+      return require("../audioTestFiles/audioAssets/Right/313_9_R.wav");
+    case "318_9_R":
+      return require("../audioTestFiles/audioAssets/Right/318_9_R.wav");
+    case "321_9_R":
+      return require("../audioTestFiles/audioAssets/Right/321_9_R.wav");
+    case "322_9_R":
+      return require("../audioTestFiles/audioAssets/Right/322_9_R.wav");
+    case "324_9_R":
+      return require("../audioTestFiles/audioAssets/Right/324_9_R.wav");
+    case "342_9_R":
+      return require("../audioTestFiles/audioAssets/Right/342_9_R.wav");
+    case "343_9_R":
+      return require("../audioTestFiles/audioAssets/Right/343_9_R.wav");
+    case "345_9_R":
+      return require("../audioTestFiles/audioAssets/Right/345_9_R.wav");
+    case "346_9_R":
+      return require("../audioTestFiles/audioAssets/Right/346_9_R.wav");
+    case "353_9_R":
+      return require("../audioTestFiles/audioAssets/Right/353_9_R.wav");
+    case "362_9_R":
+      return require("../audioTestFiles/audioAssets/Right/362_9_R.wav");
+    case "383_9_R":
+      return require("../audioTestFiles/audioAssets/Right/383_9_R.wav");
+    case "384_9_R":
+      return require("../audioTestFiles/audioAssets/Right/384_9_R.wav");
+    case "393_9_R":
+      return require("../audioTestFiles/audioAssets/Right/393_9_R.wav");
+    case "398_9_R":
+      return require("../audioTestFiles/audioAssets/Right/398_9_R.wav");
+    case "436_9_R":
+      return require("../audioTestFiles/audioAssets/Right/436_9_R.wav");
+    case "439_9_R":
+      return require("../audioTestFiles/audioAssets/Right/439_9_R.wav");
+    case "441_9_R":
+      return require("../audioTestFiles/audioAssets/Right/441_9_R.wav");
+    case "452_9_R":
+      return require("../audioTestFiles/audioAssets/Right/452_9_R.wav");
+    case "453_9_R":
+      return require("../audioTestFiles/audioAssets/Right/453_9_R.wav");
+    case "454_9_R":
+      return require("../audioTestFiles/audioAssets/Right/454_9_R.wav");
+    case "464_9_R":
+      return require("../audioTestFiles/audioAssets/Right/464_9_R.wav");
+    case "483_9_R":
+      return require("../audioTestFiles/audioAssets/Right/483_9_R.wav");
+    case "534_9_R":
+      return require("../audioTestFiles/audioAssets/Right/534_9_R.wav");
+    case "556_9_R":
+      return require("../audioTestFiles/audioAssets/Right/556_9_R.wav");
+    case "568_9_R":
+      return require("../audioTestFiles/audioAssets/Right/568_9_R.wav");
+    case "593_9_R":
+      return require("../audioTestFiles/audioAssets/Right/593_9_R.wav");
+    case "599_9_R":
+      return require("../audioTestFiles/audioAssets/Right/599_9_R.wav");
+    case "639_9_R":
+      return require("../audioTestFiles/audioAssets/Right/639_9_R.wav");
+    case "649_9_R":
+      return require("../audioTestFiles/audioAssets/Right/649_9_R.wav");
+    case "658_9_R":
+      return require("../audioTestFiles/audioAssets/Right/658_9_R.wav");
+    case "823_9_R":
+      return require("../audioTestFiles/audioAssets/Right/823_9_R.wav");
+    case "825_9_R":
+      return require("../audioTestFiles/audioAssets/Right/825_9_R.wav");
+    case "828_9_R":
+      return require("../audioTestFiles/audioAssets/Right/828_9_R.wav");
+    case "833_9_R":
+      return require("../audioTestFiles/audioAssets/Right/833_9_R.wav");
+    case "854_9_R":
+      return require("../audioTestFiles/audioAssets/Right/854_9_R.wav");
+    case "856_9_R":
+      return require("../audioTestFiles/audioAssets/Right/856_9_R.wav");
+    case "862_9_R":
+      return require("../audioTestFiles/audioAssets/Right/862_9_R.wav");
+    case "891_9_R":
+      return require("../audioTestFiles/audioAssets/Right/891_9_R.wav");
+    case "916_9_R":
+      return require("../audioTestFiles/audioAssets/Right/916_9_R.wav");
+    case "929_9_R":
+      return require("../audioTestFiles/audioAssets/Right/929_9_R.wav");
+    case "942_9_R":
+      return require("../audioTestFiles/audioAssets/Right/942_9_R.wav");
+    case "989_9_R":
+      return require("../audioTestFiles/audioAssets/Right/989_9_R.wav");
+
+    //10 up values
+    case "128_10_L":
+      return require("../audioTestFiles/audioAssets/Left/128_10_L.wav");
+    case "152_10_L":
+      return require("../audioTestFiles/audioAssets/Left/152_10_L.wav");
+    case "154_10_L":
+      return require("../audioTestFiles/audioAssets/Left/154_10_L.wav");
+    case "161_10_L":
+      return require("../audioTestFiles/audioAssets/Left/161_10_L.wav");
+    case "181_10_L":
+      return require("../audioTestFiles/audioAssets/Left/181_10_L.wav");
+    case "182_10_L":
+      return require("../audioTestFiles/audioAssets/Left/182_10_L.wav");
+    case "185_10_L":
+      return require("../audioTestFiles/audioAssets/Left/185_10_L.wav");
+    case "193_10_L":
+      return require("../audioTestFiles/audioAssets/Left/193_10_L.wav");
+    case "194_10_L":
+      return require("../audioTestFiles/audioAssets/Left/194_10_L.wav");
+    case "199_10_L":
+      return require("../audioTestFiles/audioAssets/Left/199_10_L.wav");
+    case "213_10_L":
+      return require("../audioTestFiles/audioAssets/Left/213_10_L.wav");
+    case "216_10_L":
+      return require("../audioTestFiles/audioAssets/Left/216_10_L.wav");
+    case "218_10_L":
+      return require("../audioTestFiles/audioAssets/Left/218_10_L.wav");
+    case "233_10_L":
+      return require("../audioTestFiles/audioAssets/Left/233_10_L.wav");
+    case "243_10_L":
+      return require("../audioTestFiles/audioAssets/Left/243_10_L.wav");
+    case "254_10_L":
+      return require("../audioTestFiles/audioAssets/Left/254_10_L.wav");
+    case "256_10_L":
+      return require("../audioTestFiles/audioAssets/Left/256_10_L.wav");
+    case "261_10_L":
+      return require("../audioTestFiles/audioAssets/Left/261_10_L.wav");
+    case "294_10_L":
+      return require("../audioTestFiles/audioAssets/Left/294_10_L.wav");
+    case "295_10_L":
+      return require("../audioTestFiles/audioAssets/Left/295_10_L.wav");
+    case "296_10_L":
+      return require("../audioTestFiles/audioAssets/Left/296_10_L.wav");
+    case "313_10_L":
+      return require("../audioTestFiles/audioAssets/Left/313_10_L.wav");
+    case "318_10_L":
+      return require("../audioTestFiles/audioAssets/Left/318_10_L.wav");
+    case "321_10_L":
+      return require("../audioTestFiles/audioAssets/Left/321_10_L.wav");
+    case "322_10_L":
+      return require("../audioTestFiles/audioAssets/Left/322_10_L.wav");
+    case "324_10_L":
+      return require("../audioTestFiles/audioAssets/Left/324_10_L.wav");
+    case "342_10_L":
+      return require("../audioTestFiles/audioAssets/Left/342_10_L.wav");
+    case "343_10_L":
+      return require("../audioTestFiles/audioAssets/Left/343_10_L.wav");
+    case "345_10_L":
+      return require("../audioTestFiles/audioAssets/Left/345_10_L.wav");
+    case "346_10_L":
+      return require("../audioTestFiles/audioAssets/Left/346_10_L.wav");
+    case "353_10_L":
+      return require("../audioTestFiles/audioAssets/Left/353_10_L.wav");
+    case "362_10_L":
+      return require("../audioTestFiles/audioAssets/Left/362_10_L.wav");
+    case "383_10_L":
+      return require("../audioTestFiles/audioAssets/Left/383_10_L.wav");
+    case "384_10_L":
+      return require("../audioTestFiles/audioAssets/Left/384_10_L.wav");
+    case "393_10_L":
+      return require("../audioTestFiles/audioAssets/Left/393_10_L.wav");
+    case "398_10_L":
+      return require("../audioTestFiles/audioAssets/Left/398_10_L.wav");
+    case "436_10_L":
+      return require("../audioTestFiles/audioAssets/Left/436_10_L.wav");
+    case "439_10_L":
+      return require("../audioTestFiles/audioAssets/Left/439_10_L.wav");
+    case "441_10_L":
+      return require("../audioTestFiles/audioAssets/Left/441_10_L.wav");
+    case "452_10_L":
+      return require("../audioTestFiles/audioAssets/Left/452_10_L.wav");
+    case "453_10_L":
+      return require("../audioTestFiles/audioAssets/Left/453_10_L.wav");
+    case "454_10_L":
+      return require("../audioTestFiles/audioAssets/Left/454_10_L.wav");
+    case "464_10_L":
+      return require("../audioTestFiles/audioAssets/Left/464_10_L.wav");
+    case "483_10_L":
+      return require("../audioTestFiles/audioAssets/Left/483_10_L.wav");
+    case "534_10_L":
+      return require("../audioTestFiles/audioAssets/Left/534_10_L.wav");
+    case "556_10_L":
+      return require("../audioTestFiles/audioAssets/Left/556_10_L.wav");
+    case "568_10_L":
+      return require("../audioTestFiles/audioAssets/Left/568_10_L.wav");
+    case "593_10_L":
+      return require("../audioTestFiles/audioAssets/Left/593_10_L.wav");
+    case "599_10_L":
+      return require("../audioTestFiles/audioAssets/Left/599_10_L.wav");
+    case "639_10_L":
+      return require("../audioTestFiles/audioAssets/Left/639_10_L.wav");
+    case "649_10_L":
+      return require("../audioTestFiles/audioAssets/Left/649_10_L.wav");
+    case "658_10_L":
+      return require("../audioTestFiles/audioAssets/Left/658_10_L.wav");
+    case "823_10_L":
+      return require("../audioTestFiles/audioAssets/Left/823_10_L.wav");
+    case "825_10_L":
+      return require("../audioTestFiles/audioAssets/Left/825_10_L.wav");
+    case "828_10_L":
+      return require("../audioTestFiles/audioAssets/Left/828_10_L.wav");
+    case "833_10_L":
+      return require("../audioTestFiles/audioAssets/Left/833_10_L.wav");
+    case "854_10_L":
+      return require("../audioTestFiles/audioAssets/Left/854_10_L.wav");
+    case "856_10_L":
+      return require("../audioTestFiles/audioAssets/Left/856_10_L.wav");
+    case "862_10_L":
+      return require("../audioTestFiles/audioAssets/Left/862_10_L.wav");
+    case "891_10_L":
+      return require("../audioTestFiles/audioAssets/Left/891_10_L.wav");
+    case "916_10_L":
+      return require("../audioTestFiles/audioAssets/Left/916_10_L.wav");
+    case "929_10_L":
+      return require("../audioTestFiles/audioAssets/Left/929_10_L.wav");
+    case "942_10_L":
+      return require("../audioTestFiles/audioAssets/Left/942_10_L.wav");
+    case "989_10_L":
+      return require("../audioTestFiles/audioAssets/Left/989_10_L.wav");
+    case "128_11_L":
+      return require("../audioTestFiles/audioAssets/Left/128_11_L.wav");
+    case "152_11_L":
+      return require("../audioTestFiles/audioAssets/Left/152_11_L.wav");
+    case "154_11_L":
+      return require("../audioTestFiles/audioAssets/Left/154_11_L.wav");
+    case "161_11_L":
+      return require("../audioTestFiles/audioAssets/Left/161_11_L.wav");
+    case "181_11_L":
+      return require("../audioTestFiles/audioAssets/Left/181_11_L.wav");
+    case "182_11_L":
+      return require("../audioTestFiles/audioAssets/Left/182_11_L.wav");
+    case "185_11_L":
+      return require("../audioTestFiles/audioAssets/Left/185_11_L.wav");
+    case "193_11_L":
+      return require("../audioTestFiles/audioAssets/Left/193_11_L.wav");
+    case "194_11_L":
+      return require("../audioTestFiles/audioAssets/Left/194_11_L.wav");
+    case "199_11_L":
+      return require("../audioTestFiles/audioAssets/Left/199_11_L.wav");
+    case "213_11_L":
+      return require("../audioTestFiles/audioAssets/Left/213_11_L.wav");
+    case "216_11_L":
+      return require("../audioTestFiles/audioAssets/Left/216_11_L.wav");
+    case "218_11_L":
+      return require("../audioTestFiles/audioAssets/Left/218_11_L.wav");
+    case "233_11_L":
+      return require("../audioTestFiles/audioAssets/Left/233_11_L.wav");
+    case "243_11_L":
+      return require("../audioTestFiles/audioAssets/Left/243_11_L.wav");
+    case "254_11_L":
+      return require("../audioTestFiles/audioAssets/Left/254_11_L.wav");
+    case "256_11_L":
+      return require("../audioTestFiles/audioAssets/Left/256_11_L.wav");
+    case "261_11_L":
+      return require("../audioTestFiles/audioAssets/Left/261_11_L.wav");
+    case "294_11_L":
+      return require("../audioTestFiles/audioAssets/Left/294_11_L.wav");
+    case "295_11_L":
+      return require("../audioTestFiles/audioAssets/Left/295_11_L.wav");
+    case "296_11_L":
+      return require("../audioTestFiles/audioAssets/Left/296_11_L.wav");
+    case "313_11_L":
+      return require("../audioTestFiles/audioAssets/Left/313_11_L.wav");
+    case "318_11_L":
+      return require("../audioTestFiles/audioAssets/Left/318_11_L.wav");
+    case "321_11_L":
+      return require("../audioTestFiles/audioAssets/Left/321_11_L.wav");
+    case "322_11_L":
+      return require("../audioTestFiles/audioAssets/Left/322_11_L.wav");
+    case "324_11_L":
+      return require("../audioTestFiles/audioAssets/Left/324_11_L.wav");
+    case "342_11_L":
+      return require("../audioTestFiles/audioAssets/Left/342_11_L.wav");
+    case "343_11_L":
+      return require("../audioTestFiles/audioAssets/Left/343_11_L.wav");
+    case "345_11_L":
+      return require("../audioTestFiles/audioAssets/Left/345_11_L.wav");
+    case "346_11_L":
+      return require("../audioTestFiles/audioAssets/Left/346_11_L.wav");
+    case "353_11_L":
+      return require("../audioTestFiles/audioAssets/Left/353_11_L.wav");
+    case "362_11_L":
+      return require("../audioTestFiles/audioAssets/Left/362_11_L.wav");
+    case "383_11_L":
+      return require("../audioTestFiles/audioAssets/Left/383_11_L.wav");
+    case "384_11_L":
+      return require("../audioTestFiles/audioAssets/Left/384_11_L.wav");
+    case "393_11_L":
+      return require("../audioTestFiles/audioAssets/Left/393_11_L.wav");
+    case "398_11_L":
+      return require("../audioTestFiles/audioAssets/Left/398_11_L.wav");
+    case "436_11_L":
+      return require("../audioTestFiles/audioAssets/Left/436_11_L.wav");
+    case "439_11_L":
+      return require("../audioTestFiles/audioAssets/Left/439_11_L.wav");
+    case "441_11_L":
+      return require("../audioTestFiles/audioAssets/Left/441_11_L.wav");
+    case "452_11_L":
+      return require("../audioTestFiles/audioAssets/Left/452_11_L.wav");
+    case "453_11_L":
+      return require("../audioTestFiles/audioAssets/Left/453_11_L.wav");
+    case "454_11_L":
+      return require("../audioTestFiles/audioAssets/Left/454_11_L.wav");
+    case "464_11_L":
+      return require("../audioTestFiles/audioAssets/Left/464_11_L.wav");
+    case "483_11_L":
+      return require("../audioTestFiles/audioAssets/Left/483_11_L.wav");
+    case "534_11_L":
+      return require("../audioTestFiles/audioAssets/Left/534_11_L.wav");
+    case "556_11_L":
+      return require("../audioTestFiles/audioAssets/Left/556_11_L.wav");
+    case "568_11_L":
+      return require("../audioTestFiles/audioAssets/Left/568_11_L.wav");
+    case "593_11_L":
+      return require("../audioTestFiles/audioAssets/Left/593_11_L.wav");
+    case "599_11_L":
+      return require("../audioTestFiles/audioAssets/Left/599_11_L.wav");
+    case "639_11_L":
+      return require("../audioTestFiles/audioAssets/Left/639_11_L.wav");
+    case "649_11_L":
+      return require("../audioTestFiles/audioAssets/Left/649_11_L.wav");
+    case "658_11_L":
+      return require("../audioTestFiles/audioAssets/Left/658_11_L.wav");
+    case "823_11_L":
+      return require("../audioTestFiles/audioAssets/Left/823_11_L.wav");
+    case "825_11_L":
+      return require("../audioTestFiles/audioAssets/Left/825_11_L.wav");
+    case "828_11_L":
+      return require("../audioTestFiles/audioAssets/Left/828_11_L.wav");
+    case "833_11_L":
+      return require("../audioTestFiles/audioAssets/Left/833_11_L.wav");
+    case "854_11_L":
+      return require("../audioTestFiles/audioAssets/Left/854_11_L.wav");
+    case "856_11_L":
+      return require("../audioTestFiles/audioAssets/Left/856_11_L.wav");
+    case "862_11_L":
+      return require("../audioTestFiles/audioAssets/Left/862_11_L.wav");
+    case "891_11_L":
+      return require("../audioTestFiles/audioAssets/Left/891_11_L.wav");
+    case "916_11_L":
+      return require("../audioTestFiles/audioAssets/Left/916_11_L.wav");
+    case "929_11_L":
+      return require("../audioTestFiles/audioAssets/Left/929_11_L.wav");
+    case "942_11_L":
+      return require("../audioTestFiles/audioAssets/Left/942_11_L.wav");
+    case "989_11_L":
+      return require("../audioTestFiles/audioAssets/Left/989_11_L.wav");
+
+    case "128_10_R":
+      return require("../audioTestFiles/audioAssets/Right/128_10_R.wav");
+    case "152_10_R":
+      return require("../audioTestFiles/audioAssets/Right/152_10_R.wav");
+    case "154_10_R":
+      return require("../audioTestFiles/audioAssets/Right/154_10_R.wav");
+    case "161_10_R":
+      return require("../audioTestFiles/audioAssets/Right/161_10_R.wav");
+    case "181_10_R":
+      return require("../audioTestFiles/audioAssets/Right/181_10_R.wav");
+    case "182_10_R":
+      return require("../audioTestFiles/audioAssets/Right/182_10_R.wav");
+    case "185_10_R":
+      return require("../audioTestFiles/audioAssets/Right/185_10_R.wav");
+    case "193_10_R":
+      return require("../audioTestFiles/audioAssets/Right/193_10_R.wav");
+    case "194_10_R":
+      return require("../audioTestFiles/audioAssets/Right/194_10_R.wav");
+    case "199_10_R":
+      return require("../audioTestFiles/audioAssets/Right/199_10_R.wav");
+    case "213_10_R":
+      return require("../audioTestFiles/audioAssets/Right/213_10_R.wav");
+    case "216_10_R":
+      return require("../audioTestFiles/audioAssets/Right/216_10_R.wav");
+    case "218_10_R":
+      return require("../audioTestFiles/audioAssets/Right/218_10_R.wav");
+    case "233_10_R":
+      return require("../audioTestFiles/audioAssets/Right/233_10_R.wav");
+    case "243_10_R":
+      return require("../audioTestFiles/audioAssets/Right/243_10_R.wav");
+    case "254_10_R":
+      return require("../audioTestFiles/audioAssets/Right/254_10_R.wav");
+    case "256_10_R":
+      return require("../audioTestFiles/audioAssets/Right/256_10_R.wav");
+    case "261_10_R":
+      return require("../audioTestFiles/audioAssets/Right/261_10_R.wav");
+    case "294_10_R":
+      return require("../audioTestFiles/audioAssets/Right/294_10_R.wav");
+    case "295_10_R":
+      return require("../audioTestFiles/audioAssets/Right/295_10_R.wav");
+    case "296_10_R":
+      return require("../audioTestFiles/audioAssets/Right/296_10_R.wav");
+    case "313_10_R":
+      return require("../audioTestFiles/audioAssets/Right/313_10_R.wav");
+    case "318_10_R":
+      return require("../audioTestFiles/audioAssets/Right/318_10_R.wav");
+    case "321_10_R":
+      return require("../audioTestFiles/audioAssets/Right/321_10_R.wav");
+    case "322_10_R":
+      return require("../audioTestFiles/audioAssets/Right/322_10_R.wav");
+    case "324_10_R":
+      return require("../audioTestFiles/audioAssets/Right/324_10_R.wav");
+    case "342_10_R":
+      return require("../audioTestFiles/audioAssets/Right/342_10_R.wav");
+    case "343_10_R":
+      return require("../audioTestFiles/audioAssets/Right/343_10_R.wav");
+    case "345_10_R":
+      return require("../audioTestFiles/audioAssets/Right/345_10_R.wav");
+    case "346_10_R":
+      return require("../audioTestFiles/audioAssets/Right/346_10_R.wav");
+    case "353_10_R":
+      return require("../audioTestFiles/audioAssets/Right/353_10_R.wav");
+    case "362_10_R":
+      return require("../audioTestFiles/audioAssets/Right/362_10_R.wav");
+    case "383_10_R":
+      return require("../audioTestFiles/audioAssets/Right/383_10_R.wav");
+    case "384_10_R":
+      return require("../audioTestFiles/audioAssets/Right/384_10_R.wav");
+    case "393_10_R":
+      return require("../audioTestFiles/audioAssets/Right/393_10_R.wav");
+    case "398_10_R":
+      return require("../audioTestFiles/audioAssets/Right/398_10_R.wav");
+    case "436_10_R":
+      return require("../audioTestFiles/audioAssets/Right/436_10_R.wav");
+    case "439_10_R":
+      return require("../audioTestFiles/audioAssets/Right/439_10_R.wav");
+    case "441_10_R":
+      return require("../audioTestFiles/audioAssets/Right/441_10_R.wav");
+    case "452_10_R":
+      return require("../audioTestFiles/audioAssets/Right/452_10_R.wav");
+    case "453_10_R":
+      return require("../audioTestFiles/audioAssets/Right/453_10_R.wav");
+    case "454_10_R":
+      return require("../audioTestFiles/audioAssets/Right/454_10_R.wav");
+    case "464_10_R":
+      return require("../audioTestFiles/audioAssets/Right/464_10_R.wav");
+    case "483_10_R":
+      return require("../audioTestFiles/audioAssets/Right/483_10_R.wav");
+    case "534_10_R":
+      return require("../audioTestFiles/audioAssets/Right/534_10_R.wav");
+    case "556_10_R":
+      return require("../audioTestFiles/audioAssets/Right/556_10_R.wav");
+    case "568_10_R":
+      return require("../audioTestFiles/audioAssets/Right/568_10_R.wav");
+    case "593_10_R":
+      return require("../audioTestFiles/audioAssets/Right/593_10_R.wav");
+    case "599_10_R":
+      return require("../audioTestFiles/audioAssets/Right/599_10_R.wav");
+    case "639_10_R":
+      return require("../audioTestFiles/audioAssets/Right/639_10_R.wav");
+    case "649_10_R":
+      return require("../audioTestFiles/audioAssets/Right/649_10_R.wav");
+    case "658_10_R":
+      return require("../audioTestFiles/audioAssets/Right/658_10_R.wav");
+    case "823_10_R":
+      return require("../audioTestFiles/audioAssets/Right/823_10_R.wav");
+    case "825_10_R":
+      return require("../audioTestFiles/audioAssets/Right/825_10_R.wav");
+    case "828_10_R":
+      return require("../audioTestFiles/audioAssets/Right/828_10_R.wav");
+    case "833_10_R":
+      return require("../audioTestFiles/audioAssets/Right/833_10_R.wav");
+    case "854_10_R":
+      return require("../audioTestFiles/audioAssets/Right/854_10_R.wav");
+    case "856_10_R":
+      return require("../audioTestFiles/audioAssets/Right/856_10_R.wav");
+    case "862_10_R":
+      return require("../audioTestFiles/audioAssets/Right/862_10_R.wav");
+    case "891_10_R":
+      return require("../audioTestFiles/audioAssets/Right/891_10_R.wav");
+    case "916_10_R":
+      return require("../audioTestFiles/audioAssets/Right/916_10_R.wav");
+    case "929_10_R":
+      return require("../audioTestFiles/audioAssets/Right/929_10_R.wav");
+    case "942_10_R":
+      return require("../audioTestFiles/audioAssets/Right/942_10_R.wav");
+    case "989_10_R":
+      return require("../audioTestFiles/audioAssets/Right/989_10_R.wav");
+    case "128_11_R":
+      return require("../audioTestFiles/audioAssets/Right/128_11_R.wav");
+    case "152_11_R":
+      return require("../audioTestFiles/audioAssets/Right/152_11_R.wav");
+    case "154_11_R":
+      return require("../audioTestFiles/audioAssets/Right/154_11_R.wav");
+    case "161_11_R":
+      return require("../audioTestFiles/audioAssets/Right/161_11_R.wav");
+    case "181_11_R":
+      return require("../audioTestFiles/audioAssets/Right/181_11_R.wav");
+    case "182_11_R":
+      return require("../audioTestFiles/audioAssets/Right/182_11_R.wav");
+    case "185_11_R":
+      return require("../audioTestFiles/audioAssets/Right/185_11_R.wav");
+    case "193_11_R":
+      return require("../audioTestFiles/audioAssets/Right/193_11_R.wav");
+    case "194_11_R":
+      return require("../audioTestFiles/audioAssets/Right/194_11_R.wav");
+    case "199_11_R":
+      return require("../audioTestFiles/audioAssets/Right/199_11_R.wav");
+    case "213_11_R":
+      return require("../audioTestFiles/audioAssets/Right/213_11_R.wav");
+    case "216_11_R":
+      return require("../audioTestFiles/audioAssets/Right/216_11_R.wav");
+    case "218_11_R":
+      return require("../audioTestFiles/audioAssets/Right/218_11_R.wav");
+    case "233_11_R":
+      return require("../audioTestFiles/audioAssets/Right/233_11_R.wav");
+    case "243_11_R":
+      return require("../audioTestFiles/audioAssets/Right/243_11_R.wav");
+    case "254_11_R":
+      return require("../audioTestFiles/audioAssets/Right/254_11_R.wav");
+    case "256_11_R":
+      return require("../audioTestFiles/audioAssets/Right/256_11_R.wav");
+    case "261_11_R":
+      return require("../audioTestFiles/audioAssets/Right/261_11_R.wav");
+    case "294_11_R":
+      return require("../audioTestFiles/audioAssets/Right/294_11_R.wav");
+    case "295_11_R":
+      return require("../audioTestFiles/audioAssets/Right/295_11_R.wav");
+    case "296_11_R":
+      return require("../audioTestFiles/audioAssets/Right/296_11_R.wav");
+    case "313_11_R":
+      return require("../audioTestFiles/audioAssets/Right/313_11_R.wav");
+    case "318_11_R":
+      return require("../audioTestFiles/audioAssets/Right/318_11_R.wav");
+    case "321_11_R":
+      return require("../audioTestFiles/audioAssets/Right/321_11_R.wav");
+    case "322_11_R":
+      return require("../audioTestFiles/audioAssets/Right/322_11_R.wav");
+    case "324_11_R":
+      return require("../audioTestFiles/audioAssets/Right/324_11_R.wav");
+    case "342_11_R":
+      return require("../audioTestFiles/audioAssets/Right/342_11_R.wav");
+    case "343_11_R":
+      return require("../audioTestFiles/audioAssets/Right/343_11_R.wav");
+    case "345_11_R":
+      return require("../audioTestFiles/audioAssets/Right/345_11_R.wav");
+    case "346_11_R":
+      return require("../audioTestFiles/audioAssets/Right/346_11_R.wav");
+    case "353_11_R":
+      return require("../audioTestFiles/audioAssets/Right/353_11_R.wav");
+    case "362_11_R":
+      return require("../audioTestFiles/audioAssets/Right/362_11_R.wav");
+    case "383_11_R":
+      return require("../audioTestFiles/audioAssets/Right/383_11_R.wav");
+    case "384_11_R":
+      return require("../audioTestFiles/audioAssets/Right/384_11_R.wav");
+    case "393_11_R":
+      return require("../audioTestFiles/audioAssets/Right/393_11_R.wav");
+    case "398_11_R":
+      return require("../audioTestFiles/audioAssets/Right/398_11_R.wav");
+    case "436_11_R":
+      return require("../audioTestFiles/audioAssets/Right/436_11_R.wav");
+    case "439_11_R":
+      return require("../audioTestFiles/audioAssets/Right/439_11_R.wav");
+    case "441_11_R":
+      return require("../audioTestFiles/audioAssets/Right/441_11_R.wav");
+    case "452_11_R":
+      return require("../audioTestFiles/audioAssets/Right/452_11_R.wav");
+    case "453_11_R":
+      return require("../audioTestFiles/audioAssets/Right/453_11_R.wav");
+    case "454_11_R":
+      return require("../audioTestFiles/audioAssets/Right/454_11_R.wav");
+    case "464_11_R":
+      return require("../audioTestFiles/audioAssets/Right/464_11_R.wav");
+    case "483_11_R":
+      return require("../audioTestFiles/audioAssets/Right/483_11_R.wav");
+    case "534_11_R":
+      return require("../audioTestFiles/audioAssets/Right/534_11_R.wav");
+    case "556_11_R":
+      return require("../audioTestFiles/audioAssets/Right/556_11_R.wav");
+    case "568_11_R":
+      return require("../audioTestFiles/audioAssets/Right/568_11_R.wav");
+    case "593_11_R":
+      return require("../audioTestFiles/audioAssets/Right/593_11_R.wav");
+    case "599_11_R":
+      return require("../audioTestFiles/audioAssets/Right/599_11_R.wav");
+    case "639_11_R":
+      return require("../audioTestFiles/audioAssets/Right/639_11_R.wav");
+    case "649_11_R":
+      return require("../audioTestFiles/audioAssets/Right/649_11_R.wav");
+    case "658_11_R":
+      return require("../audioTestFiles/audioAssets/Right/658_11_R.wav");
+    case "823_11_R":
+      return require("../audioTestFiles/audioAssets/Right/823_11_R.wav");
+    case "825_11_R":
+      return require("../audioTestFiles/audioAssets/Right/825_11_R.wav");
+    case "828_11_R":
+      return require("../audioTestFiles/audioAssets/Right/828_11_R.wav");
+    case "833_11_R":
+      return require("../audioTestFiles/audioAssets/Right/833_11_R.wav");
+    case "854_11_R":
+      return require("../audioTestFiles/audioAssets/Right/854_11_R.wav");
+    case "856_11_R":
+      return require("../audioTestFiles/audioAssets/Right/856_11_R.wav");
+    case "862_11_R":
+      return require("../audioTestFiles/audioAssets/Right/862_11_R.wav");
+    case "891_11_R":
+      return require("../audioTestFiles/audioAssets/Right/891_11_R.wav");
+    case "916_11_R":
+      return require("../audioTestFiles/audioAssets/Right/916_11_R.wav");
+    case "929_11_R":
+      return require("../audioTestFiles/audioAssets/Right/929_11_R.wav");
+    case "942_11_R":
+      return require("../audioTestFiles/audioAssets/Right/942_11_R.wav");
+    case "989_11_R":
+      return require("../audioTestFiles/audioAssets/Right/989_11_R.wav");
+  }
+};
