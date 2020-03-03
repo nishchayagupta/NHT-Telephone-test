@@ -93,7 +93,7 @@ export default class HomeScreen extends Component<Props> {
       this.setState({ right: newArray });
       this.setState({ currentTrack: currentVal });
     }
-    let str = "First ear selection is " + earPreference;
+    let str = "----------" + earPreference + "----------";
     fileWriter.push(str);
     this.setState({ currentEar: earPreference });
   };
@@ -110,6 +110,8 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentTrack: currentVal });
           this.setState({ right: newArray });
           this.setState({ currentEar: "right" });
+          let str = "----------" + "right" + "----------";
+          fileWriter.push(str);
         } else {
           this.setState({ currentTrack: 0 });
           this.setState({ currentEar: "" });
@@ -134,6 +136,8 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentTrack: currentVal });
           this.setState({ right: newArray });
           this.setState({ currentEar: "right" });
+          let str = "----------" + "right" + "----------";
+          fileWriter.push(str);
         } else {
           this.setState({ currentTrack: 0 });
           this.setState({ currentEar: "" });
@@ -158,6 +162,8 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentTrack: currentVal });
           this.setState({ left: newArray });
           this.setState({ currentEar: "left" });
+          let str = "----------" + "left" + "----------";
+          fileWriter.push(str);
         } else {
           this.setState({ currentTrack: 0 });
           this.setState({ currentEar: "" });
@@ -182,6 +188,8 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentTrack: currentVal });
           this.setState({ left: newArray });
           this.setState({ currentEar: "left" });
+          let str = "----------" + "left" + "----------";
+          fileWriter.push(str);
         } else {
           this.setState({ currentTrack: 0 });
           this.setState({ currentEar: "" });
@@ -475,6 +483,11 @@ export default class HomeScreen extends Component<Props> {
   }
 
   saveFile = async () => {
+    var finalWriteStr = "";
+    for (let i = 0; i < fileWriter.length; i++) {
+      finalWriteStr = finalWriteStr + "\n" + fileWriter[i];
+    }
+    console.log("finalString is ", finalWriteStr);
     const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
     if (status === "granted") {
       let fileUri = FileSystem.documentDirectory + "text.txt";
