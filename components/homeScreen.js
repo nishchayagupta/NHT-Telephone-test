@@ -110,6 +110,7 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentTrack: currentVal });
           this.setState({ right: newArray });
           this.setState({ currentEar: "right" });
+          this.setState({ currentLevel: 2 });
           let str = "----------" + "right" + "----------";
           fileWriter.push(str);
         } else {
@@ -136,6 +137,8 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentTrack: currentVal });
           this.setState({ right: newArray });
           this.setState({ currentEar: "right" });
+          this.setState({ currentLevel: 2 });
+
           let str = "----------" + "right" + "----------";
           fileWriter.push(str);
         } else {
@@ -162,6 +165,8 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentTrack: currentVal });
           this.setState({ left: newArray });
           this.setState({ currentEar: "left" });
+          this.setState({ currentLevel: 2 });
+
           let str = "----------" + "left" + "----------";
           fileWriter.push(str);
         } else {
@@ -188,6 +193,8 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentTrack: currentVal });
           this.setState({ left: newArray });
           this.setState({ currentEar: "left" });
+          this.setState({ currentLevel: 2 });
+
           let str = "----------" + "left" + "----------";
           fileWriter.push(str);
         } else {
@@ -413,14 +420,17 @@ export default class HomeScreen extends Component<Props> {
 
       if (this.state.currentLevel > 1) {
         var currentLevel = this.state.currentLevel - 1;
+        this.setState({ currentLevel: currentLevel });
+
         await this.trackChange();
         await this.playAudio();
       } else {
         var currentLevel = this.state.currentLevel;
+        this.setState({ currentLevel: currentLevel });
+
         await this.trackChange();
         await this.playAudio();
       }
-      this.setState({ currentLevel: currentLevel });
       this.setState({ inputText: "" });
     }
   }
