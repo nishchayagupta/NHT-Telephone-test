@@ -465,9 +465,33 @@ export default class HomeScreen extends Component<Props> {
           <Overlay
             isVisible={this.state.isOverlayVisible}
             onBackdropPress={() => this.setState({ isOverlayVisible: false })}
-            height="30%"
+            height="15%"
             width="80%"
-          />
+          >
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
+              }}
+            >
+              <Text style={{ fontWeight: "bold", fontSize: 20 }}>
+                {this.state.currentEar == "left" ? "Right" : "Left"} ear testing
+                complete
+              </Text>
+              <SpaceView />
+              <Text>
+                Press Continue to start testing the{" "}
+                {this.state.currentEar == "left" ? "Left" : "Right"} ear
+              </Text>
+              <SpaceView />
+              <SpaceView />
+              <Button
+                title="Continue"
+                onPress={() => this.setState({ isOverlayVisible: false })}
+              />
+            </View>
+          </Overlay>
           <TouchableOpacity
             onPress={() => {
               this.playAudio();
