@@ -311,7 +311,7 @@ export default class HomeScreen extends Component<Props> {
       setTimeout(() => {
         soundObject.playAsync();
         console.log("play the sound");
-      }, 2500);
+      }, 2000);
 
       this.setState({ soundFlag: 1 });
       if (this.state.currentEar == "left") {
