@@ -28,6 +28,7 @@ import EntryScreen from "./entryscreen";
 import * as MediaLibrary from "expo-media-library";
 import * as FileSystem from "expo-file-system";
 import * as Permissions from "expo-permissions";
+import { Overlay } from "react-native-elements";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -51,7 +52,8 @@ export default class HomeScreen extends Component<Props> {
       leftStatus: false,
       rightStatus: false,
       testContinue: false,
-      fileWrite: []
+      fileWrite: [],
+      isOverlayVisible: false
     };
     this.returnButton = this.returnButton.bind(this);
   }
@@ -166,7 +168,6 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ left: newArray });
           this.setState({ currentEar: "left" });
           this.setState({ currentLevel: 2 });
-
           let str = "----------" + "left" + "----------";
           fileWriter.push(str);
         } else {
@@ -241,6 +242,7 @@ export default class HomeScreen extends Component<Props> {
       this.state.testContinue == false
     ) {
       this.setState({ testContinue: true });
+      this.setState({ isOverlayVisible: true });
       return;
     }
     if (
@@ -250,6 +252,7 @@ export default class HomeScreen extends Component<Props> {
       this.state.testContinue == false
     ) {
       this.setState({ testContinue: true });
+      this.setState({ isOverlayVisible: true });
       return;
     }
     currentTrackString =
@@ -459,6 +462,10 @@ export default class HomeScreen extends Component<Props> {
             justifyContent: "center"
           }}
         >
+          <Overlay
+            isVisible={this.state.isOverlayVisible}
+            onBackdropPress={() => this.setState({ isOverlayVisible: false })}
+          />
           <TouchableOpacity
             onPress={() => {
               this.playAudio();
