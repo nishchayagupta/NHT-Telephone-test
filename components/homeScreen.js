@@ -558,7 +558,7 @@ export default class HomeScreen extends Component<Props> {
     } else {
       return (
         <View id="MainView" style={styles.MainView}>
-          {this.displaySelectEarButton()}
+          {/* {this.displaySelectEarButton()} */}
           {/* <Text>
           {this.props.navigation.state.params.selectedEar}
         </Text> */}

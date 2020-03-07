@@ -164,7 +164,7 @@ export default class Initialscreen extends Component<Props> {
               paddingRight: 10
             }}
           >
-            <TouchableOpacity
+            {/* <TouchableOpacity
               style={styles.ButtonViewStyle}
               onPress={() => {
                 if (this.state.selectedEar === "") {
@@ -177,7 +177,19 @@ export default class Initialscreen extends Component<Props> {
               }}
             >
               <Text> Begin Test </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
+            <Button
+              title="Begin Test"
+              onPress={() => {
+                if (this.state.selectedEar === "") {
+                  this.refs.error.show("please select an ear");
+                } else {
+                  this.props.navigation.navigate("HomeScreen", {
+                    selectedEar: this.state.selectedEar
+                  });
+                }
+              }}
+            />
           </View>
         </Card>
       </View>
