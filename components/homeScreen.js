@@ -465,6 +465,8 @@ export default class HomeScreen extends Component<Props> {
           <Overlay
             isVisible={this.state.isOverlayVisible}
             onBackdropPress={() => this.setState({ isOverlayVisible: false })}
+            height="30%"
+            width="80%"
           />
           <TouchableOpacity
             onPress={() => {
