@@ -29,6 +29,8 @@ import * as MediaLibrary from "expo-media-library";
 import * as FileSystem from "expo-file-system";
 import * as Permissions from "expo-permissions";
 import { Overlay } from "react-native-elements";
+import * as LeftPlayer from "./leftPlayer";
+import * as RightPlayer from "./rightPlayer";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -262,7 +264,29 @@ export default class HomeScreen extends Component<Props> {
       "_" +
       (this.state.currentEar == "left" ? "_L" : "_R");
     console.log("audio is " + currentTrackString);
-    await this.playSound(currentTrackString);
+    if (this.state.currentEar == "left") {
+      await LeftPlayer.playLeftSound(currentTrackString);
+      this.setState({ soundFlag: 1 });
+      if (this.state.currentEar == "left") {
+        var leftCount = this.state.leftCounter + 1;
+        this.setState({ leftCounter: leftCount });
+      } else if (this.state.currentEar == "right") {
+        var rightCount = this.state.rightCounter + 1;
+        console.log("new right count is " + rightCount);
+        this.setState({ rightCounter: rightCount });
+      }
+    } else if (this.state.currentEar == "right") {
+      await RightPlayer.playRightSound(currentTrackString);
+      this.setState({ soundFlag: 1 });
+      if (this.state.currentEar == "left") {
+        var leftCount = this.state.leftCounter + 1;
+        this.setState({ leftCounter: leftCount });
+      } else if (this.state.currentEar == "right") {
+        var rightCount = this.state.rightCounter + 1;
+        console.log("new right count is " + rightCount);
+        this.setState({ rightCounter: rightCount });
+      }
+    }
   }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
   componentWillMount() {
@@ -302,32 +326,31 @@ export default class HomeScreen extends Component<Props> {
     await this.handleOverlay(this.props.navigation.state.params.selectedEar);
   }
 
-  // Play audio file
-  async playSound(audioTrack) {
-    var filePath = this.state.value;
-    const soundObject = new Audio.Sound();
-    try {
-      await soundObject.loadAsync(AudioFiles.audioSelector(audioTrack));
-      setTimeout(() => {
-        soundObject.playAsync();
-        console.log("play the sound");
-      }, 2000);
+  // // Play audio file
+  // async playSound(audioTrack) {
+  //   const soundObject = new Audio.Sound();
+  //   try {
+  //     await soundObject.loadAsync(AudioFiles.audioSelector(audioTrack));
+  //     setTimeout(() => {
+  //       soundObject.playAsync();
+  //       console.log("play the sound");
+  //     }, 2000);
 
-      this.setState({ soundFlag: 1 });
-      if (this.state.currentEar == "left") {
-        var leftCount = this.state.leftCounter + 1;
-        this.setState({ leftCounter: leftCount });
-      } else if (this.state.currentEar == "right") {
-        var rightCount = this.state.rightCounter + 1;
-        console.log("new right count is " + rightCount);
-        this.setState({ rightCounter: rightCount });
-      }
+  //     this.setState({ soundFlag: 1 });
+  //     if (this.state.currentEar == "left") {
+  //       var leftCount = this.state.leftCounter + 1;
+  //       this.setState({ leftCounter: leftCount });
+  //     } else if (this.state.currentEar == "right") {
+  //       var rightCount = this.state.rightCounter + 1;
+  //       console.log("new right count is " + rightCount);
+  //       this.setState({ rightCounter: rightCount });
+  //     }
 
-      // Your sound is playing!
-    } catch (error) {
-      console.log("error playing sound due to ", error);
-    }
-  }
+  //     // Your sound is playing!
+  //   } catch (error) {
+  //     console.log("error playing sound due to ", error);
+  //   }
+  // }
 
   // This method would append the text value entered by the user into the top text show area
   appendState = num => {
@@ -465,7 +488,7 @@ export default class HomeScreen extends Component<Props> {
           <Overlay
             isVisible={this.state.isOverlayVisible}
             onBackdropPress={() => this.setState({ isOverlayVisible: false })}
-            height="15%"
+            height="25%"
             width="80%"
           >
             <View
