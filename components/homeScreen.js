@@ -55,7 +55,8 @@ export default class HomeScreen extends Component<Props> {
       rightStatus: false,
       testContinue: false,
       fileWrite: [],
-      isOverlayVisible: false
+      isOverlayVisible: false,
+      fileWritten: false
     };
     this.returnButton = this.returnButton.bind(this);
   }
@@ -97,12 +98,15 @@ export default class HomeScreen extends Component<Props> {
       this.setState({ right: newArray });
       this.setState({ currentTrack: currentVal });
     }
-    let str = "----------" + earPreference + "----------";
+    let str =
+      earPreference == "left"
+        ? "--------------------------left---------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |"
+        : "--------------------------right--------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
     fileWriter.push(str);
     this.setState({ currentEar: earPreference });
   };
 
-  leftTrackChange() {
+  async leftTrackChange() {
     if (this.state.currentEar == "left") {
       if (this.state.leftCorrectResponses == 0 && this.state.leftCounter > 5) {
         if (this.state.rightStatus == false) {
@@ -115,9 +119,11 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ right: newArray });
           this.setState({ currentEar: "right" });
           this.setState({ currentLevel: 2 });
-          let str = "----------" + "right" + "----------";
+          let str =
+            "\n--------------------------right--------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
           fileWriter.push(str);
         } else {
+          await this.saveFile();
           this.setState({ currentTrack: 0 });
           this.setState({ currentEar: "" });
         }
@@ -143,9 +149,11 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentEar: "right" });
           this.setState({ currentLevel: 2 });
 
-          let str = "----------" + "right" + "----------";
+          let str =
+            "\n--------------------------right--------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
           fileWriter.push(str);
         } else {
+          await this.saveFile();
           this.setState({ currentTrack: 0 });
           this.setState({ currentEar: "" });
         }
@@ -154,7 +162,7 @@ export default class HomeScreen extends Component<Props> {
     }
   }
 
-  rightTrackChange() {
+  async rightTrackChange() {
     if (this.state.currentEar == "right") {
       if (
         this.state.rightCorrectResponses == 0 &&
@@ -170,9 +178,11 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ left: newArray });
           this.setState({ currentEar: "left" });
           this.setState({ currentLevel: 2 });
-          let str = "----------" + "left" + "----------";
+          let str =
+            "\n--------------------------left---------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
           fileWriter.push(str);
         } else {
+          await this.saveFile();
           this.setState({ currentTrack: 0 });
           this.setState({ currentEar: "" });
         }
@@ -198,9 +208,11 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentEar: "left" });
           this.setState({ currentLevel: 2 });
 
-          let str = "----------" + "left" + "----------";
+          let str =
+            "\n--------------------------left---------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
           fileWriter.push(str);
         } else {
+          await this.saveFile();
           this.setState({ currentTrack: 0 });
           this.setState({ currentEar: "" });
         }
@@ -326,32 +338,6 @@ export default class HomeScreen extends Component<Props> {
     await this.handleOverlay(this.props.navigation.state.params.selectedEar);
   }
 
-  // // Play audio file
-  // async playSound(audioTrack) {
-  //   const soundObject = new Audio.Sound();
-  //   try {
-  //     await soundObject.loadAsync(AudioFiles.audioSelector(audioTrack));
-  //     setTimeout(() => {
-  //       soundObject.playAsync();
-  //       console.log("play the sound");
-  //     }, 2000);
-
-  //     this.setState({ soundFlag: 1 });
-  //     if (this.state.currentEar == "left") {
-  //       var leftCount = this.state.leftCounter + 1;
-  //       this.setState({ leftCounter: leftCount });
-  //     } else if (this.state.currentEar == "right") {
-  //       var rightCount = this.state.rightCounter + 1;
-  //       console.log("new right count is " + rightCount);
-  //       this.setState({ rightCounter: rightCount });
-  //     }
-
-  //     // Your sound is playing!
-  //   } catch (error) {
-  //     console.log("error playing sound due to ", error);
-  //   }
-  // }
-
   // This method would append the text value entered by the user into the top text show area
   appendState = num => {
     this.setState({ inputText: this.state.inputText + num });
@@ -425,7 +411,32 @@ export default class HomeScreen extends Component<Props> {
 
   async verifyRegister() {
     if (this.state.inputText == this.state.currentTrack) {
-      console.log("match");
+      // console.log(
+      //   "trial number : " +
+      //     (this.state.currentEar == "left"
+      //       ? this.state.leftCounter
+      //       : this.state.rightCounter) +
+      //     ", stimulus : " +
+      //     this.state.currentTrack +
+      //     ", level : " +
+      //     this.state.currentLevel +
+      //     ", response : " +
+      //     this.state.inputText
+      // );
+
+      let verifyString =
+        "      " +
+        (this.state.currentEar == "left"
+          ? this.state.leftCounter
+          : this.state.rightCounter) +
+        "            " +
+        this.state.currentTrack +
+        "             " +
+        this.state.currentLevel +
+        "            " +
+        this.state.inputText +
+        "      ";
+      fileWriter.push(verifyString);
       if (this.state.currentLevel < 11) {
         var currentLevel = this.state.currentLevel + 1;
       } else {
@@ -438,11 +449,24 @@ export default class HomeScreen extends Component<Props> {
       await this.trackChange();
       await this.playAudio();
     } else {
-      console.log(
-        this.state.inputText,
-        "doesn't match",
-        this.state.currentTrack
-      );
+      // console.log(
+      //   this.state.inputText,
+      //   "doesn't match",
+      //   this.state.currentTrack
+      // );
+      let verifyString =
+        "      " +
+        (this.state.currentEar == "left"
+          ? this.state.leftCounter
+          : this.state.rightCounter) +
+        "            " +
+        this.state.currentTrack +
+        "             " +
+        this.state.currentLevel +
+        "            " +
+        this.state.inputText +
+        "      ";
+      fileWriter.push(verifyString);
 
       if (this.state.currentLevel > 1) {
         var currentLevel = this.state.currentLevel - 1;
@@ -554,29 +578,27 @@ export default class HomeScreen extends Component<Props> {
   }
 
   saveFile = async () => {
-    var finalWriteStr = "";
-    for (let i = 0; i < fileWriter.length; i++) {
-      finalWriteStr = finalWriteStr + "\n" + fileWriter[i];
-    }
-    console.log("finalString is ", finalWriteStr);
-    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-    if (status === "granted") {
-      let fileUri = FileSystem.documentDirectory + "text.txt";
-      await FileSystem.writeAsStringAsync(
-        fileUri,
-        "Hello World\n Hello guard",
-        {
+    if (this.state.fileWritten == false) {
+      var finalWriteStr = "";
+      for (let i = 0; i < fileWriter.length; i++) {
+        finalWriteStr = finalWriteStr + "\n" + fileWriter[i];
+      }
+      console.log("finalString is ", finalWriteStr);
+      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      if (status === "granted") {
+        let fileUri = FileSystem.documentDirectory + "text.txt";
+        await FileSystem.writeAsStringAsync(fileUri, finalWriteStr, {
           encoding: FileSystem.EncodingType.UTF8
-        }
-      );
-      const asset = await MediaLibrary.createAssetAsync(fileUri);
-      await MediaLibrary.createAlbumAsync("Download", asset, false);
+        });
+        const asset = await MediaLibrary.createAssetAsync(fileUri);
+        await MediaLibrary.createAlbumAsync("Download", asset, false);
+      }
+      await this.setState({ fileWritten: true });
     }
   };
 
   render() {
     if (this.state.leftStatus == true && this.state.rightStatus == true) {
-      this.saveFile();
       return <EntryScreen />;
     } else {
       return (

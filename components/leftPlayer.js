@@ -1,21 +1,6 @@
 import { Audio } from "expo-av";
 import * as AudioFiles from "./audioSelector";
 
-// async function playSound(sound) {
-//   setTimeout(() => {
-//     Audio.Sound
-//       .createAsync(sound, { shouldPlay: true })
-//       .then(res => {
-//         res.sound.setOnPlaybackStatusUpdate(status => {
-//           if (!status.didJustFinish) return;
-//           console.log("Unloading ");
-//           res.sound.unloadAsync().catch(() => {});
-//         });
-//       })
-//       .catch(error => {});
-//   }, 1000);
-// }
-
 // Play audio file
 export const playLeftSound = async audioTrack => {
   sound = AudioFiles.audioSelector(audioTrack);
