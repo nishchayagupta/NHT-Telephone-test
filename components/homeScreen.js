@@ -31,6 +31,7 @@ import * as Permissions from "expo-permissions";
 import { Overlay } from "react-native-elements";
 import * as LeftPlayer from "./leftPlayer";
 import * as RightPlayer from "./rightPlayer";
+import ThankYou from "./thankYou";
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -599,7 +600,7 @@ export default class HomeScreen extends Component<Props> {
 
   render() {
     if (this.state.leftStatus == true && this.state.rightStatus == true) {
-      return <EntryScreen />;
+      return <ThankYou />;
     } else {
       return (
         <View id="MainView" style={styles.MainView}>

@@ -16,7 +16,7 @@ export default class App extends React.Component {
             style: { color: "#fff" }
           }}
         />
-        <ThankYou />
+        <AppContainer />
       </View>
     );
   }
