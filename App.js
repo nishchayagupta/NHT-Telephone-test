@@ -4,6 +4,7 @@ import HomeScreen from "./components/homeScreen";
 import { Header } from "react-native-elements";
 import InitialScreen from "./components/entryscreen";
 import { AppContainer } from "./navigation";
+import ThankYou from "./components/thankYou";
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +16,7 @@ export default class App extends React.Component {
             style: { color: "#fff" }
           }}
         />
-        <AppContainer />
+        <ThankYou />
       </View>
     );
   }

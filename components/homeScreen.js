@@ -222,18 +222,18 @@ export default class HomeScreen extends Component<Props> {
   }
 
   async trackChange() {
-    console.log(
-      "Left counter is " +
-        this.state.leftCounter +
-        " and left status is " +
-        this.state.leftStatus
-    );
-    console.log(
-      "right counter is " +
-        this.state.rightCounter +
-        " and right status is " +
-        this.state.rightStatus
-    );
+    // console.log(
+    //   "Left counter is " +
+    //     this.state.leftCounter +
+    //     " and left status is " +
+    //     this.state.leftStatus
+    // );
+    // console.log(
+    //   "right counter is " +
+    //     this.state.rightCounter +
+    //     " and right status is " +
+    //     this.state.rightStatus
+    // );
     if (this.state.rightStatus == true && this.state.leftStatus == true) {
       console.log("test complete");
       return;
@@ -275,7 +275,7 @@ export default class HomeScreen extends Component<Props> {
       this.state.currentLevel +
       "_" +
       (this.state.currentEar == "left" ? "_L" : "_R");
-    console.log("audio is " + currentTrackString);
+    // console.log("audio is " + currentTrackString);
     if (this.state.currentEar == "left") {
       await LeftPlayer.playLeftSound(currentTrackString);
       this.setState({ soundFlag: 1 });
@@ -284,7 +284,7 @@ export default class HomeScreen extends Component<Props> {
         this.setState({ leftCounter: leftCount });
       } else if (this.state.currentEar == "right") {
         var rightCount = this.state.rightCounter + 1;
-        console.log("new right count is " + rightCount);
+        // console.log("new right count is " + rightCount);
         this.setState({ rightCounter: rightCount });
       }
     } else if (this.state.currentEar == "right") {
@@ -295,7 +295,7 @@ export default class HomeScreen extends Component<Props> {
         this.setState({ leftCounter: leftCount });
       } else if (this.state.currentEar == "right") {
         var rightCount = this.state.rightCounter + 1;
-        console.log("new right count is " + rightCount);
+        // console.log("new right count is " + rightCount);
         this.setState({ rightCounter: rightCount });
       }
     }
@@ -486,16 +486,16 @@ export default class HomeScreen extends Component<Props> {
   }
 
   renderAudioButton() {
-    if (this.state.leftCounter == 30 || this.state.rightCounter == 30) {
-      console.log(
-        "selected ear is " +
-          this.state.currentEar +
-          " and leftCounter is " +
-          this.state.leftCounter +
-          " and right counter is " +
-          this.state.rightCounter
-      );
-    }
+    // if (this.state.leftCounter == 30 || this.state.rightCounter == 30) {
+    //   console.log(
+    //     "selected ear is " +
+    //       this.state.currentEar +
+    //       " and leftCounter is " +
+    //       this.state.leftCounter +
+    //       " and right counter is " +
+    //       this.state.rightCounter
+    //   );
+    // }
     if (
       (this.state.currentEar == "left" && this.state.leftCounter == 0) ||
       (this.state.currentEar == "right" && this.state.rightCounter == 0)
