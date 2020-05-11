@@ -137,7 +137,7 @@ export default class Initialscreen extends Component<Props> {
                   onPress={() => this.selectEar("left")}
                 />
               </View>
-              <View style={{ padding: 30 }}>
+              <View>
                 <CheckBox
                   id="right"
                   center
@@ -164,20 +164,7 @@ export default class Initialscreen extends Component<Props> {
               paddingRight: 10
             }}
           >
-            {/* <TouchableOpacity
-              style={styles.ButtonViewStyle}
-              onPress={() => {
-                if (this.state.selectedEar === "") {
-                  this.refs.error.show("please select an ear");
-                } else {
-                  this.props.navigation.navigate("HomeScreen", {
-                    selectedEar: this.state.selectedEar
-                  });
-                }
-              }}
-            >
-              <Text> Begin Test </Text>
-            </TouchableOpacity> */}
+            
             <Button
               title="Begin Test"
               onPress={() => {
