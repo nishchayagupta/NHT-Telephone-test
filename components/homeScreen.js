@@ -8,7 +8,8 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Platform
 } from "react-native";
 import {
   Card,
@@ -32,6 +33,9 @@ import { Overlay } from "react-native-elements";
 import * as LeftPlayer from "./leftPlayer";
 import * as RightPlayer from "./rightPlayer";
 import ThankYou from "./thankYou";
+import * as MailComposer from 'expo-mail-composer';
+
+
 
 const DeviceHeight = Dimensions.get("window").height;
 const DeviceWidth = Dimensions.get("window").width;
@@ -61,6 +65,8 @@ export default class HomeScreen extends Component<Props> {
     };
     this.returnButton = this.returnButton.bind(this);
   }
+
+
 
   displaySelectEarButton() {
     return (
@@ -101,8 +107,8 @@ export default class HomeScreen extends Component<Props> {
     }
     let str =
       earPreference == "left"
-        ? "--------------------------left---------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |"
-        : "--------------------------right--------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
+        ? "---------------------left----------------------\n|Trial No.|Stimulus|Track Level|Response|"
+        : "---------------------right---------------------\n|Trial No.|Stimulus|Track Level|Response|";
     fileWriter.push(str);
     this.setState({ currentEar: earPreference });
   };
@@ -121,7 +127,7 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentEar: "right" });
           this.setState({ currentLevel: 2 });
           let str =
-            "\n--------------------------right--------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
+            "\n---------------------right---------------------\n|Trial No.|Stimulus|Track Level|Response|";
           fileWriter.push(str);
         } else {
           await this.saveFile();
@@ -151,7 +157,7 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentLevel: 2 });
 
           let str =
-            "\n--------------------------right--------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
+            "\n---------------------right---------------------\n|Trial No.|Stimulus|Track Level|Response|";
           fileWriter.push(str);
         } else {
           await this.saveFile();
@@ -180,7 +186,7 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentEar: "left" });
           this.setState({ currentLevel: 2 });
           let str =
-            "\n--------------------------left---------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
+            "\n---------------------left----------------------\n|Trial No.|Stimulus|Track Level|Response|";
           fileWriter.push(str);
         } else {
           await this.saveFile();
@@ -210,7 +216,7 @@ export default class HomeScreen extends Component<Props> {
           this.setState({ currentLevel: 2 });
 
           let str =
-            "\n--------------------------left---------------------------\n|  Trial No.  |  Stimulus  |  Track Level  |  Response  |";
+            "\n---------------------left----------------------\n|Trial No.|Stimulus|Track Level|Response|";
           fileWriter.push(str);
         } else {
           await this.saveFile();
@@ -591,8 +597,10 @@ export default class HomeScreen extends Component<Props> {
         await FileSystem.writeAsStringAsync(fileUri, finalWriteStr, {
           encoding: FileSystem.EncodingType.UTF8
         });
+        if (Platform.OS != "ios"){
         const asset = await MediaLibrary.createAssetAsync(fileUri);
         await MediaLibrary.createAlbumAsync("Download", asset, false);
+        }
       }
       await this.setState({ fileWritten: true });
     }
@@ -600,6 +608,15 @@ export default class HomeScreen extends Component<Props> {
 
   render() {
     if (this.state.leftStatus == true && this.state.rightStatus == true) {
+      var finalWriteStr = "";
+      for (let i = 0; i < fileWriter.length; i++) {
+        finalWriteStr = finalWriteStr + "\n" + fileWriter[i];
+      }
+      setTimeout(() => {MailComposer.composeAsync({
+      recipients :["kidd@iu.edu"],
+      subject:"Results for Client ID: "+ this.props.navigation.state.params.clientID + " and Test ID: " + this.props.navigation.state.params.testID,
+      body:finalWriteStr + "\n\n" + "Thank You,\nNHT Group" 
+    })}, 3000)
       return <ThankYou />;
     } else {
       return (

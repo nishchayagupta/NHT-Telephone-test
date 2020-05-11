@@ -185,7 +185,9 @@ export default class Initialscreen extends Component<Props> {
                   this.refs.error.show("please select an ear");
                 } else {
                   this.props.navigation.navigate("HomeScreen", {
-                    selectedEar: this.state.selectedEar
+                    selectedEar: this.state.selectedEar,
+                    clientID: this.state.clientID,
+                    testID: this.state.testID
                   });
                 }
               }}
