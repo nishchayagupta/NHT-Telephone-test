@@ -103,7 +103,6 @@ export default class Initialscreen extends Component<Props> {
           </View>
         </Card>
 
-        {this.spaceView(1, "first")}
         <Card>
           <View
             style={{
@@ -118,7 +117,6 @@ export default class Initialscreen extends Component<Props> {
             <Text style={{ fontSize: 20, fontWeight: "bold" }}>
               {" "}Select Ear{" "}
             </Text>
-            {this.spaceView(2, "first")}
             <View
               style={{
                 display: "flex",
@@ -126,7 +124,7 @@ export default class Initialscreen extends Component<Props> {
                 justifyContent: "space-between"
               }}
             >
-              <View style={{ padding: 30 }}>
+              <View>
                 <CheckBox
                   id="left"
                   center
