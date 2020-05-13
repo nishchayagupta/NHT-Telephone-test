@@ -546,7 +546,7 @@ export default class HomeScreen extends Component<Props> {
               />
             </View>
           </Overlay>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => {
               this.playAudio();
             }}
@@ -558,7 +558,14 @@ export default class HomeScreen extends Component<Props> {
               color="black"
               size={100}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+          <Button
+          title = "Start"
+          style={{ margin: 20, width:100, fontSize:30, fontWeight:"bold", height:70 }}
+          onPress={() => {
+              this.playAudio();
+            }}
+          />
         </View>
       );
     } else {
@@ -571,14 +578,21 @@ export default class HomeScreen extends Component<Props> {
             justifyContent: "center"
           }}
         >
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => {
               this.verifyRegister();
             }}
             style={{ margin: 20 }}
           >
             <Icon name="done" type="material" color="black" size={100} />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+          <Button
+          title = "Next"
+          style={{ margin: 20, width:100, fontSize:30, fontWeight:"bold", height:70 }}
+          onPress={() => {
+              this.verifyRegister();
+            }}
+          />
         </View>
       );
     }
