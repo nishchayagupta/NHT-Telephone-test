@@ -569,6 +569,7 @@ export default class HomeScreen extends Component<Props> {
         </View>
       );
     } else {
+      if(this.state.inputText.length == 3){
       return (
         <View
           style={{
@@ -595,6 +596,21 @@ export default class HomeScreen extends Component<Props> {
           />
         </View>
       );
+      }else{
+        return (
+          <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            margin: 10
+          }}
+        >
+          <Text>Please enter your response</Text>
+        </View>
+        )
+      }
     }
   }
 
