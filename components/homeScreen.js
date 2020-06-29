@@ -308,7 +308,7 @@ export default class HomeScreen extends Component<Props> {
     }
   }
   // This method will select 20 files randomly for each ear and add it to the state variables left and right
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     Leftvisited = [];
     //randomly selecting 30 files for the left ear
     while (Leftvisited.length < 30) {
